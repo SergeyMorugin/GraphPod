@@ -1,0 +1,16 @@
+PODS:
+  - GraphPod (0.1.0)
+
+DEPENDENCIES:
+  - GraphPod (from `../`)
+
+EXTERNAL SOURCES:
+  GraphPod:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GraphPod: 0561bb8fa20c144cdff5c905fff16bfbc796580c
+
+PODFILE CHECKSUM: 2a5cdd29822af0962d1ede332fb6de524efe5306
+
+COCOAPODS: 1.10.1

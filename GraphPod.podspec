@@ -21,14 +21,14 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/d.s.vandyshev@gmail.com/GraphPod'
+  s.homepage         = 'https://github.com/SergeyMorugin/GraphPod'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'd.s.vandyshev@gmail.com' => 'cmorugin@gmail.com' }
-  s.source           = { :git => 'https://github.com/d.s.vandyshev@gmail.com/GraphPod.git', :tag => s.version.to_s }
+  s.author           = { 'cmorugin@gmail.com' => 'cmorugin@gmail.com' }
+  s.source           = { :git => 'https://github.com/SergeyMorugin/GraphPod.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '14.0'
 
   s.source_files = 'GraphPod/Classes/**/*'
   
