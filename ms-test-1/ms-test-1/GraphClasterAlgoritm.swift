@@ -31,7 +31,7 @@ struct Element {
 }
 
 
-class SegmentedImageAlgorithm: UIViewController {
+class SegmentedImageAlgorithm{
 
     var edges: [Edge] = []        // edges array
     var threshold: [Float] = []   // thresholds array
@@ -39,12 +39,12 @@ class SegmentedImageAlgorithm: UIViewController {
     let minSize = 20              // min segment size
 
 
-    // MARK: - Lifecycle
+    /*// MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         segmentImage()
-    }
+    }*/
 
     // MARK:- Build Graph func
     private func segmentImage() {
@@ -228,7 +228,7 @@ class SegmentedImageAlgorithm: UIViewController {
         guard let imageGaussianed = gaussian(image: image, sigma: sigma) else { return nil}
 
         // Convert gaussianed image to png for resize and further processing
-        guard let imageToCrop = UIImage(data: UIImagePNGRepresentation(imageGaussianed)!) else { return nil}
+        guard let imageToCrop = UIImage(data: imageGaussianed.pngData()!) else { return nil}
 
         // Resize gaussianed image png to initial image size
         let initialSize = CGSize(width: image.size.width, height: image.size.height)
