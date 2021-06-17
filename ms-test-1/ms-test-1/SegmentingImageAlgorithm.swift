@@ -1,20 +1,14 @@
 //
-//  GraphClasterAlgoritm.swift
-//  ms-test-1
-//
-//  Created by Matthew on 17.06.2021.
-//  Copyright © 2021 Ostagram Inc. All rights reserved.
-//
-
-import Foundation
-
-
-//
 //  SegmentedImageAlgorithm.swift
 //  GraphPod
 //
 //  Created by Ilya Doroshkevitch on 08.06.2021.
 //
+
+import Foundation
+
+
+
 
 import UIKit
 
@@ -31,7 +25,7 @@ struct Element {
 }
 
 
-class SegmentedImageAlgorithm{
+class SegmentingImageAlgorithm {
 
     var edges: [Edge] = []        // edges array
     var threshold: [Float] = []   // thresholds array
@@ -47,25 +41,26 @@ class SegmentedImageAlgorithm{
     }*/
 
     // MARK:- Build Graph func
-    private func segmentImage() {
-
-        // Get inital image
-        guard let image = UIImage(named:"test3") else { return }
-
+    func segmentImage(_ image: BitmapImage) -> UIImage? {
+        //print(image.pixels.count)
+        //print(image)
         // Gaussian smoothed image
         //guard let image = smoothing(image: initialImage, sigma: 0.1) else { return }
-
+        var startTime = CFAbsoluteTimeGetCurrent()
+        
+        
+        
         // Get image size
-        let height = Int(image.size.height)
-        let width = Int(image.size.width)
+        let height = Int(image.height)
+        let width = Int(image.width)
 
         // Number of edges
         var numEdges = 0
 
         // Run through image width and height with 4 neighbor pixels and get edges array - OPTIMIZE NEEDED
 
-        for y in 0...height {
-            for x in 0...width {
+        for y in 0..<height {
+            for x in 0..<width {
                 if (x < width - 1) {
                     let a = y * width + x
                     let b = y * width + (x + 1)
@@ -81,7 +76,7 @@ class SegmentedImageAlgorithm{
                     let edge = Edge(a: a, b: b, weight: weight)
                     edges.append(edge)
                     numEdges+=1
-                    print(numEdges)
+                    //print(numEdges)
                 }
                 if ((x < width - 1) && (y < height - 1)) {
                     let a = y * width + x
@@ -90,7 +85,7 @@ class SegmentedImageAlgorithm{
                     let edge = Edge(a: a, b: b, weight: weight)
                     edges.append(edge)
                     numEdges+=1
-                    print(numEdges)
+                    //print(numEdges)
                 }
                 if ((x < width - 1) && (y > 0)) {
                     let a = y * width + x
@@ -99,13 +94,18 @@ class SegmentedImageAlgorithm{
                     let edge = Edge(a: a, b: b, weight: weight)
                     edges.append(edge)
                     numEdges+=1
-                    print(numEdges)
+                    //print(numEdges)
                 }
             }
         }
+        
+        print("Building graph: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        startTime = CFAbsoluteTimeGetCurrent()
 
         // Sort edges by weight
         let sortedEdges = edges.sorted { $0.weight < $1.weight  }
+        print("Sort graph: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        startTime = CFAbsoluteTimeGetCurrent()
 
         // Array for edges properties init
         var elements = [Element](repeating: Element(rank: 0, parent: 0, size: 1), count: numEdges)
@@ -137,6 +137,9 @@ class SegmentedImageAlgorithm{
                 }
             }
         }
+        
+        print("Build sectors: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        startTime = CFAbsoluteTimeGetCurrent()
 
         // Post process small segments
         for i in 0..<numEdges {
@@ -146,12 +149,16 @@ class SegmentedImageAlgorithm{
                 join(x: a, y: b, elements: &elements)
             }
         }
+        
+        print("Sectors post processing: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        startTime = CFAbsoluteTimeGetCurrent()
 
         // Create random colors array
         var randomColors = [UIColor](repeating: UIColor(), count: width * height * 4)
         for i in 0..<width * height {
             randomColors[i] = UIColor.randomize()
         }
+        
 
         // Create pixels array for segmented image
         var pixels = [UIColor]()
@@ -160,14 +167,16 @@ class SegmentedImageAlgorithm{
         for y in 0..<height{
             for x in 0..<width {
                 let component = elements[y * width + x].parent
-                print("Component - \(component)")
+                //print("Component - \(component)")
                 pixels.append(randomColors[component])
             }
         }
 
         // Create segmented image
         let segmentedImage = UIImage(pixels: pixels, width: width, height: height)
-        print(segmentedImage)
+        print("Build result image: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        //print(segmentedImage)
+        return segmentedImage
 
     }
 
@@ -197,18 +206,14 @@ class SegmentedImageAlgorithm{
    }
 
    // MARK: - Dissimilarity measure between pixels
-    func diff(image: UIImage, x1: Int, y1: Int, x2: Int, y2: Int) -> Float {
+    func diff(image: BitmapImage, x1: Int, y1: Int, x2: Int, y2: Int) -> Float {
+        //print("\(x1)-\(y1) \(x2)-\(y2)")
+        let pixel1 = image.pixel(x: x1, y: y1)
+        let pixel2 = image.pixel(x: x2, y: y2)
 
-        let r1 = image.getPixelColor(rgb: "r", position: CGPoint(x: x1, y: y1))
-        let r2 = image.getPixelColor(rgb: "r", position: CGPoint(x: x2, y: y2))
-
-        let g1 = image.getPixelColor(rgb: "g", position: CGPoint(x: x1, y: y1))
-        let g2 = image.getPixelColor(rgb: "g", position: CGPoint(x: x2, y: y2))
-
-        let b1 = image.getPixelColor(rgb: "b", position: CGPoint(x: x1, y: y1))
-        let b2 = image.getPixelColor(rgb: "b", position: CGPoint(x: x2, y: y2))
-
-        return sqrtf(Float((r1 - r2)*(r1 - r2) + ((g1 - g2)*(g1 - g2)) + (b1 - b2)*(b1 - b2)))
+        let dis = Float( (Int(pixel1.r) - Int(pixel2.r))*(Int(pixel1.r) - Int(pixel2.r)) + (Int(pixel1.g) - Int(pixel2.g))*(Int(pixel1.g) - Int(pixel2.g)) + (Int(pixel1.b) - Int(pixel2.b))*(Int(pixel1.b) - Int(pixel2.b)))
+        //print("dis = \(dis)")
+        return sqrt(Float(dis))
     }
 
     // MARK: - Gaussian blur
@@ -300,6 +305,8 @@ extension UIImage {
         self.init(cgImage: cgim)
     }
 }
+
+
 
 // Randomize color
 extension UIColor {
