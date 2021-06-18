@@ -36,11 +36,11 @@ class ViewController: UIViewController {
         //print(resultImage)
        
         
-        let im = UIImage.fromBitmapImage(bitmapImage: result!)
+        let im = UIImage.fromBitmapImage(bitmapImage: result!.0)
         im?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
 
         resultImage.image = im
-        let resultText = "Finish in \(CFAbsoluteTimeGetCurrent() - startTime) s."
+        let resultText = "Found \(result!.1.roots.count) sections in \(CFAbsoluteTimeGetCurrent() - startTime) s"
         print(resultText)
         resultLabel.text = resultText
     }

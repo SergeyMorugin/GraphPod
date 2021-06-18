@@ -23,7 +23,7 @@ struct Edge {
 
 class SegmentingImageAlgorithm {
     // MARK:- Build Graph func
-    func segmentImage(_ image: BitmapImage, threshold: Float, minSize: Int) -> BitmapImage? {
+    func segmentImage(_ image: BitmapImage, threshold: Float, minSize: Int) -> (BitmapImage, RootsDictionary, DisjointSet)? {
         //print(image.pixels.count)
         //print(image)
         // Gaussian smoothed image
@@ -152,7 +152,7 @@ class SegmentingImageAlgorithm {
         
         //print(segmentedImage)
         return segmentedImage*/
-        return BitmapImage(width: width, height: height, pixels: resultPixels)
+        return (BitmapImage(width: width, height: height, pixels: resultPixels), rootsDictionary, disjointSet)
 
     }
 
