@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        resultImage.image = UIImage(named:"test4")
+        resultImage.image = UIImage(named:"test5")
     }
 
     @IBAction func onRunClick(_ sender: Any) {
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         guard let image = smoothImage.toBitmapImage() else { return }
  
         //print(image)
-        let result = SegmentingImageAlgorithm().segmentImage(image, threshold: 0.2, minSize: 10)
+        let result = SegmentingImageAlgorithm().segmentImage(image, threshold: 10, minSize: 300)
         //print(resultImage)
        
         
