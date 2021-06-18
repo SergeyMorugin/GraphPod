@@ -9,9 +9,13 @@
 import UIKit
 
 
+
+
 class ViewController: UIViewController {
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
+    
+    let coefficients:[String: Float] = ["sigma": 0.6, "threshold": 10, "minSize": 300 ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +31,13 @@ class ViewController: UIViewController {
         guard let processingImage = resultImage.image else { return }
        
         
-        guard let smoothImage = processingImage.smoothing(sigma: 0.6) else { return }
+        guard let smoothImage = processingImage.smoothing(sigma: Double(coefficients["sigma"]!)) else { return }
         //resultImage.image = smoothImage
         print("Gauss smooth: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         guard let image = smoothImage.toBitmapImage() else { return }
  
         //print(image)
-        let result = SegmentingImageAlgorithm().segmentImage(image, threshold: 10, minSize: 300)
+        let result = SegmentingImageAlgorithm().segmentImage(image, threshold: coefficients["threshold"]!, minSize: Int(coefficients["minSize"]!))
         //print(resultImage)
        
         
@@ -41,7 +45,7 @@ class ViewController: UIViewController {
         im?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
 
         resultImage.image = im
-        let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(processingImage.size.width)x\(processingImage.size.height)"
+        let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(processingImage.size.width)x\(processingImage.size.height) \(coefficients)"
         print(resultText)
         resultLabel.text = resultText
     }
