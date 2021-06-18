@@ -55,7 +55,7 @@ final class DisjointSet {
 
 
 struct RootElementData {
-    let color: UIColor
+    let color: BitmapColor
 }
 
 
@@ -66,7 +66,7 @@ struct RootsDictionary{
         if let _ = roots[index] {
             return
         } else {
-            roots[index] = RootElementData(color: UIColor.randomize())
+            roots[index] = RootElementData(color: BitmapColor.random())
         }
         
     }

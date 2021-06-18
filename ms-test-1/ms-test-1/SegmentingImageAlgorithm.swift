@@ -37,7 +37,7 @@ class SegmentingImageAlgorithm {
     }*/
 
     // MARK:- Build Graph func
-    func segmentImage(_ image: BitmapImage) -> UIImage? {
+    func segmentImage(_ image: BitmapImage) -> BitmapImage? {
         //print(image.pixels.count)
         //print(image)
         // Gaussian smoothed image
@@ -139,26 +139,33 @@ class SegmentingImageAlgorithm {
         startTime = CFAbsoluteTimeGetCurrent()
 
 
-        // Create pixels array for segmented image
-        var pixels = [UIColor]()
-
+        //var pixels = [UIColor]()
         // Fill pixels array with random colors according to segment parent
+        
         print("disjointSet.elements.count \(disjointSet.elements.count)")
         var rootsDictionary = RootsDictionary()
+        var resultPixels:[UInt8] = []
         for i in 0..<disjointSet.elements.count {
             let rootIndex = disjointSet.rootForElementOn(index: i)
             
             rootsDictionary.createIfNew(index: rootIndex)
-            pixels.append(rootsDictionary.roots[rootIndex]!.color)
+            //pixels.append(rootsDictionary.roots[rootIndex]!.color)
+            let root = rootsDictionary.roots[rootIndex]!
+            resultPixels.append(root.color.r)
+            resultPixels.append(root.color.g)
+            resultPixels.append(root.color.b)
+            resultPixels.append(root.color.a)
         }
         
-        print("Pixels append in : \(CFAbsoluteTimeGetCurrent() - startTime) s.")
 
+        print("Build result bitmap: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        print("Sectors count: \(rootsDictionary.roots.count)")
         // Create segmented image
-        let segmentedImage = UIImage(pixels: pixels, width: width, height: height)
-        print("Build result image: \(CFAbsoluteTimeGetCurrent() - startTime) s. Result image \(segmentedImage?.size.width ?? 0)x\(segmentedImage?.size.height ?? 0)")
+        /*let segmentedImage = UIImage(pixels: pixels, width: width, height: height)
+        
         //print(segmentedImage)
-        return segmentedImage
+        return segmentedImage*/
+        return BitmapImage(width: width, height: height, pixels: resultPixels)
 
     }
 
