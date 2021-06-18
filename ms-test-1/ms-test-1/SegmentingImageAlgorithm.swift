@@ -18,11 +18,7 @@ struct Edge {
     var weight: Float = 0
 }
 
-struct Element {
-    var rank: Int
-    var parent: Int
-    var size: Int
-}
+
 
 
 class SegmentingImageAlgorithm {
@@ -52,11 +48,12 @@ class SegmentingImageAlgorithm {
         // Get image size
         let height = Int(image.height)
         let width = Int(image.width)
+        let pixelsCount = height*width
 
         // Number of edges
         var numEdges = 0
-        var edges = [Edge](repeating: Edge(), count: Int(height*width*4))
-        print("Graph memory alloc: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        var edges:[Edge] = [] //(repeating: Edge(), count: Int(height*width*4))
+        //print("Graph memory alloc: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         // Run through image width and height with 4 neighbor pixels and get edges array - OPTIMIZE NEEDED
 
         for y in 0..<height {
@@ -65,53 +62,29 @@ class SegmentingImageAlgorithm {
                     let a = y * width + x
                     let b = y * width + (x + 1)
                     let weight = diff(image: image, x1: x, y1: y, x2: x + 1, y2: y)
-                    //let edge = Edge(a: a, b: b, weight: weight)
-                    //edges.append(edge)
-                    edges[numEdges].a = a
+                    let edge = Edge(a: a, b: b, weight: weight)
+                    edges.append(edge)
+                    /*edges[numEdges].a = a
                     edges[numEdges].b = b
-                    edges[numEdges].weight = weight
+                    edges[numEdges].weight = weight*/
                     numEdges+=1
                 }
                 if (y < height - 1) {
                     let a = y * width + x
                     let b = (y + 1) * width + x
                     let weight = diff(image: image, x1: x, y1: y, x2: x, y2: y + 1)
-                    //let edge = Edge(a: a, b: b, weight: weight)
-                    //edges.append(edge)
-                    edges[numEdges].a = a
+                    let edge = Edge(a: a, b: b, weight: weight)
+                    edges.append(edge)
+                    /*edges[numEdges].a = a
                     edges[numEdges].b = b
-                    edges[numEdges].weight = weight
-                    numEdges+=1
-                    //print(numEdges)
-                }
-                if ((x < width - 1) && (y < height - 1)) {
-                    let a = y * width + x
-                    let b = (y + 1) * width + (x + 1)
-                    let weight = diff(image: image, x1: x, y1: y, x2: x + 1, y2: y + 1)
-                    //let edge = Edge(a: a, b: b, weight: weight)
-                    //edges.append(edge)
-                    edges[numEdges].a = a
-                    edges[numEdges].b = b
-                    edges[numEdges].weight = weight
-                    numEdges+=1
-                    //print(numEdges)
-                }
-                if ((x < width - 1) && (y > 0)) {
-                    let a = y * width + x
-                    let b = (y - 1) * width + (x + 1)
-                    let weight = diff(image: image, x1: x, y1: y, x2: x + 1, y2: y - 1)
-                    //let edge = Edge(a: a, b: b, weight: weight)
-                    //edges.append(edge)
-                    edges[numEdges].a = a
-                    edges[numEdges].b = b
-                    edges[numEdges].weight = weight
+                    edges[numEdges].weight = weight*/
                     numEdges+=1
                     //print(numEdges)
                 }
             }
         }
         
-        print("Building graph: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        print("Building graph on \(edges.count) nodes: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         startTime = CFAbsoluteTimeGetCurrent()
 
         // Sort edges by weight
@@ -120,11 +93,12 @@ class SegmentingImageAlgorithm {
         startTime = CFAbsoluteTimeGetCurrent()
 
         // Array for edges properties init
-        var elements = [Element](repeating: Element(rank: 0, parent: 0, size: 1), count: numEdges)
-        for i in 0..<numEdges {
-            elements[i].rank = 0
-            elements[i].size = 1
-            elements[i].parent = i
+        var disjointSet = DisjointSet()
+        disjointSet.elements = [DisjointSetElement](repeating: DisjointSetElement(rank: 0, parent: 0, size: 1), count: pixelsCount)
+        for i in 0..<pixelsCount {
+            disjointSet[i].rank = 0
+            disjointSet[i].size = 1
+            disjointSet[i].parent = i
         }
 
         // Set thresholds
@@ -136,15 +110,14 @@ class SegmentingImageAlgorithm {
         // Core sorting
         for i in 0..<numEdges {
             let pedge = sortedEdges[i]  // get rebro
-
-            var a = find(x: pedge.a, elements: &elements)  // vershina a
-            let b = find(x: pedge.b, elements: &elements)  // vershina b
-
+            
+            var a = disjointSet.rootForElementOn(index: pedge.a)//
+            let b = disjointSet.rootForElementOn(index: pedge.b)//
             if ( a != b ) {
                 if pedge.weight <= threshold[a] {
-                    join(x: a, y: b, elements: &elements)
-                    a = find(x: a, elements: &elements)
-                    threshold[a] = pedge.weight + c / Float(elements[a].size)
+                    disjointSet.joinSetsBy(index1: a, index2: b)
+                    a = disjointSet.rootForElementOn(index: a)
+                    threshold[a] = pedge.weight + c / Float(disjointSet[a].size)
                     //print(elements)
                 }
             }
@@ -152,70 +125,44 @@ class SegmentingImageAlgorithm {
         
         print("Build sectors: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         startTime = CFAbsoluteTimeGetCurrent()
-
+        
         // Post process small segments
         for i in 0..<numEdges {
-            let a = find(x: edges[i].a, elements: &elements)
-            let b = find(x: edges[i].b, elements: &elements)
-            if a != b && elements[a].size < minSize || elements[b].size < minSize {
-                join(x: a, y: b, elements: &elements)
+            let a = disjointSet.rootForElementOn(index: edges[i].a)
+            let b = disjointSet.rootForElementOn(index: edges[i].b)
+            if a != b && disjointSet[a].size < minSize || disjointSet[b].size < minSize {
+                disjointSet.joinSetsBy(index1: a, index2: b)
             }
         }
         
         print("Sectors post processing: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         startTime = CFAbsoluteTimeGetCurrent()
 
-        // Create random colors array
-        var randomColors = [UIColor](repeating: UIColor(), count: width * height * 4)
-        for i in 0..<width * height {
-            randomColors[i] = UIColor.randomize()
-        }
-        
 
         // Create pixels array for segmented image
         var pixels = [UIColor]()
 
         // Fill pixels array with random colors according to segment parent
-        for y in 0..<height{
-            for x in 0..<width {
-                let component = elements[y * width + x].parent
-                //print("Component - \(component)")
-                pixels.append(randomColors[component])
-            }
+        print("disjointSet.elements.count \(disjointSet.elements.count)")
+        var rootsDictionary = RootsDictionary()
+        for i in 0..<disjointSet.elements.count {
+            let rootIndex = disjointSet.rootForElementOn(index: i)
+            
+            rootsDictionary.createIfNew(index: rootIndex)
+            pixels.append(rootsDictionary.roots[rootIndex]!.color)
         }
+        
+        print("Pixels append in : \(CFAbsoluteTimeGetCurrent() - startTime) s.")
 
         // Create segmented image
         let segmentedImage = UIImage(pixels: pixels, width: width, height: height)
-        print("Build result image: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        print("Build result image: \(CFAbsoluteTimeGetCurrent() - startTime) s. Result image \(segmentedImage?.size.width ?? 0)x\(segmentedImage?.size.height ?? 0)")
         //print(segmentedImage)
         return segmentedImage
 
     }
 
-    // MARK:  Find element
-    func find(x: Int, elements: inout [Element]) -> Int {
-       var y = x
-       while y != elements[y].parent {
-           y = elements[y].parent
-           elements[x].parent = y
-       }
-       return y
-   }
 
-   // MARK: Join elements
-    func join(x: Int, y: Int, elements: inout [Element]) {
-       if elements[x].rank > elements[y].rank {
-           elements[y].parent = x
-           elements[x].size += elements[y].size
-       } else {
-           elements[x].parent = y
-           elements[y].size += elements[x].size
-
-       }
-       if elements[x].rank == elements[y].rank {
-           elements[y].rank += 1
-       }
-   }
 
    // MARK: - Dissimilarity measure between pixels
     func diff(image: BitmapImage, x1: Int, y1: Int, x2: Int, y2: Int) -> Float {
