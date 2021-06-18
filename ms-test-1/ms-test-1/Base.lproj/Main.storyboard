@@ -22,12 +22,24 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="702"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbQ-TJ-K5U">
-                                        <rect key="frame" x="0.0" y="702" width="414" height="116"/>
+                                        <rect key="frame" x="0.0" y="702" width="414" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="PLk-J1-kBK"/>
+                                        </constraints>
                                         <state key="normal" title="Run"/>
                                         <connections>
                                             <action selector="onRunClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P71-jX-tNP"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyn-Db-eKX">
+                                        <rect key="frame" x="0.0" y="757" width="414" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="FZh-Rt-zas"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -42,6 +54,7 @@
                     </view>
                     <connections>
                         <outlet property="resultImage" destination="ewP-Xa-Um3" id="6FX-c2-gqE"/>
+                        <outlet property="resultLabel" destination="wyn-Db-eKX" id="2eq-a0-Gop"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

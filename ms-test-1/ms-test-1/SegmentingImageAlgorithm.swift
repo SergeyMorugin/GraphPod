@@ -13,9 +13,9 @@ import Foundation
 import UIKit
 
 struct Edge {
-    var a: Int
-    var b: Int
-    var weight: Float
+    var a: Int = 0
+    var b: Int = 0
+    var weight: Float = 0
 }
 
 struct Element {
@@ -27,7 +27,7 @@ struct Element {
 
 class SegmentingImageAlgorithm {
 
-    var edges: [Edge] = []        // edges array
+            // edges array
     var threshold: [Float] = []   // thresholds array
     let c = Float(0.5)            // threshold
     let minSize = 20              // min segment size
@@ -45,9 +45,8 @@ class SegmentingImageAlgorithm {
         //print(image.pixels.count)
         //print(image)
         // Gaussian smoothed image
-        //guard let image = smoothing(image: initialImage, sigma: 0.1) else { return }
+        //
         var startTime = CFAbsoluteTimeGetCurrent()
-        
         
         
         // Get image size
@@ -56,7 +55,8 @@ class SegmentingImageAlgorithm {
 
         // Number of edges
         var numEdges = 0
-
+        var edges = [Edge](repeating: Edge(), count: Int(height*width*4))
+        print("Graph memory alloc: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         // Run through image width and height with 4 neighbor pixels and get edges array - OPTIMIZE NEEDED
 
         for y in 0..<height {
@@ -65,16 +65,22 @@ class SegmentingImageAlgorithm {
                     let a = y * width + x
                     let b = y * width + (x + 1)
                     let weight = diff(image: image, x1: x, y1: y, x2: x + 1, y2: y)
-                    let edge = Edge(a: a, b: b, weight: weight)
-                    edges.append(edge)
+                    //let edge = Edge(a: a, b: b, weight: weight)
+                    //edges.append(edge)
+                    edges[numEdges].a = a
+                    edges[numEdges].b = b
+                    edges[numEdges].weight = weight
                     numEdges+=1
                 }
                 if (y < height - 1) {
                     let a = y * width + x
                     let b = (y + 1) * width + x
                     let weight = diff(image: image, x1: x, y1: y, x2: x, y2: y + 1)
-                    let edge = Edge(a: a, b: b, weight: weight)
-                    edges.append(edge)
+                    //let edge = Edge(a: a, b: b, weight: weight)
+                    //edges.append(edge)
+                    edges[numEdges].a = a
+                    edges[numEdges].b = b
+                    edges[numEdges].weight = weight
                     numEdges+=1
                     //print(numEdges)
                 }
@@ -82,8 +88,11 @@ class SegmentingImageAlgorithm {
                     let a = y * width + x
                     let b = (y + 1) * width + (x + 1)
                     let weight = diff(image: image, x1: x, y1: y, x2: x + 1, y2: y + 1)
-                    let edge = Edge(a: a, b: b, weight: weight)
-                    edges.append(edge)
+                    //let edge = Edge(a: a, b: b, weight: weight)
+                    //edges.append(edge)
+                    edges[numEdges].a = a
+                    edges[numEdges].b = b
+                    edges[numEdges].weight = weight
                     numEdges+=1
                     //print(numEdges)
                 }
@@ -91,8 +100,11 @@ class SegmentingImageAlgorithm {
                     let a = y * width + x
                     let b = (y - 1) * width + (x + 1)
                     let weight = diff(image: image, x1: x, y1: y, x2: x + 1, y2: y - 1)
-                    let edge = Edge(a: a, b: b, weight: weight)
-                    edges.append(edge)
+                    //let edge = Edge(a: a, b: b, weight: weight)
+                    //edges.append(edge)
+                    edges[numEdges].a = a
+                    edges[numEdges].b = b
+                    edges[numEdges].weight = weight
                     numEdges+=1
                     //print(numEdges)
                 }
@@ -116,10 +128,10 @@ class SegmentingImageAlgorithm {
         }
 
         // Set thresholds
-         var threshold = [Float](repeating: 0, count: numEdges)
-         for i in 0..<numEdges {
+         var threshold = [Float](repeating: c, count: numEdges)
+         /*for i in 0..<numEdges {
             threshold[i] = c
-         }
+         }*/
 
         // Core sorting
         for i in 0..<numEdges {
@@ -211,42 +223,15 @@ class SegmentingImageAlgorithm {
         let pixel1 = image.pixel(x: x1, y: y1)
         let pixel2 = image.pixel(x: x2, y: y2)
 
-        let dis = Float( (Int(pixel1.r) - Int(pixel2.r))*(Int(pixel1.r) - Int(pixel2.r)) + (Int(pixel1.g) - Int(pixel2.g))*(Int(pixel1.g) - Int(pixel2.g)) + (Int(pixel1.b) - Int(pixel2.b))*(Int(pixel1.b) - Int(pixel2.b)))
+        let dis = Float(
+            (Int(pixel1.r) - Int(pixel2.r))*(Int(pixel1.r) - Int(pixel2.r)) +
+            (Int(pixel1.g) - Int(pixel2.g))*(Int(pixel1.g) - Int(pixel2.g)) +
+            (Int(pixel1.b) - Int(pixel2.b))*(Int(pixel1.b) - Int(pixel2.b)))
         //print("dis = \(dis)")
         return sqrt(Float(dis))
     }
 
-    // MARK: - Gaussian blur
-    func gaussian(image: UIImage, sigma: Double) -> UIImage? {
-        if let img = CIImage(image: image) {
-            if #available(iOS 10.0, *) {
-                return UIImage(ciImage: img.applyingGaussianBlur(sigma: sigma))
-            } else {
-                // Fallback on earlier versions
-            }
-        }
-        return nil
-    }
 
-  // MARK: - Smooth the image
-    func smoothing(image: UIImage, sigma: Double) -> UIImage? {
-        guard let imageGaussianed = gaussian(image: image, sigma: sigma) else { return nil}
-
-        // Convert gaussianed image to png for resize and further processing
-        guard let imageToCrop = UIImage(data: imageGaussianed.pngData()!) else { return nil}
-
-        // Resize gaussianed image png to initial image size
-        let initialSize = CGSize(width: image.size.width, height: image.size.height)
-
-        let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-
-        UIGraphicsBeginImageContextWithOptions(initialSize, false, 1.0)
-        imageToCrop.draw(in: rect)
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil}
-        UIGraphicsEndImageContext()
-
-        return image
-    }
 
 
 }
@@ -254,32 +239,37 @@ class SegmentingImageAlgorithm {
 // MARK: - Extensions
 extension UIImage {
 
-    // Get one pixel color
-    func getPixelColor(rgb: String, position: CGPoint) -> CGFloat {
-        var colorChannel = CGFloat()
+      // MARK: - Gaussian blur
+      func gaussian(image: UIImage, sigma: Double) -> UIImage? {
+          if let img = CIImage(image: image) {
+              if #available(iOS 10.0, *) {
+                  return UIImage(ciImage: img.applyingGaussianBlur(sigma: sigma))
+              } else {
+                  // Fallback on earlier versions
+              }
+          }
+          return nil
+      }
 
-        let pixelData = self.cgImage?.dataProvider?.data
-        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+    // MARK: - Smooth the image
+      func smoothing( sigma: Double) -> UIImage? {
+          guard let imageGaussianed = gaussian(image: self, sigma: sigma) else { return nil}
 
-        let pixelInfo: Int = ((Int(self.size.width) * Int(position.y)) + Int(position.x)) * 4
+          // Convert gaussianed image to png for resize and further processing
+          guard let imageToCrop = UIImage(data: imageGaussianed.pngData()!) else { return nil}
 
-        let r = CGFloat(data[pixelInfo]) / CGFloat(255.0)
-        let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
-        let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
-        //let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
+          // Resize gaussianed image png to initial image size
+          let initialSize = CGSize(width: self.size.width, height: self.size.height)
 
-        switch rgb {
-        case "r":
-            colorChannel = r
-        case "g":
-            colorChannel = g
-        case "b":
-            colorChannel = b
-        default:
-            break
-        }
-        return colorChannel
-    }
+          let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+
+          UIGraphicsBeginImageContextWithOptions(initialSize, false, 1.0)
+          imageToCrop.draw(in: rect)
+          guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil}
+          UIGraphicsEndImageContext()
+
+          return image
+      }
 }
 
 // Create new segmented image

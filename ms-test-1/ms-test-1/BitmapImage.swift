@@ -35,6 +35,7 @@ extension UIImage {
    func toBitmapImage() -> BitmapImage? {
        let size = self.size
        let dataSize = size.width * size.height * 4
+       print("Image size \(size.width)x\(size.height) = \(size.width*size.height)")
        var pixelData = [UInt8](repeating: 0, count: Int(dataSize))
        let colorSpace = CGColorSpaceCreateDeviceRGB()
        let context = CGContext(data: &pixelData,
@@ -50,30 +51,6 @@ extension UIImage {
    }
 }
 
-/*extension UIImage {
 
-    func BitmapImage2() -> BitmapImage?{
-        var width = 0
-        var height = 0
-        var pixelValues: [UInt8]?
-        if let imageRef = imageRef {
-            width = imageRef.width
-            height = imageRef.height
-            let bitsPerComponent = imageRef.bitsPerComponent
-            let bytesPerRow = imageRef.bytesPerRow
-            let totalBytes = height * bytesPerRow
-
-            let colorSpace = CGColorSpaceCreateDeviceGray()
-            var intensities = [UInt8](repeating: 0, count: totalBytes)
-
-            let contextRef = CGContext(data: &intensities, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: 0)
-            contextRef?.draw(imageRef, in: CGRect(x: 0.0, y: 0.0, width: CGFloat(width), height: CGFloat(height)))
-
-            pixelValues = intensities
-        }
-
-        return (pixelValues, width, height)
-    }
-}*/
 
 

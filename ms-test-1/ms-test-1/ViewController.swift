@@ -11,6 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var resultImage: UIImageView!
+    @IBOutlet weak var resultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +23,19 @@ class ViewController: UIViewController {
         
         let startTime = CFAbsoluteTimeGetCurrent()
         // Get inital image
-        guard let processing_image = UIImage(named:"test3") else { return }
+        guard let processingImage = UIImage(named:"test4") else { return }
         
-        let algorithm = SegmentingImageAlgorithm()
-        guard let image = processing_image.toBitmapImage() else { return }
-        print("Uncompres image: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
-        let result_image = algorithm.segmentImage(image)
-        print(result_image)
-        print("Finish in \(CFAbsoluteTimeGetCurrent() - startTime) s.")
-        resultImage.image = result_image
+        guard let smoothImage = processingImage.smoothing(sigma: 0.1) else { return }
+        print("Gauss smooth: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        guard let image = smoothImage.toBitmapImage() else { return }
+ 
+        
+        let result = SegmentingImageAlgorithm().segmentImage(image)
+        //print(resultImage)
+        let resultText = "Finish in \(CFAbsoluteTimeGetCurrent() - startTime) s."
+        print(resultText)
+        resultLabel.text = resultText
+        resultImage.image = result
     }
     
 }
