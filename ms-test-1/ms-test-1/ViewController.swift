@@ -23,29 +23,26 @@ class ViewController: UIViewController {
         
         let startTime = CFAbsoluteTimeGetCurrent()
         // Get inital image
-        guard let processingImage = UIImage(named:"test3") else { return }
+        guard let processingImage = UIImage(named:"test4") else { return }
        
         
-        guard let smoothImage = processingImage.smoothing(sigma: 0.1) else { return }
-        resultImage.image = smoothImage
+        //guard let smoothImage = processingImage.smoothing(sigma: 0.6) else { return }
+        //resultImage.image = smoothImage
         print("Gauss smooth: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
-        guard let image = smoothImage.toBitmapImage() else { return }
+        guard let image = processingImage.toBitmapImage() else { return }
  
         //print(image)
-        let result = SegmentingImageAlgorithm().segmentImage(image)
+        let result = SegmentingImageAlgorithm().segmentImage(image, threshold: 200, minSize: 400)
         //print(resultImage)
+       
+        
+        let im = UIImage.fromBitmapImage(bitmapImage: result!)
+        im?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
+
+        resultImage.image = im
         let resultText = "Finish in \(CFAbsoluteTimeGetCurrent() - startTime) s."
         print(resultText)
         resultLabel.text = resultText
-        print(image.pixels[100...120])
-        print(result!.pixels[0...100])
-        
-        let im = processingImage.fromBitmapImage(bitmapImage: result!)
-        im?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
-        //print(processingImage.cgImage.debugDescription)
-        //print(im!.cgImage.debugDescription)
-        //print(im!.toBitmapImage()!.pixels[100...120])
-        resultImage.image = im
     }
     
 }

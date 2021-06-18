@@ -22,22 +22,8 @@ struct Edge {
 
 
 class SegmentingImageAlgorithm {
-
-            // edges array
-    var threshold: [Float] = []   // thresholds array
-    let c = Float(0.5)            // threshold
-    let minSize = 20              // min segment size
-
-
-    /*// MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        segmentImage()
-    }*/
-
     // MARK:- Build Graph func
-    func segmentImage(_ image: BitmapImage) -> BitmapImage? {
+    func segmentImage(_ image: BitmapImage, threshold: Float, minSize: Int) -> BitmapImage? {
         //print(image.pixels.count)
         //print(image)
         // Gaussian smoothed image
@@ -102,7 +88,8 @@ class SegmentingImageAlgorithm {
         }
 
         // Set thresholds
-         var threshold = [Float](repeating: c, count: numEdges)
+        //var thresholds: [Float] = []
+        var thresholds = [Float](repeating: threshold, count: numEdges)
          /*for i in 0..<numEdges {
             threshold[i] = c
          }*/
@@ -114,10 +101,10 @@ class SegmentingImageAlgorithm {
             var a = disjointSet.rootForElementOn(index: pedge.a)//
             let b = disjointSet.rootForElementOn(index: pedge.b)//
             if ( a != b ) {
-                if pedge.weight <= threshold[a] {
+                if pedge.weight <= thresholds[a] {
                     disjointSet.joinSetsBy(index1: a, index2: b)
                     a = disjointSet.rootForElementOn(index: a)
-                    threshold[a] = pedge.weight + c / Float(disjointSet[a].size)
+                    thresholds[a] = pedge.weight + threshold / Float(disjointSet[a].size)
                     //print(elements)
                 }
             }
@@ -169,8 +156,6 @@ class SegmentingImageAlgorithm {
 
     }
 
-
-
    // MARK: - Dissimilarity measure between pixels
     func diff(image: BitmapImage, x1: Int, y1: Int, x2: Int, y2: Int) -> Float {
         //print("\(x1)-\(y1) \(x2)-\(y2)")
@@ -184,10 +169,6 @@ class SegmentingImageAlgorithm {
         //print("dis = \(dis)")
         return sqrt(Float(dis))
     }
-
-
-
-
 }
 
 // MARK: - Extensions
