@@ -6,10 +6,6 @@
 //
 
 import Foundation
-
-
-
-
 import UIKit
 
 struct Edge {
@@ -18,19 +14,13 @@ struct Edge {
     var weight: Float = 0
 }
 
+final class SegmentingImageAlgorithm {
 
-
-
-class SegmentingImageAlgorithm {
     // MARK:- Build Graph func
     func segmentImage(_ image: BitmapImage, threshold: Float, minSize: Int) -> (BitmapImage, RootsDictionary, DisjointSet)? {
-        //print(image.pixels.count)
-        //print(image)
-        // Gaussian smoothed image
-        //
+
         var startTime = CFAbsoluteTimeGetCurrent()
-        
-        
+
         // Get image size
         let height = Int(image.height)
         let width = Int(image.width)
@@ -38,21 +28,18 @@ class SegmentingImageAlgorithm {
 
         // Number of edges
         var numEdges = 0
-        var edges:[Edge] = [] //(repeating: Edge(), count: Int(height*width*4))
-        //print("Graph memory alloc: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        var edges:[Edge] = []
+
         // Run through image width and height with 4 neighbor pixels and get edges array - OPTIMIZE NEEDED
 
-        for y in 0..<height {
-            for x in 0..<width {
+        _ = (0..<height).map { y in
+            (0..<width).map { x in
                 if (x < width - 1) {
                     let a = y * width + x
                     let b = y * width + (x + 1)
                     let weight = diff(image: image, x1: x, y1: y, x2: x + 1, y2: y)
                     let edge = Edge(a: a, b: b, weight: weight)
                     edges.append(edge)
-                    /*edges[numEdges].a = a
-                    edges[numEdges].b = b
-                    edges[numEdges].weight = weight*/
                     numEdges+=1
                 }
                 if (y < height - 1) {
@@ -61,25 +48,22 @@ class SegmentingImageAlgorithm {
                     let weight = diff(image: image, x1: x, y1: y, x2: x, y2: y + 1)
                     let edge = Edge(a: a, b: b, weight: weight)
                     edges.append(edge)
-                    /*edges[numEdges].a = a
-                    edges[numEdges].b = b
-                    edges[numEdges].weight = weight*/
                     numEdges+=1
-                    //print(numEdges)
+
                 }
             }
-        }
-        
+         }
         print("Building graph on \(edges.count) nodes: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         startTime = CFAbsoluteTimeGetCurrent()
 
         // Sort edges by weight
         let sortedEdges = edges.sorted { $0.weight < $1.weight  }
+
         print("Sort graph: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         startTime = CFAbsoluteTimeGetCurrent()
 
         // Array for edges properties init
-        var disjointSet = DisjointSet()
+        let disjointSet = DisjointSet()
         disjointSet.elements = [DisjointSetElement](repeating: DisjointSetElement(rank: 0, parent: 0, size: 1), count: pixelsCount)
         for i in 0..<pixelsCount {
             disjointSet[i].rank = 0
@@ -88,78 +72,55 @@ class SegmentingImageAlgorithm {
         }
 
         // Set thresholds
-        //var thresholds: [Float] = []
         var thresholds = [Float](repeating: threshold, count: numEdges)
-         /*for i in 0..<numEdges {
-            threshold[i] = c
-         }*/
 
-        // Core sorting
-        for i in 0..<numEdges {
-            let pedge = sortedEdges[i]  // get rebro
-            
-            var a = disjointSet.rootForElementOn(index: pedge.a)//
-            let b = disjointSet.rootForElementOn(index: pedge.b)//
-            if ( a != b ) {
-                if (pedge.weight <= thresholds[a]) || (pedge.weight <= thresholds[b])
-                {
-                    disjointSet.joinSetsBy(index1: a, index2: b)
-                    a = disjointSet.rootForElementOn(index: a)
-                    thresholds[a] = pedge.weight + threshold/Float(disjointSet[a].size)
-                    //print(elements)
-                }
+        // Core sorting over .map
+        _ = sortedEdges.map {
+            var a = disjointSet.rootForElementOn(index: $0.a)
+            let b = disjointSet.rootForElementOn(index: $0.b)
+            if a != b && $0.weight <= thresholds[a] && $0.weight <= thresholds[b] {
+                disjointSet.joinSetsBy(index1: a, index2: b)
+                a = disjointSet.rootForElementOn(index: a)
+                thresholds[a] = $0.weight + threshold / Float(disjointSet[a].size)
             }
         }
-        
         print("Build sectors: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         startTime = CFAbsoluteTimeGetCurrent()
-        
+
         // Post process small segments
-        for i in 0..<numEdges {
-            let a = disjointSet.rootForElementOn(index: edges[i].a)
-            let b = disjointSet.rootForElementOn(index: edges[i].b)
-            if a != b && ((disjointSet[a].size < minSize) || (disjointSet[b].size < minSize)) {
+        _ = edges.map {
+            let a = disjointSet.rootForElementOn(index: $0.a)
+            let b = disjointSet.rootForElementOn(index: $0.b)
+            if a != b && ((disjointSet[a].size < minSize) || (disjointSet[b].size < minSize))  {
                 disjointSet.joinSetsBy(index1: a, index2: b)
             }
         }
-        
         print("Sectors post processing: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        print("disjointSet.elements.count \(disjointSet.elements.count)")
         startTime = CFAbsoluteTimeGetCurrent()
 
-
-        //var pixels = [UIColor]()
-        // Fill pixels array with random colors according to segment parent
-        
-        print("disjointSet.elements.count \(disjointSet.elements.count)")
+        // Create colors array for segments according to parent
         var rootsDictionary = RootsDictionary()
         var resultPixels:[UInt8] = []
         for i in 0..<disjointSet.elements.count {
             let rootIndex = disjointSet.rootForElementOn(index: i)
-            
+
             rootsDictionary.createIfNew(index: rootIndex)
-            //pixels.append(rootsDictionary.roots[rootIndex]!.color)
             let root = rootsDictionary.roots[rootIndex]!
             resultPixels.append(root.color.r)
             resultPixels.append(root.color.g)
             resultPixels.append(root.color.b)
             resultPixels.append(root.color.a)
         }
-        
-
         print("Build result bitmap: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         print("Sectors count: \(rootsDictionary.roots.count)")
-        // Create segmented image
-        /*let segmentedImage = UIImage(pixels: pixels, width: width, height: height)
-        
-        //print(segmentedImage)
-        return segmentedImage*/
+
         return (BitmapImage(width: width, height: height, pixels: resultPixels), rootsDictionary, disjointSet)
 
     }
 
    // MARK: - Dissimilarity measure between pixels
     func diff(image: BitmapImage, x1: Int, y1: Int, x2: Int, y2: Int) -> Float {
-        //print("\(x1)-\(y1) \(x2)-\(y2)")
         let pixel1 = image.pixel(x: x1, y: y1)
         let pixel2 = image.pixel(x: x2, y: y2)
 
@@ -167,12 +128,13 @@ class SegmentingImageAlgorithm {
             (Int(pixel1.r) - Int(pixel2.r))*(Int(pixel1.r) - Int(pixel2.r)) +
             (Int(pixel1.g) - Int(pixel2.g))*(Int(pixel1.g) - Int(pixel2.g)) +
             (Int(pixel1.b) - Int(pixel2.b))*(Int(pixel1.b) - Int(pixel2.b)))
-        //print("dis = \(dis)")
+
         return sqrt(Float(dis))
     }
 }
 
 // MARK: - Extensions
+
 extension UIImage {
 
       // MARK: - Gaussian blur
@@ -243,4 +205,3 @@ extension UIColor {
                        alpha: 1.0)
     }
 }
-
