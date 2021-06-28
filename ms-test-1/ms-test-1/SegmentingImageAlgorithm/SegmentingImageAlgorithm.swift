@@ -31,9 +31,9 @@ final class SegmentingImageAlgorithm {
         var edges:[Edge] = []
 
         // Run through image width and height with 4 neighbor pixels and get edges array - OPTIMIZE NEEDED
-
-        _ = (0..<height).map { y in
-            (0..<width).map { x in
+        // 
+        (0..<height).forEach { y in
+            (0..<width).forEach { x in
                 if (x < width - 1) {
                     let a = y * width + x
                     let b = y * width + (x + 1)
@@ -75,7 +75,7 @@ final class SegmentingImageAlgorithm {
         var thresholds = [Float](repeating: threshold, count: numEdges)
 
         // Core sorting over .map
-        _ = sortedEdges.map {
+        sortedEdges.forEach {
             var a = disjointSet.rootForElementOn(index: $0.a)
             let b = disjointSet.rootForElementOn(index: $0.b)
             if a != b && $0.weight <= thresholds[a] && $0.weight <= thresholds[b] {
@@ -88,7 +88,7 @@ final class SegmentingImageAlgorithm {
         startTime = CFAbsoluteTimeGetCurrent()
 
         // Post process small segments
-        _ = edges.map {
+        edges.forEach {
             let a = disjointSet.rootForElementOn(index: $0.a)
             let b = disjointSet.rootForElementOn(index: $0.b)
             if a != b && ((disjointSet[a].size < minSize) || (disjointSet[b].size < minSize))  {
