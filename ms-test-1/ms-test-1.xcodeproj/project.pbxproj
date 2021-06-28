@@ -18,6 +18,7 @@
 		3455F9E1267B6F5100D267A8 /* SegmentingImageAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455F9E0267B6F5100D267A8 /* SegmentingImageAlgorithm.swift */; };
 		3455F9E3267B848F00D267A8 /* BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455F9E2267B848F00D267A8 /* BitmapImage.swift */; };
 		3455F9E5267CA92100D267A8 /* DisjointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455F9E4267CA92100D267A8 /* DisjointSet.swift */; };
+		5B1453CB2689CD3A0076C3B4 /* EdgeDetectionAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1453CA2689CD3A0076C3B4 /* EdgeDetectionAlgorithm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3455F9E0267B6F5100D267A8 /* SegmentingImageAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentingImageAlgorithm.swift; sourceTree = "<group>"; };
 		3455F9E2267B848F00D267A8 /* BitmapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapImage.swift; sourceTree = "<group>"; };
 		3455F9E4267CA92100D267A8 /* DisjointSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisjointSet.swift; sourceTree = "<group>"; };
+		5B1453CA2689CD3A0076C3B4 /* EdgeDetectionAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeDetectionAlgorithm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +107,8 @@
 		3455F9AF267B6BA300D267A8 /* ms-test-1 */ = {
 			isa = PBXGroup;
 			children = (
-				3455F9E0267B6F5100D267A8 /* SegmentingImageAlgorithm.swift */,
+				5B1453C92689CD230076C3B4 /* EdgeDetectionAlgorithm */,
+				5B1453C82689CC270076C3B4 /* SegmentingImageAlgorithm */,
 				3455F9B0267B6BA300D267A8 /* AppDelegate.swift */,
 				3455F9B2267B6BA300D267A8 /* SceneDelegate.swift */,
 				3455F9B4267B6BA300D267A8 /* ViewController.swift */,
@@ -113,8 +116,6 @@
 				3455F9B9267B6BA700D267A8 /* Assets.xcassets */,
 				3455F9BB267B6BA700D267A8 /* LaunchScreen.storyboard */,
 				3455F9BE267B6BA700D267A8 /* Info.plist */,
-				3455F9E2267B848F00D267A8 /* BitmapImage.swift */,
-				3455F9E4267CA92100D267A8 /* DisjointSet.swift */,
 			);
 			path = "ms-test-1";
 			sourceTree = "<group>";
@@ -135,6 +136,24 @@
 				3455F9D4267B6BA700D267A8 /* Info.plist */,
 			);
 			path = "ms-test-1UITests";
+			sourceTree = "<group>";
+		};
+		5B1453C82689CC270076C3B4 /* SegmentingImageAlgorithm */ = {
+			isa = PBXGroup;
+			children = (
+				3455F9E0267B6F5100D267A8 /* SegmentingImageAlgorithm.swift */,
+				3455F9E2267B848F00D267A8 /* BitmapImage.swift */,
+				3455F9E4267CA92100D267A8 /* DisjointSet.swift */,
+			);
+			path = SegmentingImageAlgorithm;
+			sourceTree = "<group>";
+		};
+		5B1453C92689CD230076C3B4 /* EdgeDetectionAlgorithm */ = {
+			isa = PBXGroup;
+			children = (
+				5B1453CA2689CD3A0076C3B4 /* EdgeDetectionAlgorithm.swift */,
+			);
+			path = EdgeDetectionAlgorithm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +292,7 @@
 				3455F9B5267B6BA300D267A8 /* ViewController.swift in Sources */,
 				3455F9B1267B6BA300D267A8 /* AppDelegate.swift in Sources */,
 				3455F9E5267CA92100D267A8 /* DisjointSet.swift in Sources */,
+				5B1453CB2689CD3A0076C3B4 /* EdgeDetectionAlgorithm.swift in Sources */,
 				3455F9B3267B6BA300D267A8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
