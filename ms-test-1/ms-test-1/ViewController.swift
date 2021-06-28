@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
     
-    let coefficients:[String: Float] = ["sigma": 0.6, "threshold": 10, "minSize": 300 ]
+    let coefficients:[String: Float] = ["sigma": 0.6, "threshold": 10, "minSize": 10 ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         //resultImage.image = smoothImage
         print("Gauss smooth: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         guard let image = smoothImage.toBitmapImage() else { return }
+        resultImage.image = smoothImage
  
         //print(image)
         let result = SegmentingImageAlgorithm().segmentImage(image, threshold: coefficients["threshold"]!, minSize: Int(coefficients["minSize"]!))

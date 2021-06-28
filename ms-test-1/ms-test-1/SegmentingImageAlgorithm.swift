@@ -101,10 +101,11 @@ class SegmentingImageAlgorithm {
             var a = disjointSet.rootForElementOn(index: pedge.a)//
             let b = disjointSet.rootForElementOn(index: pedge.b)//
             if ( a != b ) {
-                if pedge.weight <= thresholds[a] {
+                if (pedge.weight <= thresholds[a]) || (pedge.weight <= thresholds[b])
+                {
                     disjointSet.joinSetsBy(index1: a, index2: b)
                     a = disjointSet.rootForElementOn(index: a)
-                    thresholds[a] = pedge.weight + threshold / Float(disjointSet[a].size)
+                    thresholds[a] = pedge.weight + threshold/Float(disjointSet[a].size)
                     //print(elements)
                 }
             }
@@ -117,7 +118,7 @@ class SegmentingImageAlgorithm {
         for i in 0..<numEdges {
             let a = disjointSet.rootForElementOn(index: edges[i].a)
             let b = disjointSet.rootForElementOn(index: edges[i].b)
-            if a != b && disjointSet[a].size < minSize || disjointSet[b].size < minSize {
+            if a != b && ((disjointSet[a].size < minSize) || (disjointSet[b].size < minSize)) {
                 disjointSet.joinSetsBy(index1: a, index2: b)
             }
         }

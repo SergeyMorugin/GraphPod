@@ -36,11 +36,11 @@ final class DisjointSet {
         } else {
             elements[index1].parent = index2
             elements[index2].size += elements[index1].size
-
+            if elements[index1].rank == elements[index2].rank {
+                elements[index2].rank += 1
+            }
         }
-        if elements[index1].rank == elements[index2].rank {
-            elements[index2].rank += 1
-        }
+        
     }
     
     subscript(index: Int) -> DisjointSetElement {
