@@ -36,9 +36,9 @@ class ViewController: UIViewController {
         guard let image = smoothImage.toBitmapImage() else { return }
         resultImage.image = smoothImage
  
-        //print(image)
+        //print(image.pixels.count)
         let result = SegmentingImageAlgorithm().segmentImage(image, threshold: coefficients["threshold"]!, minSize: Int(coefficients["minSize"]!))
-        //print(resultImage)
+        //print(result)
        
         
         let im = UIImage.fromBitmapImage(bitmapImage: result!.0)
@@ -69,12 +69,12 @@ class ViewController: UIViewController {
         // Get grayscale image pixel data for edge detection
         guard let pixelValuesGrayScaleImage = EdgeDetectionAlgorithm.pixelValuesFromGrayScaleImage(imageRef: smoothImage.cgImage) else { return }
 
-        //print(pixelValuesGrayScaleImage)
+        //print(pixelValuesGrayScaleImage.count)
 
         // Get magnitudes feature normalized data matrix
         let featureMatrix = EdgeDetectionAlgorithm.operate(pixelValues: pixelValuesGrayScaleImage, height: Int(image.size.height), width: Int(image.size.width))
 
-        //print(featureMatrix)
+        //print(featureMatrix.count)
 
         // Create output image
         let edgesImage = EdgeDetectionAlgorithm.imageEdgesDetected(pixelValues: featureMatrix, width: Int(image.size.width), height: Int(image.size.height))

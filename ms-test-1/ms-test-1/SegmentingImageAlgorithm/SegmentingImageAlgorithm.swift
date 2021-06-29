@@ -84,6 +84,7 @@ final class SegmentingImageAlgorithm {
                 thresholds[a] = $0.weight + threshold / Float(disjointSet[a].size)
             }
         }
+
         print("Build sectors: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         startTime = CFAbsoluteTimeGetCurrent()
 
@@ -97,6 +98,7 @@ final class SegmentingImageAlgorithm {
         }
         print("Sectors post processing: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         print("disjointSet.elements.count \(disjointSet.elements.count)")
+
         startTime = CFAbsoluteTimeGetCurrent()
 
         // Create colors array for segments according to parent

@@ -67,7 +67,6 @@ final class EdgeDetectionAlgorithm {
 
         for y in 1..<height - 1 {
             for x in 1..<width - 1 {
-
                 let gx = (kernelX[0][0] * Int(pixelValues[(y - 1) * width + (x - 1)])) +
                     (kernelX[0][1] * Int(pixelValues[(y - 1) * width + x])) +
                     (kernelX[0][2] * Int(pixelValues[(y - 1) * width + (x + 1)])) +

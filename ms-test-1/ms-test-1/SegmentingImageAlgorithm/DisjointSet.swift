@@ -40,8 +40,7 @@ final class DisjointSet {
                 elements[index2].rank += 1
             }
         }
-        
-    }
+     }
     
     subscript(index: Int) -> DisjointSetElement {
         get {

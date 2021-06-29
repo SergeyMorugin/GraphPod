@@ -20,7 +20,7 @@ struct BitmapColor {
     }
 }
 
-struct BitmapImage {
+struct BitmapImage: Equatable {
     let width: Int
     let height: Int
     var pixels: [UInt8]
