@@ -57,6 +57,7 @@
 		3455F9E2267B848F00D267A8 /* BitmapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapImage.swift; sourceTree = "<group>"; };
 		3455F9E4267CA92100D267A8 /* DisjointSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisjointSet.swift; sourceTree = "<group>"; };
 		5B1453CA2689CD3A0076C3B4 /* EdgeDetectionAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeDetectionAlgorithm.swift; sourceTree = "<group>"; };
+		5B1453D5268B557E0076C3B4 /* graphpod presentation.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = "graphpod presentation.key"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +108,7 @@
 		3455F9AF267B6BA300D267A8 /* ms-test-1 */ = {
 			isa = PBXGroup;
 			children = (
+				5B1453D4268B556E0076C3B4 /* Presentation */,
 				5B1453C92689CD230076C3B4 /* EdgeDetectionAlgorithm */,
 				5B1453C82689CC270076C3B4 /* SegmentingImageAlgorithm */,
 				3455F9B0267B6BA300D267A8 /* AppDelegate.swift */,
@@ -154,6 +156,14 @@
 				5B1453CA2689CD3A0076C3B4 /* EdgeDetectionAlgorithm.swift */,
 			);
 			path = EdgeDetectionAlgorithm;
+			sourceTree = "<group>";
+		};
+		5B1453D4268B556E0076C3B4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5B1453D5268B557E0076C3B4 /* graphpod presentation.key */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
