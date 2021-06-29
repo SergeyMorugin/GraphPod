@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Edge {
+struct Edge: Equatable {
     var a: Int = 0
     var b: Int = 0
     var weight: Float = 0

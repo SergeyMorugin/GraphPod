@@ -7,7 +7,7 @@
 //
 
 
-struct BitmapColor {
+struct BitmapColor: Equatable {
     let r: UInt8
     let g: UInt8
     let b: UInt8
@@ -40,12 +40,10 @@ extension BitmapImage {
         let height = Int(self.height)
         let width = Int(self.width)
         let pixelsCount = height*width
-        // Number of edges
-        var numEdges = 0
-        var edges:[Edge] = []
+
+        var edges: [Edge] = []
         
         // Run through image width and height with 4 neighbor pixels and get edges array - OPTIMIZE NEEDED
-        //
         (0..<height).forEach { y in
             (0..<width).forEach { x in
                 if (x < width - 1) {
@@ -54,7 +52,6 @@ extension BitmapImage {
                     let weight = diff(x1: x, y1: y, x2: x + 1, y2: y)
                     let edge = Edge(a: a, b: b, weight: weight)
                     edges.append(edge)
-                    numEdges+=1
                 }
                 if (y < height - 1) {
                     let a = y * width + x
@@ -62,7 +59,6 @@ extension BitmapImage {
                     let weight = diff(x1: x, y1: y, x2: x, y2: y + 1)
                     let edge = Edge(a: a, b: b, weight: weight)
                     edges.append(edge)
-                    numEdges+=1
                     
                 }
             }
