@@ -11,6 +11,7 @@
 		34210C2C268B698A0043160B /* RootsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34210C2B268B698A0043160B /* RootsDictionary.swift */; };
 		34210C2E268B72A90043160B /* SegmentingImageAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34210C2D268B72A90043160B /* SegmentingImageAlgorithm.swift */; };
 		34210C30268B7C9D0043160B /* RootsDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34210C2F268B7C9D0043160B /* RootsDictionaryTests.swift */; };
+		34210C32268B80570043160B /* BitmapColorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34210C31268B80570043160B /* BitmapColorTest.swift */; };
 		3455F9B1267B6BA300D267A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455F9B0267B6BA300D267A8 /* AppDelegate.swift */; };
 		3455F9B3267B6BA300D267A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455F9B2267B6BA300D267A8 /* SceneDelegate.swift */; };
 		3455F9B5267B6BA300D267A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455F9B4267B6BA300D267A8 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 		34210C2B268B698A0043160B /* RootsDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootsDictionary.swift; sourceTree = "<group>"; };
 		34210C2D268B72A90043160B /* SegmentingImageAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentingImageAlgorithm.swift; sourceTree = "<group>"; };
 		34210C2F268B7C9D0043160B /* RootsDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootsDictionaryTests.swift; sourceTree = "<group>"; };
+		34210C31268B80570043160B /* BitmapColorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapColorTest.swift; sourceTree = "<group>"; };
 		3455F9AD267B6BA300D267A8 /* ms-test-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ms-test-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3455F9B0267B6BA300D267A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3455F9B2267B6BA300D267A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				3455F9C7267B6BA700D267A8 /* ms_test_1Tests.swift */,
 				3455F9C9267B6BA700D267A8 /* Info.plist */,
 				34210C2F268B7C9D0043160B /* RootsDictionaryTests.swift */,
+				34210C31268B80570043160B /* BitmapColorTest.swift */,
 			);
 			path = "ms-test-1Tests";
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34210C32268B80570043160B /* BitmapColorTest.swift in Sources */,
 				3455F9C8267B6BA700D267A8 /* ms_test_1Tests.swift in Sources */,
 				34210C30268B7C9D0043160B /* RootsDictionaryTests.swift in Sources */,
 			);
