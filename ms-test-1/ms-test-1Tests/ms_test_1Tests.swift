@@ -11,7 +11,7 @@ import XCTest
 
 class ms_test_1Tests: XCTestCase {
 
-    let image = UIImage(named: "imageForXCT")
+  /*  let image = UIImage(named: "imageForXCT")
     var algorithm: SegmentingImageAlgorithm?
     var disjointset: DisjointSet?
 
@@ -179,6 +179,6 @@ class ms_test_1Tests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
-    }
+    }*/
 
 }

@@ -14,9 +14,7 @@ struct RootElementData {
 
 struct RootsDictionary{
     var roots: [Int: RootElementData] = [:]
-    var resultPixels: [UInt8] = []
-    
-    
+
     mutating func createIfNew(index: Int) {
         if let _ = roots[index] {
             return
