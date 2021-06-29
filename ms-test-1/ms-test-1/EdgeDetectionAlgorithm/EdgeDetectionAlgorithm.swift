@@ -43,7 +43,9 @@ final class EdgeDetectionAlgorithm {
         var edge: [UInt8] = []
         var edgeDirection: [Float] = []
 
-         // Sobel operator
+//======================================Sobel operator====================================
+// Uncomment below to try
+
         let kernelX = [[-1, 0, 1],
                        [-2, 0, 2],
                        [-1, 0, 1]]
@@ -52,9 +54,13 @@ final class EdgeDetectionAlgorithm {
                        [0,  0,  0],
                        [1, 2, 1]]
 
+//=========================================================================================
 
 
-        //Laplacian operator
+
+//======================================Laplacian operator=================================
+// Uncomment below to try
+
 //        let kernelX = [[0, 1, 0],
 //                       [1, -4, 1],
 //                       [0, 1, 0]]
@@ -63,8 +69,11 @@ final class EdgeDetectionAlgorithm {
 //                       [-1, 4, -1],
 //                       [0, -1, 0]]
 
+//=========================================================================================
 
 
+
+//========================-Sobel or Laplacian operator applying============================
         for y in 1..<height - 1 {
             for x in 1..<width - 1 {
                 let gx = (kernelX[0][0] * Int(pixelValues[(y - 1) * width + (x - 1)])) +
@@ -86,10 +95,15 @@ final class EdgeDetectionAlgorithm {
                     (kernelY[2][0] * Int(pixelValues[(y + 1) * width + (x - 1)])) +
                     (kernelY[2][1] * Int(pixelValues[(y + 1) * width + x])) +
                     (kernelY[2][2] * Int(pixelValues[(y + 1) * width + (x + 1)]))
+//==========================================================================================
+
+//   Comment Sobel or Laplacian and applying above if you'd like to try Robert Cross below
 
 
-                /*
-        // Robert Cross operator
+//============================Robert Cross operator=========================================
+// Uncomment below to try
+
+/*
         let kernelX = [[1, 0],
                        [0, -1]]
 
@@ -110,8 +124,11 @@ final class EdgeDetectionAlgorithm {
                     (kernelY[0][1] * Int(pixelValues[(y - 1) * width + x])) +
                     (kernelY[1][0] * Int(pixelValues[y * width + (x - 1)])) +
                     (kernelY[1][1] * Int(pixelValues[y * width + x]))
-*/
+ */
+//=========================================================================================
 
+
+//============================Detected edges creating======================================
 
                 var g = sqrt(Double((gx * gx) + (gy * gy)))
                 //let ng = (1 / (1 + exp(-g))) * 255
@@ -127,10 +144,9 @@ final class EdgeDetectionAlgorithm {
             }
         }
         return edge
+
+//==========================================================================================
     }
-
-
-
 
     // 5 - Non-maximum suppression
 
@@ -167,7 +183,6 @@ final class EdgeDetectionAlgorithm {
         let image = UIImage(cgImage: imageRef!)
         return image
     }
-
 }
 
 extension UIImage {

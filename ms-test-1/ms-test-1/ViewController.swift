@@ -69,15 +69,17 @@ class ViewController: UIViewController {
         // Get grayscale image pixel data for edge detection
         guard let pixelValuesGrayScaleImage = EdgeDetectionAlgorithm.pixelValuesFromGrayScaleImage(imageRef: smoothImage.cgImage) else { return }
 
-        //print(pixelValuesGrayScaleImage.count)
+        print(pixelValuesGrayScaleImage.count)
 
         // Get magnitudes feature normalized data matrix
         let featureMatrix = EdgeDetectionAlgorithm.operate(pixelValues: pixelValuesGrayScaleImage, height: Int(image.size.height), width: Int(image.size.width))
 
-        //print(featureMatrix.count)
 
         // Create output image
-        let edgesImage = EdgeDetectionAlgorithm.imageEdgesDetected(pixelValues: featureMatrix, width: Int(image.size.width), height: Int(image.size.height))
+        let readyImageWidth = Int(image.size.width) - 2
+        let readyImageHeight = Int(image.size.height) - 2
+
+        let edgesImage = EdgeDetectionAlgorithm.imageEdgesDetected(pixelValues: featureMatrix, width: readyImageWidth, height: readyImageHeight)
 
         resultImage.image = edgesImage
 
