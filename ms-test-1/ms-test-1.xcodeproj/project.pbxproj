@@ -18,7 +18,6 @@
 		3455F9BD267B6BA700D267A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3455F9BB267B6BA700D267A8 /* LaunchScreen.storyboard */; };
 		3455F9C8267B6BA700D267A8 /* ms_test_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455F9C7267B6BA700D267A8 /* ms_test_1Tests.swift */; };
 		3455F9D3267B6BA700D267A8 /* ms_test_1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455F9D2267B6BA700D267A8 /* ms_test_1UITests.swift */; };
-		3455F9E1267B6F5100D267A8 /* SegmentingImageAlgorithm2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455F9E0267B6F5100D267A8 /* SegmentingImageAlgorithm2.swift */; };
 		3455F9E3267B848F00D267A8 /* BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455F9E2267B848F00D267A8 /* BitmapImage.swift */; };
 		3455F9E5267CA92100D267A8 /* DisjointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455F9E4267CA92100D267A8 /* DisjointSet.swift */; };
 		5B1453CB2689CD3A0076C3B4 /* EdgeDetectionAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1453CA2689CD3A0076C3B4 /* EdgeDetectionAlgorithm.swift */; };
@@ -59,7 +58,6 @@
 		3455F9CE267B6BA700D267A8 /* ms-test-1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ms-test-1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3455F9D2267B6BA700D267A8 /* ms_test_1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ms_test_1UITests.swift; sourceTree = "<group>"; };
 		3455F9D4267B6BA700D267A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3455F9E0267B6F5100D267A8 /* SegmentingImageAlgorithm2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentingImageAlgorithm2.swift; sourceTree = "<group>"; };
 		3455F9E2267B848F00D267A8 /* BitmapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapImage.swift; sourceTree = "<group>"; };
 		3455F9E4267CA92100D267A8 /* DisjointSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisjointSet.swift; sourceTree = "<group>"; };
 		5B1453CA2689CD3A0076C3B4 /* EdgeDetectionAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeDetectionAlgorithm.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 		5B1453C82689CC270076C3B4 /* SegmentingImageAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
-				3455F9E0267B6F5100D267A8 /* SegmentingImageAlgorithm2.swift */,
 				3455F9E2267B848F00D267A8 /* BitmapImage.swift */,
 				3455F9E4267CA92100D267A8 /* DisjointSet.swift */,
 				34210C29268B62300043160B /* WGraph.swift */,
@@ -309,7 +306,6 @@
 				34210C2C268B698A0043160B /* RootsDictionary.swift in Sources */,
 				34210C2A268B62300043160B /* WGraph.swift in Sources */,
 				3455F9E3267B848F00D267A8 /* BitmapImage.swift in Sources */,
-				3455F9E1267B6F5100D267A8 /* SegmentingImageAlgorithm2.swift in Sources */,
 				3455F9B5267B6BA300D267A8 /* ViewController.swift in Sources */,
 				3455F9B1267B6BA300D267A8 /* AppDelegate.swift in Sources */,
 				3455F9E5267CA92100D267A8 /* DisjointSet.swift in Sources */,

@@ -7,8 +7,6 @@
 //
 
 
-
-
 struct BitmapColor {
     let r: UInt8
     let g: UInt8
@@ -24,10 +22,10 @@ struct BitmapImage: Equatable {
     let width: Int
     let height: Int
     var pixels: [UInt8]
-    private let bitsPerComponent = 4
+    private let bytesPerComponent = 4
     
     func pixel(x: Int, y: Int)-> BitmapColor {
-        let startPoint = (y*width + x)*bitsPerComponent
+        let startPoint = (y*width + x)*bytesPerComponent
         return BitmapColor(r: pixels[startPoint],
                            g: pixels[startPoint+1],
                            b: pixels[startPoint+2],
@@ -45,7 +43,7 @@ extension BitmapImage {
         // Number of edges
         var numEdges = 0
         var edges:[Edge] = []
-
+        
         // Run through image width and height with 4 neighbor pixels and get edges array - OPTIMIZE NEEDED
         //
         (0..<height).forEach { y in
@@ -65,22 +63,22 @@ extension BitmapImage {
                     let edge = Edge(a: a, b: b, weight: weight)
                     edges.append(edge)
                     numEdges+=1
-
+                    
                 }
             }
-         }
+        }
         return WGraph(edges: edges, vertexCount: pixelsCount)
     }
     
     func diff(x1: Int, y1: Int, x2: Int, y2: Int) -> Float {
         let pixel1 = self.pixel(x: x1, y: y1)
         let pixel2 = self.pixel(x: x2, y: y2)
-
+        
         let dis = Float(
             (Int(pixel1.r) - Int(pixel2.r))*(Int(pixel1.r) - Int(pixel2.r)) +
-            (Int(pixel1.g) - Int(pixel2.g))*(Int(pixel1.g) - Int(pixel2.g)) +
-            (Int(pixel1.b) - Int(pixel2.b))*(Int(pixel1.b) - Int(pixel2.b)))
-
+                (Int(pixel1.g) - Int(pixel2.g))*(Int(pixel1.g) - Int(pixel2.g)) +
+                (Int(pixel1.b) - Int(pixel2.b))*(Int(pixel1.b) - Int(pixel2.b)))
+        
         return sqrt(Float(dis))
     }
 }
@@ -89,25 +87,25 @@ extension BitmapImage {
 import UIKit
 
 extension UIImage {
-   func toBitmapImage() -> BitmapImage? {
-       let size = self.size
-       let dataSize = size.width * size.height * 4
-       print("Image size \(size.width)x\(size.height) = \(size.width*size.height)")
-       var pixelData = [UInt8](repeating: 0, count: Int(dataSize))
-       let colorSpace = CGColorSpaceCreateDeviceRGB()
-       let context = CGContext(data: &pixelData,
-                               width: Int(size.width),
-                               height: Int(size.height),
-                               bitsPerComponent: 8,
-                               bytesPerRow: 4 * Int(size.width),
-                               space: colorSpace,
-                               bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)
-       guard let cgImage = self.cgImage else { return nil }
-       context?.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-       return BitmapImage(width: Int(size.width), height: Int(size.height), pixels: pixelData)
-   }
+    func toBitmapImage() -> BitmapImage? {
+        let size = self.size
+        let dataSize = size.width * size.height * 4
+        print("Image size \(size.width)x\(size.height) = \(size.width*size.height)")
+        var pixelData = [UInt8](repeating: 0, count: Int(dataSize))
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let context = CGContext(data: &pixelData,
+                                width: Int(size.width),
+                                height: Int(size.height),
+                                bitsPerComponent: 8,
+                                bytesPerRow: 4 * Int(size.width),
+                                space: colorSpace,
+                                bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)
+        guard let cgImage = self.cgImage else { return nil }
+        context?.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        return BitmapImage(width: Int(size.width), height: Int(size.height), pixels: pixelData)
+    }
     
-   static func fromBitmapImage(bitmapImage: BitmapImage)-> UIImage? {
+    static func fromBitmapImage(bitmapImage: BitmapImage)-> UIImage? {
         //var srgbArray = [UInt32](repeating: 0xFF204080, count: 8*8)
         var pixels = bitmapImage.pixels
         let cgImg = pixels.withUnsafeMutableBytes { (ptr) -> CGImage in
@@ -120,12 +118,47 @@ extension UIImage {
                 space: CGColorSpace(name: CGColorSpace.sRGB)!,
                 bitmapInfo: CGBitmapInfo.byteOrder32Little.rawValue +
                     CGImageAlphaInfo.premultipliedFirst.rawValue
-                )!
+            )!
             return ctx.makeImage()!
         }
         return UIImage(cgImage: cgImg)
     }
     
+}
+
+extension UIImage {
+    
+    // MARK: - Gaussian blur
+    func gaussian(image: UIImage, sigma: Double) -> UIImage? {
+        if let img = CIImage(image: image) {
+            if #available(iOS 10.0, *) {
+                return UIImage(ciImage: img.applyingGaussianBlur(sigma: sigma))
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        return nil
+    }
+    
+    // MARK: - Smooth the image
+    func smoothing( sigma: Double) -> UIImage? {
+        guard let imageGaussianed = gaussian(image: self, sigma: sigma) else { return nil}
+        
+        // Convert gaussianed image to png for resize and further processing
+        guard let imageToCrop = UIImage(data: imageGaussianed.pngData()!) else { return nil}
+        
+        // Resize gaussianed image png to initial image size
+        let initialSize = CGSize(width: self.size.width, height: self.size.height)
+        
+        let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        
+        UIGraphicsBeginImageContextWithOptions(initialSize, false, 1.0)
+        imageToCrop.draw(in: rect)
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil}
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
 }
 
 
