@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         resultImage.image = smoothImage
  
         //print(image.pixels.count)
-        let result = SegmentingImageAlgorithm().segmentImage(image, threshold: coefficients["threshold"]!, minSize: Int(coefficients["minSize"]!))
+        let result = SegmentingImageAlgorithm.execute(image: image, threshold: coefficients["threshold"]!, minSize: Int(coefficients["minSize"]!))
         //print(result)
        
         

@@ -6,7 +6,7 @@
 //  Copyright © 2021 Ostagram Inc. All rights reserved.
 //
 
-import UIKit
+
 
 
 struct BitmapColor {
@@ -28,7 +28,6 @@ struct BitmapImage: Equatable {
     
     func pixel(x: Int, y: Int)-> BitmapColor {
         let startPoint = (y*width + x)*bitsPerComponent
-        //print("startPoint=\(startPoint)")
         return BitmapColor(r: pixels[startPoint],
                            g: pixels[startPoint+1],
                            b: pixels[startPoint+2],
@@ -37,6 +36,57 @@ struct BitmapImage: Equatable {
     }
 }
 
+
+extension BitmapImage {
+    func createWGraph() -> WGraph {
+        let height = Int(self.height)
+        let width = Int(self.width)
+        let pixelsCount = height*width
+        // Number of edges
+        var numEdges = 0
+        var edges:[Edge] = []
+
+        // Run through image width and height with 4 neighbor pixels and get edges array - OPTIMIZE NEEDED
+        //
+        (0..<height).forEach { y in
+            (0..<width).forEach { x in
+                if (x < width - 1) {
+                    let a = y * width + x
+                    let b = y * width + (x + 1)
+                    let weight = diff(x1: x, y1: y, x2: x + 1, y2: y)
+                    let edge = Edge(a: a, b: b, weight: weight)
+                    edges.append(edge)
+                    numEdges+=1
+                }
+                if (y < height - 1) {
+                    let a = y * width + x
+                    let b = (y + 1) * width + x
+                    let weight = diff(x1: x, y1: y, x2: x, y2: y + 1)
+                    let edge = Edge(a: a, b: b, weight: weight)
+                    edges.append(edge)
+                    numEdges+=1
+
+                }
+            }
+         }
+        return WGraph(edges: edges, vertexCount: pixelsCount)
+    }
+    
+    func diff(x1: Int, y1: Int, x2: Int, y2: Int) -> Float {
+        let pixel1 = self.pixel(x: x1, y: y1)
+        let pixel2 = self.pixel(x: x2, y: y2)
+
+        let dis = Float(
+            (Int(pixel1.r) - Int(pixel2.r))*(Int(pixel1.r) - Int(pixel2.r)) +
+            (Int(pixel1.g) - Int(pixel2.g))*(Int(pixel1.g) - Int(pixel2.g)) +
+            (Int(pixel1.b) - Int(pixel2.b))*(Int(pixel1.b) - Int(pixel2.b)))
+
+        return sqrt(Float(dis))
+    }
+}
+
+
+import UIKit
 
 extension UIImage {
    func toBitmapImage() -> BitmapImage? {

@@ -6,7 +6,7 @@
 //  Copyright © 2021 Ostagram Inc. All rights reserved.
 //
 
-import UIKit
+//import UIKit
 
 
 struct DisjointSetElement {
@@ -18,6 +18,16 @@ struct DisjointSetElement {
 final class DisjointSet {
     var elements:[DisjointSetElement] = []
     
+    init(count: Int) {
+        elements = [DisjointSetElement](repeating: DisjointSetElement(rank: 0, parent: 0, size: 1), count: count)
+        for i in 0..<count {
+            elements[i].rank = 0
+            elements[i].size = 1
+            elements[i].parent = i
+        }
+    }
+    
+    
     // MARK:  Find element
     func rootForElementOn(index: Int) -> Int {
         var y = index
@@ -27,9 +37,9 @@ final class DisjointSet {
         }
         return y
     }
-
+    
     // MARK: Join elements
-     func joinSetsBy(index1: Int, index2: Int) {
+    func joinSetsBy(index1: Int, index2: Int) {
         if elements[index1].rank > elements[index2].rank {
             elements[index2].parent = index1
             elements[index1].size += elements[index2].size
@@ -40,7 +50,7 @@ final class DisjointSet {
                 elements[index2].rank += 1
             }
         }
-     }
+    }
     
     subscript(index: Int) -> DisjointSetElement {
         get {
@@ -52,21 +62,22 @@ final class DisjointSet {
     }
 }
 
-
-struct RootElementData {
-    let color: BitmapColor
-}
-
-
-struct RootsDictionary{
-    var roots:[Int: RootElementData] = [:]
-    
-    mutating func createIfNew(index: Int) {
-        if let _ = roots[index] {
-            return
-        } else {
-            roots[index] = RootElementData(color: BitmapColor.random())
+extension DisjointSet {
+    func colorizeBitmap(withWidth width: Int, andHeight height: Int) -> (BitmapImage, RootsDictionary) {
+        var rootsDictionary = RootsDictionary()
+        var resultPixels: [UInt8] = []
+        for i in 0..<elements.count {
+            let rootIndex =  rootForElementOn(index: i)
+            
+            rootsDictionary.createIfNew(index: rootIndex)
+            let root = rootsDictionary.roots[rootIndex]!
+            resultPixels.append(root.color.r)
+            resultPixels.append(root.color.g)
+            resultPixels.append(root.color.b)
+            resultPixels.append(root.color.a)
         }
+        return (BitmapImage(width: width, height: height, pixels: resultPixels), rootsDictionary)
         
     }
 }
+
