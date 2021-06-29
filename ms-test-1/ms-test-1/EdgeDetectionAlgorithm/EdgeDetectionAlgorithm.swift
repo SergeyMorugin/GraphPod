@@ -37,7 +37,7 @@ final class EdgeDetectionAlgorithm {
         return pixelValues
     }
 
-    // 4 - Sobel X and Sobel Y
+    // 4 - Detect edges operators and processing
     class func operate(pixelValues: [UInt8], height: Int, width: Int ) -> [UInt8] {
 
         var edge: [UInt8] = []
