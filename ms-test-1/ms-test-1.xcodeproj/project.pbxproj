@@ -69,7 +69,7 @@
 		3455F9E2267B848F00D267A8 /* BitmapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapImage.swift; sourceTree = "<group>"; };
 		3455F9E4267CA92100D267A8 /* DisjointSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisjointSet.swift; sourceTree = "<group>"; };
 		5B1453CA2689CD3A0076C3B4 /* EdgeDetectionAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeDetectionAlgorithm.swift; sourceTree = "<group>"; };
-		5B1453EB268C561B0076C3B4 /* graphpod presentation.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = "graphpod presentation.key"; sourceTree = "<group>"; };
+		5B1453EF268C6D760076C3B4 /* graphpod presentation.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = "graphpod presentation.key"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +179,7 @@
 		5B1453D4268B556E0076C3B4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				5B1453EB268C561B0076C3B4 /* graphpod presentation.key */,
+				5B1453EF268C6D760076C3B4 /* graphpod presentation.key */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
