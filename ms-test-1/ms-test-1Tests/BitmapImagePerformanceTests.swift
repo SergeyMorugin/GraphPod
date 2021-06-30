@@ -23,7 +23,7 @@ class BitmapImagePerformanceTests: XCTestCase {
         let bitmap = BitmapImage(width: 2, height: 2, pixels: Array(repeating: UInt8.random(in: 1..<255), count: 2*2*4))
         self.measure {
             (1..<1_000_000).forEach { i in
-                bitmap.diff(x1: 0, y1: 0, x2: 1, y2: 1)
+                let _ = bitmap.diff(x1: 0, y1: 0, x2: 1, y2: 1)
             }
         }
     }
