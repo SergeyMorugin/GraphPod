@@ -27,7 +27,6 @@ final class DisjointSet {
         }
     }
     
-    
     // MARK:  Find element
     func rootForElementOn(index: Int) -> Int {
         var y = index
@@ -77,7 +76,6 @@ extension DisjointSet {
             resultPixels.append(root.color.a)
         }
         return (BitmapImage(width: width, height: height, pixels: resultPixels), rootsDictionary)
-        
     }
 }
 
