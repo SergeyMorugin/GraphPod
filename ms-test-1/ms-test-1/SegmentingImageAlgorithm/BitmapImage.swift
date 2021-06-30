@@ -69,13 +69,21 @@ extension BitmapImage {
     func diff(x1: Int, y1: Int, x2: Int, y2: Int) -> Float {
         let pixel1 = self.pixel(x: x1, y: y1)
         let pixel2 = self.pixel(x: x2, y: y2)
-        
         let dis = Float(
-            (Int(pixel1.r) - Int(pixel2.r))*(Int(pixel1.r) - Int(pixel2.r)) +
-                (Int(pixel1.g) - Int(pixel2.g))*(Int(pixel1.g) - Int(pixel2.g)) +
-                (Int(pixel1.b) - Int(pixel2.b))*(Int(pixel1.b) - Int(pixel2.b)))
+            squared(divMod(pixel1.r, pixel2.r)) +
+            squared(divMod(pixel1.g, pixel2.g)) +
+            squared(divMod(pixel1.b, pixel2.b)) )
         
         return sqrt(Float(dis))
+    }
+    
+    private func squared(_ val: Int) -> Int {return val * val}
+    private func divMod(_ val1: UInt8, _ val2: UInt8) -> Int {
+        if val1 > val2 {
+            return Int(val1 - val2)
+        } else {
+            return Int(val2 - val1)
+        }
     }
 }
 
