@@ -17,19 +17,19 @@ final class SegmentingImageAlgorithm {
         let height = Int(image.height)
         let width = Int(image.width)
 
-        var wGrath = image.createWGraph()
+        var wGraph = image.createWGraph()
         
-        print("Building graph on \(wGrath.edges.count) nodes: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+        print("Building graph on \(wGraph.edges.count) nodes: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         startTime = CFAbsoluteTimeGetCurrent()
 
         // Sort edges by weight
-        wGrath.sortEdges()
+        wGraph.sortEdges()
 
         print("Sort graph: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         startTime = CFAbsoluteTimeGetCurrent()
 
         //
-        let pixelsCombinedInSegments = wGrath.createSegmentSets(threshold: threshold, minSize: minSize)
+        let pixelsCombinedInSegments = wGraph.createSegmentSets(threshold: threshold, minSize: minSize)
         
 
         print("Build segments: \(CFAbsoluteTimeGetCurrent() - startTime) s.")

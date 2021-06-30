@@ -13,52 +13,65 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
-    
-    let coefficients:[String: Float] = ["sigma": 0.6, "threshold": 10, "minSize": 10 ]
+    @IBOutlet weak var saveButton: UIButton!
+
+    let coefficients:[String: Float] = ["sigma": 0.6, "threshold": 200, "minSize": 200 ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        //Defaul image
         resultImage.image = UIImage(named:"test5")
+
+        // Hide Save button
+        saveButton.isHidden = true
     }
 
     @IBAction func onRunClick(_ sender: Any) {
         print("Run")
-        
+
         let startTime = CFAbsoluteTimeGetCurrent()
+
+        // Hide Save button
+        saveButton.isHidden = true
+
         // Get inital image
         guard let processingImage = resultImage.image else { return }
-       
-        
+
         guard let smoothImage = processingImage.smoothing(sigma: Double(coefficients["sigma"]!)) else { return }
         //resultImage.image = smoothImage
         print("Gauss smooth: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         guard let image = smoothImage.toBitmapImage() else { return }
         resultImage.image = smoothImage
- 
+
         //print(image.pixels.count)
         let result = SegmentingImageAlgorithm.execute(image: image, threshold: coefficients["threshold"]!, minSize: Int(coefficients["minSize"]!))
         //print(result)
-       
-        
+
         let im = UIImage.fromBitmapImage(bitmapImage: result!.0)
         im?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
 
-        resultImage.image = im
+        self.resultImage.image = im
         let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(processingImage.size.width)x\(processingImage.size.height) \(coefficients)"
         print(resultText)
         resultLabel.text = resultText
+
+        // Show Save button
+        saveButton.isHidden = false
     }
 
     // MARK: - Edges detection
     @IBAction func getEdges(_ sender: Any) {
-          detectEdges()
+        detectEdges()
     }
 
     private func detectEdges() {
         print("Detect edges")
 
         let startTime = CFAbsoluteTimeGetCurrent()
+
+        // Hide Save button
+        saveButton.isHidden = true
 
         // Get input image and convert it to grayscale
         guard let image = resultImage.image?.convertToGrayScale() else { return }
@@ -74,7 +87,6 @@ class ViewController: UIViewController {
         // Get magnitudes feature normalized data matrix
         let featureMatrix = EdgeDetectionAlgorithm.operate(pixelValues: pixelValuesGrayScaleImage, height: Int(image.size.height), width: Int(image.size.width))
 
-
         // Create output image
         let readyImageWidth = Int(image.size.width) - 2
         let readyImageHeight = Int(image.size.height) - 2
@@ -83,32 +95,58 @@ class ViewController: UIViewController {
 
         resultImage.image = edgesImage
 
+        // Show Save button
+        saveButton.isHidden = false
+
         print("Edge detection done in: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
     }
 
 
+    // MARK: - Save result image to photo album
+    @IBAction func saveResultToAlbum(_ sender: Any) {
+        saveImageToAlbum()
+    }
 
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
+
+    func saveImageToAlbum() {
+        guard let image = resultImage.image else { return }
+
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+
+    // MARK: - Take a photo from album
     @IBAction func onLoadPhotoClick(_ sender: Any) {
         takeAPhoto()
     }
-    
-    
+
     func takeAPhoto() {
         let imagePickerController = UIImagePickerController()
-       if UIImagePickerController.isSourceTypeAvailable(.camera) {
-           imagePickerController.sourceType = .camera
-       } else {
-           imagePickerController.sourceType = .savedPhotosAlbum
-       }
-       imagePickerController.allowsEditing = true
-       imagePickerController.delegate = self
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePickerController.sourceType = .camera
+        } else {
+            imagePickerController.sourceType = .savedPhotosAlbum
+        }
+        imagePickerController.allowsEditing = true
+        imagePickerController.delegate = self
         UIApplication.shared.keyWindow?.rootViewController?.present(imagePickerController, animated: true)
     }
     
 }
 
 extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-   
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
@@ -134,4 +172,3 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
         }
     }
 }
-

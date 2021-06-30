@@ -21,8 +21,15 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ewP-Xa-Um3">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="528"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="457"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6S-By-ePd">
+                                        <rect key="frame" x="0.0" y="473" width="414" height="55"/>
+                                        <state key="normal" title="Save result to album"/>
+                                        <connections>
+                                            <action selector="saveResultToAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P3s-2m-LV5"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C24-cy-CUS">
                                         <rect key="frame" x="0.0" y="544" width="414" height="55"/>
                                         <constraints>
@@ -61,6 +68,7 @@
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="D6S-By-ePd" firstAttribute="height" secondItem="C24-cy-CUS" secondAttribute="height" id="0pl-K5-NrD"/>
                                     <constraint firstAttribute="width" secondItem="RbQ-TJ-K5U" secondAttribute="width" id="PAf-Am-cZk"/>
                                     <constraint firstItem="Aa1-ep-ez1" firstAttribute="height" secondItem="RbQ-TJ-K5U" secondAttribute="height" id="Qn9-4x-7l2"/>
                                 </constraints>
@@ -78,6 +86,7 @@
                     <connections>
                         <outlet property="resultImage" destination="ewP-Xa-Um3" id="6FX-c2-gqE"/>
                         <outlet property="resultLabel" destination="wyn-Db-eKX" id="2eq-a0-Gop"/>
+                        <outlet property="saveButton" destination="D6S-By-ePd" id="hJ5-gI-hQE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
