@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SC1-0v-kSM">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SC1-0v-kSM">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ewP-Xa-Um3">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="528"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C24-cy-CUS">
-                                        <rect key="frame" x="0.0" y="647" width="414" height="55"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C24-cy-CUS">
+                                        <rect key="frame" x="0.0" y="544" width="414" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="avg-V5-DhC"/>
                                         </constraints>
@@ -31,14 +33,21 @@
                                             <action selector="onLoadPhotoClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="roG-lN-uTl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbQ-TJ-K5U">
-                                        <rect key="frame" x="0.0" y="702" width="414" height="55"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbQ-TJ-K5U">
+                                        <rect key="frame" x="0.0" y="615" width="414" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="PLk-J1-kBK"/>
                                         </constraints>
                                         <state key="normal" title="Run"/>
                                         <connections>
                                             <action selector="onRunClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P71-jX-tNP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa1-ep-ez1">
+                                        <rect key="frame" x="0.0" y="686" width="414" height="55"/>
+                                        <state key="normal" title="Get edges"/>
+                                        <connections>
+                                            <action selector="getEdges:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AQL-i4-bpp"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyn-Db-eKX">
@@ -51,16 +60,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RbQ-TJ-K5U" secondAttribute="width" id="PAf-Am-cZk"/>
+                                    <constraint firstItem="Aa1-ep-ez1" firstAttribute="height" secondItem="RbQ-TJ-K5U" secondAttribute="height" id="Qn9-4x-7l2"/>
+                                </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SC1-0v-kSM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dnt-8N-pHO"/>
                             <constraint firstItem="SC1-0v-kSM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gPH-GH-hww"/>
                             <constraint firstItem="SC1-0v-kSM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="n2k-GE-Sha"/>
                             <constraint firstItem="SC1-0v-kSM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="z7M-I8-jCm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="resultImage" destination="ewP-Xa-Um3" id="6FX-c2-gqE"/>
@@ -72,4 +85,9 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

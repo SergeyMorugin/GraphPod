@@ -9,13 +9,12 @@
 import UIKit
 
 
-
-
 class ViewController: UIViewController {
+    
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
     
-    let coefficients:[String: Float] = ["sigma": 0.6, "threshold": 10, "minSize": 300 ]
+    let coefficients:[String: Float] = ["sigma": 0.6, "threshold": 10, "minSize": 10 ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +34,11 @@ class ViewController: UIViewController {
         //resultImage.image = smoothImage
         print("Gauss smooth: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         guard let image = smoothImage.toBitmapImage() else { return }
+        resultImage.image = smoothImage
  
-        //print(image)
-        let result = SegmentingImageAlgorithm().segmentImage(image, threshold: coefficients["threshold"]!, minSize: Int(coefficients["minSize"]!))
-        //print(resultImage)
+        //print(image.pixels.count)
+        let result = SegmentingImageAlgorithm.execute(image: image, threshold: coefficients["threshold"]!, minSize: Int(coefficients["minSize"]!))
+        //print(result)
        
         
         let im = UIImage.fromBitmapImage(bitmapImage: result!.0)
@@ -49,7 +49,45 @@ class ViewController: UIViewController {
         print(resultText)
         resultLabel.text = resultText
     }
-    
+
+    // MARK: - Edges detection
+    @IBAction func getEdges(_ sender: Any) {
+          detectEdges()
+    }
+
+    private func detectEdges() {
+        print("Detect edges")
+
+        let startTime = CFAbsoluteTimeGetCurrent()
+
+        // Get input image and convert it to grayscale
+        guard let image = resultImage.image?.convertToGrayScale() else { return }
+
+        // Smooth the image
+        guard let smoothImage = image.smoothing(sigma: Double(coefficients["sigma"]!)) else { return }
+
+        // Get grayscale image pixel data for edge detection
+        guard let pixelValuesGrayScaleImage = EdgeDetectionAlgorithm.pixelValuesFromGrayScaleImage(imageRef: smoothImage.cgImage) else { return }
+
+        print(pixelValuesGrayScaleImage.count)
+
+        // Get magnitudes feature normalized data matrix
+        let featureMatrix = EdgeDetectionAlgorithm.operate(pixelValues: pixelValuesGrayScaleImage, height: Int(image.size.height), width: Int(image.size.width))
+
+
+        // Create output image
+        let readyImageWidth = Int(image.size.width) - 2
+        let readyImageHeight = Int(image.size.height) - 2
+
+        let edgesImage = EdgeDetectionAlgorithm.imageEdgesDetected(pixelValues: featureMatrix, width: readyImageWidth, height: readyImageHeight)
+
+        resultImage.image = edgesImage
+
+        print("Edge detection done in: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
+    }
+
+
+
     @IBAction func onLoadPhotoClick(_ sender: Any) {
         takeAPhoto()
     }
