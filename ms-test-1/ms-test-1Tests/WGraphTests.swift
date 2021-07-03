@@ -31,7 +31,6 @@ class WGraphTests: XCTestCase {
             Edge(a: 0, b: 2, weight: 1),
             Edge(a: 1, b: 3, weight: 3),
             Edge(a: 2, b: 3, weight: 3),
-            
         ]
         var graph = WGraph(edges: edges, vertexCount: 4)
         graph.sortEdges()
@@ -56,7 +55,6 @@ class WGraphTests: XCTestCase {
             Edge(a: 0, b: 2, weight: 1),
             Edge(a: 1, b: 3, weight: 3),
             Edge(a: 2, b: 3, weight: 3),
-            
         ]
         var graph = WGraph(edges: edges, vertexCount: 4)
         graph.sortEdges()
@@ -82,7 +80,6 @@ class WGraphTests: XCTestCase {
             Edge(a: 0, b: 2, weight: 1),
             Edge(a: 1, b: 3, weight: 3),
             Edge(a: 2, b: 3, weight: 3),
-            
         ]
         var graph = WGraph(edges: edges, vertexCount: 4)
         graph.sortEdges()
@@ -108,7 +105,6 @@ class WGraphTests: XCTestCase {
             Edge(a: 0, b: 2, weight: 1),
             Edge(a: 1, b: 3, weight: 3),
             Edge(a: 2, b: 3, weight: 3),
-            
         ]
         var graph = WGraph(edges: edges, vertexCount: 4)
         graph.sortEdges()
@@ -126,7 +122,6 @@ class WGraphTests: XCTestCase {
         XCTAssertEqual(tree4[1].size, 4)
         XCTAssertEqual(tree4[2].size, 1)
         XCTAssertEqual(tree4[3].size, 1)
-        
     }
 
 }
