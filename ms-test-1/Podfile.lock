@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GraphPod:
-    :commit: 670ec1adc5834ea6bebca33278709abc0792c158
+    :commit: 96d67469ecc32aa64a3072c61998a18c92cffa34
     :git: "git@github.com:SergeyMorugin/GraphPod.git"
 
 SPEC CHECKSUMS:

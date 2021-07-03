@@ -9,16 +9,16 @@
 //import UIKit
 
 
-struct DisjointSetElement {
+public struct DisjointSetElement {
     var rank: Int
     var parent: Int
     var size: Int
 }
 
-final class DisjointSet {
+public final class DisjointSet {
     var elements:[DisjointSetElement] = []
     
-    init(count: Int) {
+    public init(count: Int) {
         elements = [DisjointSetElement](repeating: DisjointSetElement(rank: 0, parent: 0, size: 1), count: count)
         for i in 0..<count {
             elements[i].rank = 0
@@ -28,7 +28,7 @@ final class DisjointSet {
     }
     
     // MARK:  Find element
-    func rootForElementOn(index: Int) -> Int {
+    public func rootForElementOn(index: Int) -> Int {
         var y = index
         while y != elements[y].parent {
             y = elements[y].parent
@@ -38,7 +38,7 @@ final class DisjointSet {
     }
     
     // MARK: Join elements
-    func joinSetsBy(index1: Int, index2: Int) {
+    public func joinSetsBy(index1: Int, index2: Int) {
         if elements[index1].rank > elements[index2].rank {
             elements[index2].parent = index1
             elements[index1].size += elements[index2].size
@@ -51,7 +51,7 @@ final class DisjointSet {
         }
     }
     
-    subscript(index: Int) -> DisjointSetElement {
+    public subscript(index: Int) -> DisjointSetElement {
         get {
             return elements[index]
         }
@@ -61,8 +61,8 @@ final class DisjointSet {
     }
 }
 
-extension DisjointSet {
-    func colorizeBitmap(withWidth width: Int, andHeight height: Int) -> (BitmapImage, RootsDictionary) {
+public extension DisjointSet {
+    public func colorizeBitmap(withWidth width: Int, andHeight height: Int) -> (BitmapImage, RootsDictionary) {
         var rootsDictionary = RootsDictionary()
         var resultPixels: [UInt8] = []
         for i in 0..<elements.count {

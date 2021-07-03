@@ -9,8 +9,8 @@
 import Foundation
 
 
-final class SegmentingImageAlgorithm {
-    static func execute(image: BitmapImage, threshold: Float, minSize: Int) -> (BitmapImage, RootsDictionary, DisjointSet)? {
+public final class SegmentingImageAlgorithm {
+    public static func execute(image: BitmapImage, threshold: Float, minSize: Int) -> (BitmapImage, RootsDictionary, DisjointSet)? {
         var startTime = CFAbsoluteTimeGetCurrent()
 
         // Get image size

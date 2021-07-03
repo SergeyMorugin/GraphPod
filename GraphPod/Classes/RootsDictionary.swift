@@ -7,15 +7,15 @@
 //
 
 
-struct RootElementData {
+public struct RootElementData {
     let color: BitmapColor
 }
 
 
-struct RootsDictionary{
+public struct RootsDictionary{
     var roots: [Int: RootElementData] = [:]
 
-    mutating func createIfNew(index: Int) {
+    public mutating func createIfNew(index: Int) {
         if let _ = roots[index] {
             return
         } else {
