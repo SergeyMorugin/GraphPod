@@ -37,13 +37,8 @@ class ViewController: UIViewController {
         // Get inital image
         guard let processingImage = resultImage.image else { return }
        
-        
-        //guard let smoothImage = processingImage.smoothing(sigma: Double(coefficients["sigma"]!)) else { return }
-        //resultImage.image = smoothImage
         print("Gauss smooth: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         guard let image = processingImage.toBitmapImage() else { return }
-        //resultImage.image = smoothImage
- 
         //print(image.pixels.count)
         let result = SegmentingImageAlgorithm.execute(image: image, threshold: coefficients["threshold"]!, minSize: Int(coefficients["minSize"]!))
         //print(result)
