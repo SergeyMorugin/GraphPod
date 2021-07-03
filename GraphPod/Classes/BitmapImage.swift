@@ -132,7 +132,7 @@ extension UIImage {
     
 }
 
-extension UIImage {
+/*extension UIImage {
     
     // MARK: - Gaussian blur
     public func gaussian(image: UIImage, sigma: Double) -> UIImage? {
@@ -165,7 +165,7 @@ extension UIImage {
         
         return image
     }
-}
+}*/
 
 #endif
 
