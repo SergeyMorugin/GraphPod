@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  GraphPod
 //
-//  Created by d.s.vandyshev@gmail.com on 06/09/2021.
-//  Copyright (c) 2021 d.s.vandyshev@gmail.com. All rights reserved.
+//  Created by segiomars@gmail.com on 07/03/2021.
+//  Copyright (c) 2021 segiomars@gmail.com. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }

@@ -1,16 +1,27 @@
 PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
   - GraphPod (0.1.0)
 
 DEPENDENCIES:
+  - FBSnapshotTestCase (~> 2.1.4)
   - GraphPod (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
 
 EXTERNAL SOURCES:
   GraphPod:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GraphPod: 0561bb8fa20c144cdff5c905fff16bfbc796580c
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  GraphPod: 4f20b36abbbf472e1ec73d489a21f124f1ff982d
 
-PODFILE CHECKSUM: 2a5cdd29822af0962d1ede332fb6de524efe5306
+PODFILE CHECKSUM: 5a82b8d29bc55bc1b52d27dc7bf138b10a78b7e4
 
 COCOAPODS: 1.10.1

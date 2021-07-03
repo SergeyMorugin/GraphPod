@@ -8,6 +8,6 @@ target 'GraphPod_Example' do
   target 'GraphPod_Tests' do
     inherit! :search_paths
 
-    
+    pod 'FBSnapshotTestCase' , '~> 2.1.4'
   end
 end

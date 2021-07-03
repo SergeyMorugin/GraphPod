@@ -66,3 +66,4 @@ d.s.vandyshev@gmail.com, cmorugin@gmail.com, doroshkevichilya@gmail.com
 ## License
 
 GraphPod is available under the MIT license. See the LICENSE file for more info.
+
