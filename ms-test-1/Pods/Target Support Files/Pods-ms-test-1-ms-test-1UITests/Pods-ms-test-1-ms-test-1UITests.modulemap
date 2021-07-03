@@ -1,6 +1,0 @@
-framework module Pods_ms_test_1_ms_test_1UITests {
-  umbrella header "Pods-ms-test-1-ms-test-1UITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
