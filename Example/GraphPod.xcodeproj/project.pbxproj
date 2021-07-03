@@ -14,6 +14,17 @@
 		3420FB512690BD8100D7AC2F /* WGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB4C2690BD8100D7AC2F /* WGraphTests.swift */; };
 		3420FB542690BFD600D7AC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3420FB522690BFD600D7AC2F /* Main.storyboard */; };
 		3420FB552690C13B00D7AC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3420FB522690BFD600D7AC2F /* Main.storyboard */; };
+		3493469A2690D26400FF727C /* BitmapImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB4A2690BD8100D7AC2F /* BitmapImageTests.swift */; };
+		3493469B2690D26400FF727C /* DisjointSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB4B2690BD8100D7AC2F /* DisjointSetTests.swift */; };
+		3493469C2690D26400FF727C /* BitmapColorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB492690BD8100D7AC2F /* BitmapColorTest.swift */; };
+		3493469D2690D26400FF727C /* WGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB4C2690BD8100D7AC2F /* WGraphTests.swift */; };
+		3493469E2690D26400FF727C /* RootsDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB482690BD8100D7AC2F /* RootsDictionaryTests.swift */; };
+		349346A02690D26400FF727C /* Pods_GraphPod_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68476C214C82A0642A5F81C1 /* Pods_GraphPod_Tests.framework */; };
+		349346A22690D26400FF727C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3420FB522690BFD600D7AC2F /* Main.storyboard */; };
+		349346B22690D30D00FF727C /* BitmapImagePerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AB2690D30900FF727C /* BitmapImagePerformanceTests.swift */; };
+		349346B32690D31000FF727C /* DisjointSetPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AD2690D30900FF727C /* DisjointSetPerformanceTests.swift */; };
+		349346B42690D31400FF727C /* SegmentingImageAlgorithmPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AC2690D30900FF727C /* SegmentingImageAlgorithmPerformanceTests.swift */; };
+		349346B52690D31800FF727C /* WGraphPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AA2690D30900FF727C /* WGraphPerformanceTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -23,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		349346972690D26400FF727C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = GraphPod;
+		};
 		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
@@ -40,6 +58,12 @@
 		3420FB4B2690BD8100D7AC2F /* DisjointSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisjointSetTests.swift; sourceTree = "<group>"; };
 		3420FB4C2690BD8100D7AC2F /* WGraphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGraphTests.swift; sourceTree = "<group>"; };
 		3420FB532690BFD600D7AC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		349346A72690D26400FF727C /* GraphPod_Performance_Tests .xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GraphPod_Performance_Tests .xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		349346A82690D26500FF727C /* GraphPod_Tests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GraphPod_Tests copy-Info.plist"; path = "/Users/matthew/Documents/IOSProjects/Geekbrains/GraphPod/Example/GraphPod_Tests copy-Info.plist"; sourceTree = "<absolute>"; };
+		349346AA2690D30900FF727C /* WGraphPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGraphPerformanceTests.swift; sourceTree = "<group>"; };
+		349346AB2690D30900FF727C /* BitmapImagePerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmapImagePerformanceTests.swift; sourceTree = "<group>"; };
+		349346AC2690D30900FF727C /* SegmentingImageAlgorithmPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentingImageAlgorithmPerformanceTests.swift; sourceTree = "<group>"; };
+		349346AD2690D30900FF727C /* DisjointSetPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisjointSetPerformanceTests.swift; sourceTree = "<group>"; };
 		38348CD0814D2C49D565008C /* Pods-GraphPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Example.release.xcconfig"; path = "Target Support Files/Pods-GraphPod_Example/Pods-GraphPod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		423091CABFAD2C9C5D6E0645 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* GraphPod_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphPod_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +83,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3493469F2690D26400FF727C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349346A02690D26400FF727C /* Pods_GraphPod_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCD1AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,15 +110,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		349346A92690D29A00FF727C /* Performance Tests */ = {
+			isa = PBXGroup;
+			children = (
+				349346AB2690D30900FF727C /* BitmapImagePerformanceTests.swift */,
+				349346AD2690D30900FF727C /* DisjointSetPerformanceTests.swift */,
+				349346AC2690D30900FF727C /* SegmentingImageAlgorithmPerformanceTests.swift */,
+				349346AA2690D30900FF727C /* WGraphPerformanceTests.swift */,
+			);
+			path = "Performance Tests";
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for GraphPod */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				349346A92690D29A00FF727C /* Performance Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				D2366F2EEC62E7D2FEF096E2 /* Pods */,
 				6FE2F21BEA330ABA0CF39F84 /* Frameworks */,
+				349346A82690D26500FF727C /* GraphPod_Tests copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +140,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* GraphPod_Example.app */,
 				607FACE51AFB9204008FA782 /* GraphPod_Tests.xctest */,
+				349346A72690D26400FF727C /* GraphPod_Performance_Tests .xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,6 +221,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		349346952690D26400FF727C /* GraphPod_Performance_Tests  */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349346A42690D26400FF727C /* Build configuration list for PBXNativeTarget "GraphPod_Performance_Tests " */;
+			buildPhases = (
+				349346982690D26400FF727C /* [CP] Check Pods Manifest.lock */,
+				349346992690D26400FF727C /* Sources */,
+				3493469F2690D26400FF727C /* Frameworks */,
+				349346A12690D26400FF727C /* Resources */,
+				349346A32690D26400FF727C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				349346962690D26400FF727C /* PBXTargetDependency */,
+			);
+			name = "GraphPod_Performance_Tests ";
+			productName = Tests;
+			productReference = 349346A72690D26400FF727C /* GraphPod_Performance_Tests .xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		607FACCF1AFB9204008FA782 /* GraphPod_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "GraphPod_Example" */;
@@ -252,11 +318,20 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* GraphPod_Example */,
 				607FACE41AFB9204008FA782 /* GraphPod_Tests */,
+				349346952690D26400FF727C /* GraphPod_Performance_Tests  */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		349346A12690D26400FF727C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349346A22690D26400FF727C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCE1AFB9204008FA782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,6 +353,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		349346982690D26400FF727C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GraphPod_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		349346A32690D26400FF727C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphPod_Tests/Pods-GraphPod_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GraphPod_Tests/Pods-GraphPod_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4BBC8ACE6F4460C62081C82E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -361,6 +476,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		349346992690D26400FF727C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3493469A2690D26400FF727C /* BitmapImageTests.swift in Sources */,
+				349346B42690D31400FF727C /* SegmentingImageAlgorithmPerformanceTests.swift in Sources */,
+				349346B52690D31800FF727C /* WGraphPerformanceTests.swift in Sources */,
+				349346B32690D31000FF727C /* DisjointSetPerformanceTests.swift in Sources */,
+				349346B22690D30D00FF727C /* BitmapImagePerformanceTests.swift in Sources */,
+				3493469B2690D26400FF727C /* DisjointSetTests.swift in Sources */,
+				3493469C2690D26400FF727C /* BitmapColorTest.swift in Sources */,
+				3493469D2690D26400FF727C /* WGraphTests.swift in Sources */,
+				3493469E2690D26400FF727C /* RootsDictionaryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCC1AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,6 +516,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		349346962690D26400FF727C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* GraphPod_Example */;
+			targetProxy = 349346972690D26400FF727C /* PBXContainerItemProxy */;
+		};
 		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* GraphPod_Example */;
@@ -412,6 +548,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		349346A52690D26400FF727C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C3404E988A1635BCC13B489 /* Pods-GraphPod_Tests.debug.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GraphPod_Tests copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphPod_Example.app/GraphPod_Example";
+			};
+			name = Debug;
+		};
+		349346A62690D26400FF727C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C2D085EE6CE1B742C8D5951 /* Pods-GraphPod_Tests.release.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GraphPod_Tests copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphPod_Example.app/GraphPod_Example";
+			};
+			name = Release;
+		};
 		607FACED1AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -594,6 +770,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		349346A42690D26400FF727C /* Build configuration list for PBXNativeTarget "GraphPod_Performance_Tests " */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349346A52690D26400FF727C /* Debug */,
+				349346A62690D26400FF727C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "GraphPod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
