@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		2DCC70612667804A3FC0AE0B /* Pods-GraphPod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Example.debug.xcconfig"; path = "Target Support Files/Pods-GraphPod_Example/Pods-GraphPod_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		38348CD0814D2C49D565008C /* Pods-GraphPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Example.release.xcconfig"; path = "Target Support Files/Pods-GraphPod_Example/Pods-GraphPod_Example.release.xcconfig"; sourceTree = "<group>"; };
-		423091CABFAD2C9C5D6E0645 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		423091CABFAD2C9C5D6E0645 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* GraphPod_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphPod_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,8 +44,8 @@
 		68476C214C82A0642A5F81C1 /* Pods_GraphPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2D085EE6CE1B742C8D5951 /* Pods-GraphPod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Tests.release.xcconfig"; path = "Target Support Files/Pods-GraphPod_Tests/Pods-GraphPod_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6C3404E988A1635BCC13B489 /* Pods-GraphPod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Tests.debug.xcconfig"; path = "Target Support Files/Pods-GraphPod_Tests/Pods-GraphPod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		721E46F95328FF0E90AE3B40 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		C35D1F3E0E0ADD77D75B48CC /* GraphPod.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = GraphPod.podspec; path = ../GraphPod.podspec; sourceTree = "<group>"; };
+		721E46F95328FF0E90AE3B40 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C35D1F3E0E0ADD77D75B48CC /* GraphPod.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GraphPod.podspec; path = ../GraphPod.podspec; sourceTree = "<group>"; };
 		F027625DA31DC9E35FB30E3B /* Pods_GraphPod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,7 +156,6 @@
 				6C3404E988A1635BCC13B489 /* Pods-GraphPod_Tests.debug.xcconfig */,
 				6C2D085EE6CE1B742C8D5951 /* Pods-GraphPod_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,11 +213,11 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1250;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1250;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -228,6 +227,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -503,7 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -518,7 +518,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -539,7 +539,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphPod_Example.app/GraphPod_Example";
 			};
 			name = Debug;
@@ -557,7 +557,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphPod_Example.app/GraphPod_Example";
 			};
 			name = Release;
