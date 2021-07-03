@@ -10,15 +10,22 @@ import UIKit
 import GraphPod
 
 class ViewController: UIViewController {
+    @IBOutlet weak var thresholdPicker: UIPickerView!
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
     
-    let coefficients:[String: Float] = ["sigma": 0.6, "threshold": 10, "minSize": 10 ]
+    let thresholdValues: [Float] = [0.01,0.1,1,5,10,20,50,100,200,300]
+    let minSizeValues = [1,5,10,20,50,100,200,300, 500, 1000,10000]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         resultImage.image = UIImage(named:"test2")
+        self.thresholdPicker.delegate = self
+        self.thresholdPicker.dataSource = self
+        thresholdPicker.selectRow(4, inComponent: 0, animated: false)
+        thresholdPicker.selectRow(2, inComponent: 1, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +47,10 @@ class ViewController: UIViewController {
         print("Gauss smooth: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         guard let image = processingImage.toBitmapImage() else { return }
         //print(image.pixels.count)
-        let result = SegmentingImageAlgorithm.execute(image: image, threshold: coefficients["threshold"]!, minSize: Int(coefficients["minSize"]!))
+        
+        let threshold = thresholdValues[thresholdPicker.selectedRow(inComponent: 0)]
+        let minPixelsInSectro = minSizeValues[thresholdPicker.selectedRow(inComponent: 1)]
+        let result = SegmentingImageAlgorithm.execute(image: image, threshold: threshold, minSize: minPixelsInSectro)
         //print(result)
        
         
@@ -48,21 +58,46 @@ class ViewController: UIViewController {
         im?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
 
         resultImage.image = im
-        let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(processingImage.size.width)x\(processingImage.size.height) \(coefficients)"
+        let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(processingImage.size.width)x\(processingImage.size.height)"
         print(resultText)
         resultLabel.text = resultText
     }
     
     func takeAPhoto() {
         let imagePickerController = UIImagePickerController()
-       if UIImagePickerController.isSourceTypeAvailable(.camera) {
+       /*if UIImagePickerController.isSourceTypeAvailable(.camera) {
            imagePickerController.sourceType = .camera
        } else {
            imagePickerController.sourceType = .savedPhotosAlbum
-       }
+       }*/
+       imagePickerController.sourceType = .savedPhotosAlbum
        imagePickerController.allowsEditing = true
        imagePickerController.delegate = self
         UIApplication.shared.keyWindow?.rootViewController?.present(imagePickerController, animated: true)
+    }
+}
+
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+       return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return thresholdValues.count
+        } else {
+            return minSizeValues.count
+        }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return  String(thresholdValues[row])
+        } else {
+            return String(minSizeValues[row])
+        }
     }
 }
 
