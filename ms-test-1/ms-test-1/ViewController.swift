@@ -31,9 +31,8 @@ class ViewController: UIViewController {
         guard let processingImage = resultImage.image else { return }
        
         
-        //guard let smoothImage = processingImage.smoothing(sigma: Double(coefficients["sigma"]!)) else { return }
+        guard let smoothImage = processingImage.smoothing(sigma: Double(coefficients["sigma"]!)) else { return }
         //resultImage.image = smoothImage
-        let smoothImage = processingImage
         print("Gauss smooth: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
         guard let image = smoothImage.toBitmapImage() else { return }
         resultImage.image = smoothImage

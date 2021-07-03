@@ -6,8 +6,8 @@ target 'ms-test-1' do
   use_frameworks!
 
   # Pods for ms-test-1
-  pod "GraphPod", git: 'git@github.com:SergeyMorugin/GraphPod.git', branch: 'feature/ms-test-3'
-
+  #pod "GraphPod", git: 'git@github.com:SergeyMorugin/GraphPod.git', branch: 'feature/ms-test-3'
+  pod "GraphPod", path: '../'
   target 'ms-test-1Tests' do
     inherit! :search_paths
     # Pods for testing

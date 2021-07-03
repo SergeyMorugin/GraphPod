@@ -2,21 +2,15 @@ PODS:
   - GraphPod (1.0.0)
 
 DEPENDENCIES:
-  - "GraphPod (from `git@github.com:SergeyMorugin/GraphPod.git`, branch `feature/ms-test-3`)"
+  - GraphPod (from `../`)
 
 EXTERNAL SOURCES:
   GraphPod:
-    :branch: feature/ms-test-3
-    :git: "git@github.com:SergeyMorugin/GraphPod.git"
-
-CHECKOUT OPTIONS:
-  GraphPod:
-    :commit: 8da4cc2db1400ac465cff79469d98e0a894a2a76
-    :git: "git@github.com:SergeyMorugin/GraphPod.git"
+    :path: "../"
 
 SPEC CHECKSUMS:
   GraphPod: 132bc9f8e937341b2ef85e9826657d06530d17b4
 
-PODFILE CHECKSUM: 2445ee92c223fa633319154982cc022e057acc4b
+PODFILE CHECKSUM: e05a10d77fa0fa199396615786558f8c3473ca3e
 
 COCOAPODS: 1.10.1
