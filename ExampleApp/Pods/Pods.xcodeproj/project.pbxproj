@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0307A510C70ED6CED3D631D89D273C99 /* BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EAD3B69E81E47C5BD3DB5DB2938563 /* BitmapImage.swift */; };
+		0307A510C70ED6CED3D631D89D273C99 /* BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287DAE1BDC9C8B5EC5ACEE206A19BD9D /* BitmapImage.swift */; };
 		24B7C0D7C45C513917664B5ED83B23C0 /* Pods-ms-test-1-ms-test-1UITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4588421C8DE18CA1ABEB476395302E /* Pods-ms-test-1-ms-test-1UITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B4B4A46977330F24AB0B0329F8D63A6 /* Pods-ms-test-1-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0757C7CF6AA24279559E23FC3085281 /* Pods-ms-test-1-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50E1300E37B12379A46E795DD350EBAC /* SegmentingImageAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E445D3D84439A9413EA1637053DEA469 /* SegmentingImageAlgorithm.swift */; };
+		50E1300E37B12379A46E795DD350EBAC /* SegmentingImageAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75718F84F78CA7BBB88D6D73D7EAA9AF /* SegmentingImageAlgorithm.swift */; };
 		5A52ACC71673600264156AE1B509C949 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		77278DEC8971D7F29EE4E62E3AC3E3A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		866B3325E536AB7E5AF3AD14AB0DCE7B /* GraphPod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F53D63FF38362B0BA34529DCBED93C4 /* GraphPod-dummy.m */; };
+		866B3325E536AB7E5AF3AD14AB0DCE7B /* GraphPod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C062A5F31EE3370246B511E672A3F83D /* GraphPod-dummy.m */; };
 		881A8FFDACD279486E10C6FA67A560E8 /* Pods-ms-test-1-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 051F77AD20E9035BF961408E2F83F6E1 /* Pods-ms-test-1-dummy.m */; };
-		89F50E9277C8B9FD6E762670262B9352 /* DisjointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380192FECC031EFB2A856A0254A27FF /* DisjointSet.swift */; };
+		89F50E9277C8B9FD6E762670262B9352 /* DisjointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259B12E915CFEA5D33108E6EC27A5385 /* DisjointSet.swift */; };
 		985675EC1A7F3BCD2D0458638249605F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		B0271DB75A31EE32530C98F50B4B2423 /* RootsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98D694B6DC3535DA8155F9406C872F5 /* RootsDictionary.swift */; };
+		B0271DB75A31EE32530C98F50B4B2423 /* RootsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FD39010A495D340997C223BD0DE7BD /* RootsDictionary.swift */; };
 		B998E4F4F973AF3E96C9EC93D1E4E535 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		B9A769B7D4102D5BDFE9FADA5FD36199 /* GraphPod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 37512ABFEE73B8F21602C4D484911FCB /* GraphPod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9A769B7D4102D5BDFE9FADA5FD36199 /* GraphPod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17AC87975CE488FD737D483A2E97E92F /* GraphPod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C771A4441BA1FD78906867D61D2372A3 /* Pods-ms-test-1Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A91DA8CB07D7B0C4A2E16EBD839B4AB6 /* Pods-ms-test-1Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6E538EC9449F93AD5469213F26E13ED /* WGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1485D15073962E00E56D5CC316B58 /* WGraph.swift */; };
+		D6E538EC9449F93AD5469213F26E13ED /* WGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B4A1360214C34759A76810FEE8349 /* WGraph.swift */; };
 		D80EA388D896B8DF1795AD16099A1F57 /* Pods-ms-test-1-ms-test-1UITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B0D30B7C93A1C8BFF218432A846780 /* Pods-ms-test-1-ms-test-1UITests-dummy.m */; };
 		DC5631143BFC99BBB729538282B4F2E6 /* Pods-ms-test-1Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3386EDE4AFCE7E7AD12181615E0948 /* Pods-ms-test-1Tests-dummy.m */; };
 /* End PBXBuildFile section */
@@ -54,50 +54,50 @@
 		010FABBE0653112EF692584AB1AC2618 /* Pods-ms-test-1Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ms-test-1Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		051F77AD20E9035BF961408E2F83F6E1 /* Pods-ms-test-1-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ms-test-1-dummy.m"; sourceTree = "<group>"; };
 		08456471E822587A04F132393C7FDF2E /* Pods-ms-test-1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ms-test-1Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		17AC87975CE488FD737D483A2E97E92F /* GraphPod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphPod-umbrella.h"; sourceTree = "<group>"; };
 		1CDFA228D547430E70C8BE7703E094F0 /* Pods_ms_test_1_ms_test_1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ms_test_1_ms_test_1UITests.framework; path = "Pods-ms-test-1-ms-test-1UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2310A94FA49E983E3AA408AD72402846 /* GraphPod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphPod-prefix.pch"; sourceTree = "<group>"; };
+		259B12E915CFEA5D33108E6EC27A5385 /* DisjointSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DisjointSet.swift; path = GraphPod/Classes/DisjointSet.swift; sourceTree = "<group>"; };
+		287DAE1BDC9C8B5EC5ACEE206A19BD9D /* BitmapImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BitmapImage.swift; path = GraphPod/Classes/BitmapImage.swift; sourceTree = "<group>"; };
 		29EBF8048772D47173B3C621E8682922 /* Pods-ms-test-1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ms-test-1.release.xcconfig"; sourceTree = "<group>"; };
 		2B56C11CE2142D1F3A8D31267BBCE128 /* Pods-ms-test-1-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ms-test-1-acknowledgements.plist"; sourceTree = "<group>"; };
 		2C3386EDE4AFCE7E7AD12181615E0948 /* Pods-ms-test-1Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ms-test-1Tests-dummy.m"; sourceTree = "<group>"; };
-		3380192FECC031EFB2A856A0254A27FF /* DisjointSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DisjointSet.swift; path = GraphPod/Classes/DisjointSet.swift; sourceTree = "<group>"; };
-		37512ABFEE73B8F21602C4D484911FCB /* GraphPod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphPod-umbrella.h"; sourceTree = "<group>"; };
 		3C4059EC4BE9E4F66AD8F72D768F9BC8 /* Pods-ms-test-1Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ms-test-1Tests-Info.plist"; sourceTree = "<group>"; };
 		3D2D4313F5748BF172E1B9F21533920A /* Pods-ms-test-1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ms-test-1.debug.xcconfig"; sourceTree = "<group>"; };
-		472446DF42F1B690C2EF54E1988FABB6 /* GraphPod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphPod-prefix.pch"; sourceTree = "<group>"; };
-		473115E45FA3E2B3D3A2A3B6558F2F1A /* GraphPod-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GraphPod-Info.plist"; sourceTree = "<group>"; };
 		4AD52AB62038D3305C29CF0DD2CCD4C3 /* Pods-ms-test-1-ms-test-1UITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ms-test-1-ms-test-1UITests-frameworks.sh"; sourceTree = "<group>"; };
-		4D41E607324F7B5B810E97FA8E770C48 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		4E67B7FE0DC5C9E64245247A204E4D1E /* GraphPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GraphPod.debug.xcconfig; sourceTree = "<group>"; };
 		5AF7F8CCFE9F74687B115CAED0007CC0 /* Pods-ms-test-1-ms-test-1UITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ms-test-1-ms-test-1UITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5C07327FD0F79CED89D7C6304C3328EC /* GraphPod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GraphPod.modulemap; sourceTree = "<group>"; };
 		5F4588421C8DE18CA1ABEB476395302E /* Pods-ms-test-1-ms-test-1UITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ms-test-1-ms-test-1UITests-umbrella.h"; sourceTree = "<group>"; };
-		5F53D63FF38362B0BA34529DCBED93C4 /* GraphPod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GraphPod-dummy.m"; sourceTree = "<group>"; };
-		639A6BF5460CBBEC4A2EB54874FCD5E5 /* GraphPod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GraphPod.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		68B110735016B2CB34B40DB3394BC3EF /* Pods-ms-test-1-ms-test-1UITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ms-test-1-ms-test-1UITests-Info.plist"; sourceTree = "<group>"; };
 		6B8EAA2B52938C50F32CB9F32896DC91 /* Pods-ms-test-1-ms-test-1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ms-test-1-ms-test-1UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C23426F3FB8A5C6E2C1D5EEFA09B945 /* Pods-ms-test-1-ms-test-1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ms-test-1-ms-test-1UITests.release.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		82EAD3B69E81E47C5BD3DB5DB2938563 /* BitmapImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BitmapImage.swift; path = GraphPod/Classes/BitmapImage.swift; sourceTree = "<group>"; };
+		753678AF693C54F57F3B1735779CAD54 /* GraphPod-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GraphPod-Info.plist"; sourceTree = "<group>"; };
+		75718F84F78CA7BBB88D6D73D7EAA9AF /* SegmentingImageAlgorithm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentingImageAlgorithm.swift; path = GraphPod/Classes/SegmentingImageAlgorithm.swift; sourceTree = "<group>"; };
+		77FD39010A495D340997C223BD0DE7BD /* RootsDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RootsDictionary.swift; path = GraphPod/Classes/RootsDictionary.swift; sourceTree = "<group>"; };
+		7A965B072B7D94374B2B80D112E507CB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		89BF9892F6BD33F859351C15DC0C2556 /* Pods_ms_test_1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ms_test_1Tests.framework; path = "Pods-ms-test-1Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D7B4A1360214C34759A76810FEE8349 /* WGraph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WGraph.swift; path = GraphPod/Classes/WGraph.swift; sourceTree = "<group>"; };
 		90A7E37E74DBEB7912EBE4F352BFCE77 /* Pods-ms-test-1-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ms-test-1-acknowledgements.markdown"; sourceTree = "<group>"; };
-		934F6EE432F5FFBDFA4620AA85CDDB3C /* GraphPod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GraphPod.modulemap; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A2B0D30B7C93A1C8BFF218432A846780 /* Pods-ms-test-1-ms-test-1UITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ms-test-1-ms-test-1UITests-dummy.m"; sourceTree = "<group>"; };
 		A91DA8CB07D7B0C4A2E16EBD839B4AB6 /* Pods-ms-test-1Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ms-test-1Tests-umbrella.h"; sourceTree = "<group>"; };
 		ABD4DA787F5D91EE6EF28DCE7BB39FFC /* Pods-ms-test-1.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ms-test-1.modulemap"; sourceTree = "<group>"; };
-		AD39795A2D5081683C1D16A92AC0C1E5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		ACD7584E57F2F026C0E436F58DA430A5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		B3E080AC465D7422544760B0F8AB0563 /* Pods_ms_test_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ms_test_1.framework; path = "Pods-ms-test-1.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B84C0AE13D895AB42EEA784AABB5D54B /* GraphPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GraphPod.framework; path = GraphPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C062A5F31EE3370246B511E672A3F83D /* GraphPod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GraphPod-dummy.m"; sourceTree = "<group>"; };
 		C0973CA60A0E7E0548A094101FA6BF2F /* Pods-ms-test-1-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ms-test-1-Info.plist"; sourceTree = "<group>"; };
 		D0757C7CF6AA24279559E23FC3085281 /* Pods-ms-test-1-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ms-test-1-umbrella.h"; sourceTree = "<group>"; };
 		D2B57794C7DE0D0A63F7E644C5B5F1C8 /* Pods-ms-test-1-ms-test-1UITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ms-test-1-ms-test-1UITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D75D70498523C65F2A99E0AB77693B01 /* Pods-ms-test-1-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ms-test-1-frameworks.sh"; sourceTree = "<group>"; };
-		E445D3D84439A9413EA1637053DEA469 /* SegmentingImageAlgorithm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentingImageAlgorithm.swift; path = GraphPod/Classes/SegmentingImageAlgorithm.swift; sourceTree = "<group>"; };
-		E98D694B6DC3535DA8155F9406C872F5 /* RootsDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RootsDictionary.swift; path = GraphPod/Classes/RootsDictionary.swift; sourceTree = "<group>"; };
+		E50740E49CCFE03CEDF580EB28F4AA6B /* GraphPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GraphPod.release.xcconfig; sourceTree = "<group>"; };
 		EC1093DBD892441831AD674B56158D8A /* Pods-ms-test-1Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ms-test-1Tests.modulemap"; sourceTree = "<group>"; };
 		EC981726E215C1879C3E00EF975DA591 /* Pods-ms-test-1Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ms-test-1Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EE577F94047B9C04A6734C1B088E5781 /* GraphPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GraphPod.debug.xcconfig; sourceTree = "<group>"; };
 		F18670EBB316049DFD72DA5B430A3990 /* Pods-ms-test-1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ms-test-1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F3499955951CBDF3C1EA3BC14977172F /* Pods-ms-test-1-ms-test-1UITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ms-test-1-ms-test-1UITests.modulemap"; sourceTree = "<group>"; };
-		F6C1485D15073962E00E56D5CC316B58 /* WGraph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WGraph.swift; path = GraphPod/Classes/WGraph.swift; sourceTree = "<group>"; };
-		FFC6406C7878C40D74CEFBA885A4E799 /* GraphPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GraphPod.release.xcconfig; sourceTree = "<group>"; };
+		FC21CAC91F9590044BBB351C193F38CF /* GraphPod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GraphPod.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,37 +136,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15768DDEA047317F664C4808ED94D3FE /* GraphPod */ = {
-			isa = PBXGroup;
-			children = (
-				82EAD3B69E81E47C5BD3DB5DB2938563 /* BitmapImage.swift */,
-				3380192FECC031EFB2A856A0254A27FF /* DisjointSet.swift */,
-				E98D694B6DC3535DA8155F9406C872F5 /* RootsDictionary.swift */,
-				E445D3D84439A9413EA1637053DEA469 /* SegmentingImageAlgorithm.swift */,
-				F6C1485D15073962E00E56D5CC316B58 /* WGraph.swift */,
-				4626B321C931BB4BA83A8FF72E3569D0 /* Pod */,
-				E9FCA2BED984DA1A7D7C91AB9187EE0C /* Support Files */,
-			);
-			name = GraphPod;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		300D3EA85BF614FB6471F6474D364959 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				15768DDEA047317F664C4808ED94D3FE /* GraphPod */,
+				B39BCFD437AD5B0C1819F8B6E7D67DD0 /* GraphPod */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		4626B321C931BB4BA83A8FF72E3569D0 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				639A6BF5460CBBEC4A2EB54874FCD5E5 /* GraphPod.podspec */,
-				AD39795A2D5081683C1D16A92AC0C1E5 /* LICENSE */,
-				4D41E607324F7B5B810E97FA8E770C48 /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -212,6 +187,46 @@
 				65FD3149155394093A4044E8424B51F4 /* Pods-ms-test-1Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8DFD14DB2865CD539C3F2C8645B4FB7E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C07327FD0F79CED89D7C6304C3328EC /* GraphPod.modulemap */,
+				C062A5F31EE3370246B511E672A3F83D /* GraphPod-dummy.m */,
+				753678AF693C54F57F3B1735779CAD54 /* GraphPod-Info.plist */,
+				2310A94FA49E983E3AA408AD72402846 /* GraphPod-prefix.pch */,
+				17AC87975CE488FD737D483A2E97E92F /* GraphPod-umbrella.h */,
+				EE577F94047B9C04A6734C1B088E5781 /* GraphPod.debug.xcconfig */,
+				E50740E49CCFE03CEDF580EB28F4AA6B /* GraphPod.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "ExampleApp/Pods/Target Support Files/GraphPod";
+			sourceTree = "<group>";
+		};
+		B39BCFD437AD5B0C1819F8B6E7D67DD0 /* GraphPod */ = {
+			isa = PBXGroup;
+			children = (
+				287DAE1BDC9C8B5EC5ACEE206A19BD9D /* BitmapImage.swift */,
+				259B12E915CFEA5D33108E6EC27A5385 /* DisjointSet.swift */,
+				77FD39010A495D340997C223BD0DE7BD /* RootsDictionary.swift */,
+				75718F84F78CA7BBB88D6D73D7EAA9AF /* SegmentingImageAlgorithm.swift */,
+				8D7B4A1360214C34759A76810FEE8349 /* WGraph.swift */,
+				C12BA0E04841831344295249B4C9497C /* Pod */,
+				8DFD14DB2865CD539C3F2C8645B4FB7E /* Support Files */,
+			);
+			name = GraphPod;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		C12BA0E04841831344295249B4C9497C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				FC21CAC91F9590044BBB351C193F38CF /* GraphPod.podspec */,
+				7A965B072B7D94374B2B80D112E507CB /* LICENSE */,
+				ACD7584E57F2F026C0E436F58DA430A5 /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -265,21 +280,6 @@
 			);
 			name = "Pods-ms-test-1-ms-test-1UITests";
 			path = "Target Support Files/Pods-ms-test-1-ms-test-1UITests";
-			sourceTree = "<group>";
-		};
-		E9FCA2BED984DA1A7D7C91AB9187EE0C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				934F6EE432F5FFBDFA4620AA85CDDB3C /* GraphPod.modulemap */,
-				5F53D63FF38362B0BA34529DCBED93C4 /* GraphPod-dummy.m */,
-				473115E45FA3E2B3D3A2A3B6558F2F1A /* GraphPod-Info.plist */,
-				472446DF42F1B690C2EF54E1988FABB6 /* GraphPod-prefix.pch */,
-				37512ABFEE73B8F21602C4D484911FCB /* GraphPod-umbrella.h */,
-				4E67B7FE0DC5C9E64245247A204E4D1E /* GraphPod.debug.xcconfig */,
-				FFC6406C7878C40D74CEFBA885A4E799 /* GraphPod.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "ms-test-1/Pods/Target Support Files/GraphPod";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -596,7 +596,7 @@
 		};
 		6C1D4219C67E19CB20DEF6699F9AE91F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E67B7FE0DC5C9E64245247A204E4D1E /* GraphPod.debug.xcconfig */;
+			baseConfigurationReference = EE577F94047B9C04A6734C1B088E5781 /* GraphPod.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -804,7 +804,7 @@
 		};
 		B4277593048988140567A7D6459D9011 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFC6406C7878C40D74CEFBA885A4E799 /* GraphPod.release.xcconfig */;
+			baseConfigurationReference = E50740E49CCFE03CEDF580EB28F4AA6B /* GraphPod.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

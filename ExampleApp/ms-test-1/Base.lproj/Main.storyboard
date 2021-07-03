@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,10 +21,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ewP-Xa-Um3">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="528"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="599"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C24-cy-CUS">
-                                        <rect key="frame" x="0.0" y="544" width="414" height="55"/>
+                                        <rect key="frame" x="0.0" y="615" width="414" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="avg-V5-DhC"/>
                                         </constraints>
@@ -34,20 +34,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbQ-TJ-K5U">
-                                        <rect key="frame" x="0.0" y="615" width="414" height="55"/>
+                                        <rect key="frame" x="0.0" y="686" width="414" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="PLk-J1-kBK"/>
                                         </constraints>
                                         <state key="normal" title="Run"/>
                                         <connections>
                                             <action selector="onRunClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P71-jX-tNP"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa1-ep-ez1">
-                                        <rect key="frame" x="0.0" y="686" width="414" height="55"/>
-                                        <state key="normal" title="Get edges"/>
-                                        <connections>
-                                            <action selector="getEdges:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AQL-i4-bpp"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyn-Db-eKX">
@@ -62,7 +55,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RbQ-TJ-K5U" secondAttribute="width" id="PAf-Am-cZk"/>
-                                    <constraint firstItem="Aa1-ep-ez1" firstAttribute="height" secondItem="RbQ-TJ-K5U" secondAttribute="height" id="Qn9-4x-7l2"/>
                                 </constraints>
                             </stackView>
                         </subviews>

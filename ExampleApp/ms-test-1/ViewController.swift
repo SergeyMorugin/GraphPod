@@ -52,42 +52,6 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Edges detection
-    @IBAction func getEdges(_ sender: Any) {
-          detectEdges()
-    }
-
-    private func detectEdges() {
-        print("Detect edges")
-
-        let startTime = CFAbsoluteTimeGetCurrent()
-
-        // Get input image and convert it to grayscale
-        guard let image = resultImage.image?.convertToGrayScale() else { return }
-
-        // Smooth the image
-        guard let smoothImage = image.smoothing(sigma: Double(coefficients["sigma"]!)) else { return }
-
-        // Get grayscale image pixel data for edge detection
-        guard let pixelValuesGrayScaleImage = EdgeDetectionAlgorithm.pixelValuesFromGrayScaleImage(imageRef: smoothImage.cgImage) else { return }
-
-        print(pixelValuesGrayScaleImage.count)
-
-        // Get magnitudes feature normalized data matrix
-        let featureMatrix = EdgeDetectionAlgorithm.operate(pixelValues: pixelValuesGrayScaleImage, height: Int(image.size.height), width: Int(image.size.width))
-
-
-        // Create output image
-        let readyImageWidth = Int(image.size.width) - 2
-        let readyImageHeight = Int(image.size.height) - 2
-
-        let edgesImage = EdgeDetectionAlgorithm.imageEdgesDetected(pixelValues: featureMatrix, width: readyImageWidth, height: readyImageHeight)
-
-        resultImage.image = edgesImage
-
-        print("Edge detection done in: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
-    }
-
-
 
     @IBAction func onLoadPhotoClick(_ sender: Any) {
         takeAPhoto()
