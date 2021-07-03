@@ -8,12 +8,12 @@
 
 
 public struct RootElementData {
-    let color: BitmapColor
+    public let color: BitmapColor
 }
 
 
 public struct RootsDictionary{
-    var roots: [Int: RootElementData] = [:]
+    public var roots: [Int: RootElementData] = [:]
 
     public mutating func createIfNew(index: Int) {
         if let _ = roots[index] {

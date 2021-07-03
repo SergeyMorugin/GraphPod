@@ -31,7 +31,7 @@ public struct WGraph {
 
 
 public extension WGraph {
-    public mutating func createSegmentSets(threshold: Float, minSize: Int) -> DisjointSet {
+    mutating func createSegmentSets(threshold: Float, minSize: Int) -> DisjointSet {
         let disjointSet = DisjointSet(count: vertexCount)
         // Set thresholds
         var thresholds = [Float](repeating: threshold, count: vertexCount)

@@ -62,7 +62,7 @@ public final class DisjointSet {
 }
 
 public extension DisjointSet {
-    public func colorizeBitmap(withWidth width: Int, andHeight height: Int) -> (BitmapImage, RootsDictionary) {
+    func colorizeBitmap(withWidth width: Int, andHeight height: Int) -> (BitmapImage, RootsDictionary) {
         var rootsDictionary = RootsDictionary()
         var resultPixels: [UInt8] = []
         for i in 0..<elements.count {

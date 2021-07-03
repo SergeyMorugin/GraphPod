@@ -36,7 +36,7 @@ public struct BitmapImage: Equatable {
 
 
 public extension BitmapImage {
-    public func createWGraph() -> WGraph {
+    func createWGraph() -> WGraph {
         let height = Int(self.height)
         let width = Int(self.width)
         let pixelsCount = height*width
@@ -66,7 +66,7 @@ public extension BitmapImage {
         return WGraph(edges: edges, vertexCount: pixelsCount)
     }
     
-    public func diff(x1: Int, y1: Int, x2: Int, y2: Int) -> Float {
+    func diff(x1: Int, y1: Int, x2: Int, y2: Int) -> Float {
         let pixel1 = self.pixel(x: x1, y: y1)
         let pixel2 = self.pixel(x: x2, y: y2)
         let dis = Float(
