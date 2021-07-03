@@ -10,13 +10,13 @@
 
 
 public struct DisjointSetElement {
-    var rank: Int
-    var parent: Int
-    var size: Int
+    public var rank: Int
+    public var parent: Int
+    public var size: Int
 }
 
 public final class DisjointSet {
-    var elements:[DisjointSetElement] = []
+    public var elements:[DisjointSetElement] = []
     
     public init(count: Int) {
         elements = [DisjointSetElement](repeating: DisjointSetElement(rank: 0, parent: 0, size: 1), count: count)

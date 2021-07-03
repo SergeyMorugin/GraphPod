@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3420FB4D2690BD8100D7AC2F /* RootsDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB482690BD8100D7AC2F /* RootsDictionaryTests.swift */; };
+		3420FB4E2690BD8100D7AC2F /* BitmapColorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB492690BD8100D7AC2F /* BitmapColorTest.swift */; };
+		3420FB4F2690BD8100D7AC2F /* BitmapImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB4A2690BD8100D7AC2F /* BitmapImageTests.swift */; };
+		3420FB502690BD8100D7AC2F /* DisjointSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB4B2690BD8100D7AC2F /* DisjointSetTests.swift */; };
+		3420FB512690BD8100D7AC2F /* WGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB4C2690BD8100D7AC2F /* WGraphTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -29,6 +34,11 @@
 
 /* Begin PBXFileReference section */
 		2DCC70612667804A3FC0AE0B /* Pods-GraphPod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Example.debug.xcconfig"; path = "Target Support Files/Pods-GraphPod_Example/Pods-GraphPod_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		3420FB482690BD8100D7AC2F /* RootsDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootsDictionaryTests.swift; sourceTree = "<group>"; };
+		3420FB492690BD8100D7AC2F /* BitmapColorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmapColorTest.swift; sourceTree = "<group>"; };
+		3420FB4A2690BD8100D7AC2F /* BitmapImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmapImageTests.swift; sourceTree = "<group>"; };
+		3420FB4B2690BD8100D7AC2F /* DisjointSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisjointSetTests.swift; sourceTree = "<group>"; };
+		3420FB4C2690BD8100D7AC2F /* WGraphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGraphTests.swift; sourceTree = "<group>"; };
 		38348CD0814D2C49D565008C /* Pods-GraphPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Example.release.xcconfig"; path = "Target Support Files/Pods-GraphPod_Example/Pods-GraphPod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		423091CABFAD2C9C5D6E0645 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* GraphPod_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphPod_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +125,11 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				3420FB492690BD8100D7AC2F /* BitmapColorTest.swift */,
+				3420FB4A2690BD8100D7AC2F /* BitmapImageTests.swift */,
+				3420FB4B2690BD8100D7AC2F /* DisjointSetTests.swift */,
+				3420FB482690BD8100D7AC2F /* RootsDictionaryTests.swift */,
+				3420FB4C2690BD8100D7AC2F /* WGraphTests.swift */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -359,7 +374,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3420FB4F2690BD8100D7AC2F /* BitmapImageTests.swift in Sources */,
+				3420FB502690BD8100D7AC2F /* DisjointSetTests.swift in Sources */,
+				3420FB4E2690BD8100D7AC2F /* BitmapColorTest.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				3420FB512690BD8100D7AC2F /* WGraphTests.swift in Sources */,
+				3420FB4D2690BD8100D7AC2F /* RootsDictionaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

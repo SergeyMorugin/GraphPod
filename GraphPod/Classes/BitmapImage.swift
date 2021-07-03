@@ -8,10 +8,10 @@
 
 
 public struct BitmapColor: Equatable {
-    let r: UInt8
-    let g: UInt8
-    let b: UInt8
-    let a: UInt8
+    public let r: UInt8
+    public let g: UInt8
+    public let b: UInt8
+    public let a: UInt8
     
     public static func random() -> BitmapColor{
         return BitmapColor(r: UInt8.random(in: 1..<255), g: UInt8.random(in: 1..<255), b: UInt8.random(in: 1..<255), a: 255)
