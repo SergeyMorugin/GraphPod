@@ -7,7 +7,7 @@
 //
 
 
-struct BitmapColor: Equatable {
+public struct BitmapColor: Equatable {
     let r: UInt8
     let g: UInt8
     let b: UInt8
@@ -18,13 +18,13 @@ struct BitmapColor: Equatable {
     }
 }
 
-struct BitmapImage: Equatable {
+public  struct BitmapImage: Equatable {
     let width: Int
     let height: Int
     var pixels: [UInt8]
     private let bytesPerComponent = 4
     
-    func pixel(x: Int, y: Int)-> BitmapColor {
+    public  func pixel(x: Int, y: Int)-> BitmapColor {
         let startPoint = (y*width + x)*bytesPerComponent
         return BitmapColor(r: pixels[startPoint],
                            g: pixels[startPoint+1],
@@ -35,8 +35,8 @@ struct BitmapImage: Equatable {
 }
 
 
-extension BitmapImage {
-    func createWGraph() -> WGraph {
+public extension BitmapImage {
+    public func createWGraph() -> WGraph {
         let height = Int(self.height)
         let width = Int(self.width)
         let pixelsCount = height*width
@@ -93,7 +93,7 @@ extension BitmapImage {
 import UIKit
 
 extension UIImage {
-    func toBitmapImage() -> BitmapImage? {
+    public func toBitmapImage() -> BitmapImage? {
         let size = self.size
         let dataSize = size.width * size.height * 4
         print("Image size \(size.width)x\(size.height) = \(size.width*size.height)")
@@ -111,7 +111,7 @@ extension UIImage {
         return BitmapImage(width: Int(size.width), height: Int(size.height), pixels: pixelData)
     }
     
-    static func fromBitmapImage(bitmapImage: BitmapImage)-> UIImage? {
+    public static func fromBitmapImage(bitmapImage: BitmapImage)-> UIImage? {
         //var srgbArray = [UInt32](repeating: 0xFF204080, count: 8*8)
         var pixels = bitmapImage.pixels
         let cgImg = pixels.withUnsafeMutableBytes { (ptr) -> CGImage in
@@ -135,7 +135,7 @@ extension UIImage {
 extension UIImage {
     
     // MARK: - Gaussian blur
-    func gaussian(image: UIImage, sigma: Double) -> UIImage? {
+    public func gaussian(image: UIImage, sigma: Double) -> UIImage? {
         if let img = CIImage(image: image) {
             if #available(iOS 10.0, *) {
                 return UIImage(ciImage: img.applyingGaussianBlur(sigma: sigma))
@@ -147,7 +147,7 @@ extension UIImage {
     }
     
     // MARK: - Smooth the image
-    func smoothing( sigma: Double) -> UIImage? {
+    public func smoothing( sigma: Double) -> UIImage? {
         guard let imageGaussianed = gaussian(image: self, sigma: sigma) else { return nil}
         
         // Convert gaussianed image to png for resize and further processing

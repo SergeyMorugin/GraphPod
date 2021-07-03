@@ -16,7 +16,7 @@
     "tag": "1.0.0"
   },
   "platforms": {
-    "ios": "14.0"
+    "ios": "9.0"
   },
   "source_files": "GraphPod/Classes/**/*"
 }

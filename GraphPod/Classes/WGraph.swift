@@ -8,30 +8,30 @@
 
 import Foundation
 
-struct Edge: Equatable {
+public struct Edge: Equatable {
     var a: Int = 0
     var b: Int = 0
     var weight: Float = 0
 }
 
-struct WGraph {
+public struct WGraph {
     var edges: [Edge]
     let vertexCount: Int
     private var edgesIsSorted = false
-    init(edges: [Edge], vertexCount: Int) {
+    public init(edges: [Edge], vertexCount: Int) {
         self.edges = edges
         self.vertexCount = vertexCount
     }
     
-    mutating func sortEdges()  {
+    public mutating func sortEdges()  {
         edges = edges.sorted { $0.weight < $1.weight  }
         edgesIsSorted = true
     }
 }
 
 
-extension WGraph {
-    mutating func createSegmentSets(threshold: Float, minSize: Int) -> DisjointSet {
+public extension WGraph {
+    public mutating func createSegmentSets(threshold: Float, minSize: Int) -> DisjointSet {
         let disjointSet = DisjointSet(count: vertexCount)
         // Set thresholds
         var thresholds = [Float](repeating: threshold, count: vertexCount)
