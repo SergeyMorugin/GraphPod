@@ -24,12 +24,22 @@ it, simply add the following line to your Podfile:
 pod 'GraphPod'
 ```
 
+## Example App
+
+You can run the App in the Example folder, research how it works and test algorithms with different coefficients, save results.
+
+![administrate](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-optimizing-1/docs/imgs/app2.jpg?raw=true)
+
 ## Documentation
 
 
 ### Convert input image to bitmap
 
-Bitmap is a best format to iterate through image pixels rgb values.
+The library works just with our BitmapImage format image data. It requres to convert UIImage to BitmapImage format as below.
+
+```swift
+let bitmapImage = UIImage(named:"testImage").toBitmapImage()
+```
 
 ### Use Gaussian smoothing
 
