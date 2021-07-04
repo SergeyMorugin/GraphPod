@@ -63,6 +63,14 @@ class ViewController: UIViewController {
         resultLabel.text = resultText
     }
     
+    
+    @IBAction func onSaveImageClick(_ sender: Any) {
+        guard let image = resultImage.image else {
+            return
+        }
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
+    
     func takeAPhoto() {
         let imagePickerController = UIImagePickerController()
        /*if UIImagePickerController.isSourceTypeAvailable(.camera) {
