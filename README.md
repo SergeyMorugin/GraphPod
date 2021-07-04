@@ -28,7 +28,7 @@ pod 'GraphPod'
 
 You can run the App in the Example folder, research how it works and test algorithms with different coefficients, save results.
 
-![administrate](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-optimizing-1/docs/imgs/app2.jpg?raw=true)
+![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-optimizing-1/docs/imgs/app2.jpg?raw=true)
 
 ## Documentation
 
