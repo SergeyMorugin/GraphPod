@@ -33,6 +33,8 @@ You can run the App in the Example folder, research how it works and test algori
 ## Documentation
 
 
+##  Fast image segmentation algorithm by using Graphs
+
 ### Convert input image to bitmap
 
 The library works just with our BitmapImage format image data. It requres to convert UIImage to BitmapImage format as below.
@@ -49,9 +51,17 @@ Smoothing is necessary to smooth the neighbor pixels intensity and make it easie
 
 Graph is a data structure with every image pixel as a vertex and edges between four neighbor pixels. We need weighted graph here as an image segment will be created according to each edge weight. As a weight we take neighbored pixels rgb intensity difference.
 
+```swift
+var wGrath = bitmapImage.createWGraph()
+```
+
 ### Create segments using disjoint-set data structure and threshold coefficient
 
 Segment is a pixels group combined together by edges weight between them. If edge weight is below threshold it will be grouped into segment that means one and only parent pixel (in other words "tree root") will be set for this pair. 
+
+```swift
+let pixelsCombinedInSegments = wGrath.createSegmentSets(threshold: threshold, minSize: minSize)
+```
 
 ### Post-process segments
 
