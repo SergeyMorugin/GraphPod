@@ -9,10 +9,6 @@ GraphPod is a pure Swift implementation of an image segmentation functionality b
 
 It includes copious in-source documentation, unit tests.
 
-## Example
-
-To run the example project clone the repo and run `pod install` from the Example directory first.
-
 ## Requirements
 
 iOS 9 and more.
@@ -22,18 +18,10 @@ iOS 9 and more.
 GraphPod is available through [CocoaPods](https://cocoapods.org). To install
 it simply add the following line to your Podfile:
 
-```
+```swift
 pod 'GraphPod'
 ```
 and then `pod install`.
-
-## Example App
-
-You can run the App in the Example folder, research how it works and test algorithms with different coefficients, save results.
-
-![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-optimizing-1/docs/imgs/app2.jpg?raw=true)
-
-## Documentation
 
 ### How to use GraphPod in your project
 
@@ -43,13 +31,25 @@ After you add GraphPod in project it's very simple to use it - just call Segment
 let processedImage = SegmentingImageAlgorithm.execute(for: imageToProcess, with: threshold, with: minPixelsInSector)
 
 ```
-and then set processedImage to UIImageView or save it to library etc.
- 
+and then set processedImage to UIImageView or save it to library or whatever you prefer.
+
+Read more about threshold and minPixelsInSector below.
+
+## Example
+
+To run the example project clone the repo and run `pod install` from the Example directory first.
+
+### Example App
+
+You can run the demo App in the Example folder, research how it works and test algorithm with different coefficients and save results.
+
+![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-optimizing-1/docs/imgs/app2.jpg?raw=true)
+
 ## How it all works
 
 ### Convert input image to bitmap
 
-The library works just with our BitmapImage format image data. It requres to convert UIImage to BitmapImage format as below.
+The library works with BitmapImage data format. First we need to convert UIImage to Bitmap format as below as Bitmap gives best efficiency in loop iterating through image pixels color data.
 
 ```swift
 let bitmapImage = UIImage(named:"testImage").toBitmapImage()
@@ -64,12 +64,12 @@ Smoothing is necessary to smooth the neighbor pixels intensity and make it easie
 Graph is a data structure with every image pixel as a vertex and edges between four neighbor pixels. We need weighted graph here as an image segment will be created according to each edge weight. As a weight we take neighbored pixels rgb intensity difference.
 
 ```swift
-var wGrath = bitmapImage.createWGraph()
+var wGraph = bitmapImage.createWGraph()
 ```
 
-### Create segments using disjoint-set data structure and threshold coefficient
+### Create segments using disjoint-set data structure, threshold and minPixelsInSector coefficients
 
-Segment is a pixels group combined together by edges weight between them. If edge weight is below threshold it will be grouped into segment that means one and only parent pixel (in other words "tree root") will be set for this pair. 
+Segment is a pixels group combined together by edges weight between them. If edge weight is below threshold it will be grouped into one segment that means one and only parent pixel (other words "tree root") will be set for this pair. Segment size defined by minPixelsInSector value. The more minPixelsInSector the more segment size.
 
 ```swift
 let pixelsCombinedInSegments = wGrath.createSegmentSets(threshold: threshold, minSize: minSize)
