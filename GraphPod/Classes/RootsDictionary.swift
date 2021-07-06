@@ -6,11 +6,9 @@
 //  Copyright © 2021 Ostagram Inc. All rights reserved.
 //
 
-
 public struct RootElementData {
     public let color: BitmapColor
 }
-
 
 public struct RootsDictionary{
     public var roots: [Int: RootElementData] = [:]

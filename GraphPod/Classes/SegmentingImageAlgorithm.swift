@@ -8,40 +8,33 @@
 
 import Foundation
 
-
 public final class SegmentingImageAlgorithm {
-    public static func execute(image: BitmapImage, threshold: Float, minSize: Int) -> (BitmapImage, RootsDictionary, DisjointSet)? {
-        var startTime = CFAbsoluteTimeGetCurrent()
+    public static func execute(for image: UIImage, with threshold: Float, with minSize: Int) -> (UIImage, RootsDictionary) {
+        var processedImage: UIImage
 
         // Get image size
-        let height = Int(image.height)
-        let width = Int(image.width)
+        let height = Int(image.size.height)
+        let width = Int(image.size.width)
 
-        var wGrath = image.createWGraph()
-        
-        print("Building graph on \(wGrath.edges.count) nodes: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
-        startTime = CFAbsoluteTimeGetCurrent()
+        // Get inital image bitmap
+        let imageBitmap = image.toBitmapImage()
+
+        // Create weighted graph
+        var wGraph = imageBitmap!.createWGraph()
 
         // Sort edges by weight
-        wGrath.sortEdges()
+        wGraph.sortEdges()
 
-        print("Sort graph: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
-        startTime = CFAbsoluteTimeGetCurrent()
+       // Create segments
+        let pixelsCombinedInSegments = wGraph.createSegmentSets(threshold: threshold, minSize: minSize)
 
-        //
-        let pixelsCombinedInSegments = wGrath.createSegmentSets(threshold: threshold, minSize: minSize)
-        
-
-        print("Build segments: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
-        print("disjointSet.elements.count \(pixelsCombinedInSegments.elements.count)")
-        startTime = CFAbsoluteTimeGetCurrent()
-        
-
+        // Create segments colored bitmap
         let (bitmapImage, roots) = pixelsCombinedInSegments.colorizeBitmap(withWidth: width, andHeight: height)
-        print("Build result bitmap: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
-        print("Sectors count: \(roots.roots.count)")
 
-        return (bitmapImage, roots, pixelsCombinedInSegments)
+        // Get image from bitmap
+        processedImage = UIImage.fromBitmapImage(bitmapImage: bitmapImage)!
+        processedImage.cgImage?.copy(colorSpace: image.cgImage!.colorSpace!)
 
+        return (processedImage, roots)
     }
 }

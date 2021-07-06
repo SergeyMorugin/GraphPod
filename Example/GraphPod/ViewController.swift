@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  GraphPod
+//  GraphPod Example App
 //
 //  Created by segiomars@gmail.com on 07/03/2021.
 //  Copyright (c) 2021 segiomars@gmail.com. All rights reserved.
@@ -13,15 +13,72 @@ class ViewController: UIViewController {
     @IBOutlet weak var thresholdPicker: UIPickerView!
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
-    
+
+    // Values for UIPicker
     let thresholdValues: [Float] = [0.01,0.1,1,5,10,20,50,100,200,300]
     let minSizeValues = [1,5,10,20,50,100,200,300, 500, 1000,10000]
 
-    
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        resultImage.image = UIImage(named:"test2")
+
+        // Set default image
+        resultImage.image = UIImage(named:"defaultImage")
+
+        setPicker()
+    }
+
+    // MARK: - Load photo from library
+    @IBAction func onLoadPhotoClick(_ sender: Any) {
+        takeAPhoto()
+    }
+
+    // MARK: - Run the algorithm processing
+    @IBAction func onRunClick(_ sender: Any) {
+        // Start the timer
+        let startTime = CFAbsoluteTimeGetCurrent()
+
+        // Get inital image
+        guard let imageToProcess = resultImage.image else { return }
+
+        // Get threshold value from UIPicker
+        let threshold = thresholdValues[thresholdPicker.selectedRow(inComponent: 0)]
+
+        // Get segment min size value from UIPicker
+        let minPixelsInSector = minSizeValues[thresholdPicker.selectedRow(inComponent: 1)]
+
+        // PROCESS THE IMAGE
+        let processedImage = SegmentingImageAlgorithm.execute(for: imageToProcess, with: threshold, with: minPixelsInSector)
+
+        // Set processed image to imageView
+        resultImage.image = processedImage.0
+
+        // Get process info text if needed
+        let resultText = "Found \(processedImage.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(imageToProcess.size.width)x\(imageToProcess.size.height)"
+
+        // Show process info text
+        resultLabel.text = resultText
+    }
+
+    // MARK: - Load image for processing
+    func takeAPhoto() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .savedPhotosAlbum
+        imagePickerController.allowsEditing = true
+        imagePickerController.delegate = self
+        UIApplication.shared.keyWindow?.rootViewController?.present(imagePickerController, animated: true)
+    }
+
+    // MARK: - Save the processed image to library
+    @IBAction func onSaveImageClick(_ sender: Any) {
+        guard let image = resultImage.image else {
+            return
+        }
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
+
+    // MARK: - UIPicker setup
+    func setPicker() {
         self.thresholdPicker.delegate = self
         self.thresholdPicker.dataSource = self
         thresholdPicker.selectRow(4, inComponent: 0, animated: false)
@@ -30,65 +87,16 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    @IBAction func onLoadPhotoClick(_ sender: Any) {
-        takeAPhoto()
-    }
-    
-    @IBAction func onRunClick(_ sender: Any) {
-        print("Run")
-        
-        let startTime = CFAbsoluteTimeGetCurrent()
-        // Get inital image
-        guard let processingImage = resultImage.image else { return }
-       
-        print("Gauss smooth: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
-        guard let image = processingImage.toBitmapImage() else { return }
-        //print(image.pixels.count)
-        
-        let threshold = thresholdValues[thresholdPicker.selectedRow(inComponent: 0)]
-        let minPixelsInSectro = minSizeValues[thresholdPicker.selectedRow(inComponent: 1)]
-        let result = SegmentingImageAlgorithm.execute(image: image, threshold: threshold, minSize: minPixelsInSectro)
-        //print(result)
-       
-        
-        let im = UIImage.fromBitmapImage(bitmapImage: result!.0)
-        im?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
-
-        resultImage.image = im
-        let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(processingImage.size.width)x\(processingImage.size.height)"
-        print(resultText)
-        resultLabel.text = resultText
-    }
-    
-    
-    @IBAction func onSaveImageClick(_ sender: Any) {
-        guard let image = resultImage.image else {
-            return
-        }
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    }
-    
-    func takeAPhoto() {
-        let imagePickerController = UIImagePickerController()
-       /*if UIImagePickerController.isSourceTypeAvailable(.camera) {
-           imagePickerController.sourceType = .camera
-       } else {
-           imagePickerController.sourceType = .savedPhotosAlbum
-       }*/
-       imagePickerController.sourceType = .savedPhotosAlbum
-       imagePickerController.allowsEditing = true
-       imagePickerController.delegate = self
-        UIApplication.shared.keyWindow?.rootViewController?.present(imagePickerController, animated: true)
     }
 }
 
 
+// MARK: - Extensions
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+
+    // MARK: - UIPicker Delegate
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-       return 2
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -110,11 +118,11 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
 }
 
 extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-   
+
+    // MARK: - ImagePicker Delegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
-    
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         let image = extractImage(from: info)
@@ -122,7 +130,8 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
         resultLabel.text = ""
         picker.dismiss(animated: true)
     }
-    
+
+    // MARK: - Extract image
     private func extractImage(from info: [UIImagePickerController.InfoKey: Any]) -> UIImage? {
         // Пытаемся извлечь отредактированное изображение
         if let image = info[.editedImage] as? UIImage {

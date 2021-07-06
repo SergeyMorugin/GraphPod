@@ -34,7 +34,7 @@ public struct BitmapImage: Equatable {
     }
 }
 
-
+// MARK: - Extension
 public extension BitmapImage {
     func createWGraph() -> WGraph {
         let height = Int(self.height)
@@ -42,8 +42,8 @@ public extension BitmapImage {
         let pixelsCount = height*width
 
         var edges: [Edge] = []
-        
-        // Run through image width and height with 4 neighbor pixels and get edges array - OPTIMIZE NEEDED
+
+        // Calculating pixels colors difference
         (0..<height).forEach { y in
             (0..<width).forEach { x in
                 if (x < width - 1) {
@@ -59,7 +59,6 @@ public extension BitmapImage {
                     let weight = diff(x1: x, y1: y, x2: x, y2: y + 1)
                     let edge = Edge(a: a, b: b, weight: weight)
                     edges.append(edge)
-                    
                 }
             }
         }
@@ -78,6 +77,7 @@ public extension BitmapImage {
     }
     
     private func squared(_ val: Int) -> Int {return val * val}
+
     private func divMod(_ val1: UInt8, _ val2: UInt8) -> Int {
         if val1 > val2 {
             return Int(val1 - val2)
@@ -86,7 +86,6 @@ public extension BitmapImage {
         }
     }
 }
-
 
 #if canImport(UIKit)
 
@@ -112,7 +111,6 @@ extension UIImage {
     }
     
     public static func fromBitmapImage(bitmapImage: BitmapImage)-> UIImage? {
-        //var srgbArray = [UInt32](repeating: 0xFF204080, count: 8*8)
         var pixels = bitmapImage.pixels
         let cgImg = pixels.withUnsafeMutableBytes { (ptr) -> CGImage in
             let ctx = CGContext(
@@ -129,44 +127,7 @@ extension UIImage {
         }
         return UIImage(cgImage: cgImg)
     }
-    
 }
-
-/*extension UIImage {
-    
-    // MARK: - Gaussian blur
-    public func gaussian(image: UIImage, sigma: Double) -> UIImage? {
-        if let img = CIImage(image: image) {
-            if #available(iOS 10.0, *) {
-                return UIImage(ciImage: img.applyingGaussianBlur(sigma: sigma))
-            } else {
-                // Fallback on earlier versions
-            }
-        }
-        return nil
-    }
-    
-    // MARK: - Smooth the image
-    public func smoothing( sigma: Double) -> UIImage? {
-        guard let imageGaussianed = gaussian(image: self, sigma: sigma) else { return nil}
-        
-        // Convert gaussianed image to png for resize and further processing
-        guard let imageToCrop = UIImage(data: imageGaussianed.pngData()!) else { return nil}
-        
-        // Resize gaussianed image png to initial image size
-        let initialSize = CGSize(width: self.size.width, height: self.size.height)
-        
-        let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
-        
-        UIGraphicsBeginImageContextWithOptions(initialSize, false, 1.0)
-        imageToCrop.draw(in: rect)
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil}
-        UIGraphicsEndImageContext()
-        
-        return image
-    }
-}*/
-
 #endif
 
 

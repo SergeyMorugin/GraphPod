@@ -13,19 +13,17 @@ class SegmentingImageAlgorithmPerformanceTests: XCTestCase {
     
     // test performance for 100x100px image
     func testPerformanceImage1() throws {
-        let image =  UIImage(named: "test1")
-        let bitmap = image!.toBitmapImage()!
+        let image =  UIImage(named: "testImage100on100")
         self.measure {
-            let _ = SegmentingImageAlgorithm.execute(image: bitmap, threshold: 10, minSize: 10)
+            let _ = SegmentingImageAlgorithm.execute(image: image!, threshold: 10, minSize: 10)
         }
     }
     
     // test performance for 1000x1000px image
     func testPerformanceImage2() throws {
-        let image =  UIImage(named: "test2")
-        let bitmap = image!.toBitmapImage()!
+        let image =  UIImage(named: "defaultImage")
         self.measure {
-            let _ = SegmentingImageAlgorithm.execute(image: bitmap, threshold: 10, minSize: 10)
+            let _ = SegmentingImageAlgorithm.execute(image: image!, threshold: 10, minSize: 10)
         }
     }
 
