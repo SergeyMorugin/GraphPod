@@ -11,18 +11,21 @@ It includes copious in-source documentation, unit tests.
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project clone the repo and run `pod install` from the Example directory first.
 
 ## Requirements
+
+iOS 9 and more.
 
 ## Installation
 
 GraphPod is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+it simply add the following line to your Podfile:
 
-```ruby
+```
 pod 'GraphPod'
 ```
+and then `pod install`.
 
 ## Example App
 
@@ -32,8 +35,17 @@ You can run the App in the Example folder, research how it works and test algori
 
 ## Documentation
 
+### How to use GraphPod in your project
 
-##  Fast image segmentation algorithm by using Graphs
+After you add GraphPod in project it's very simple to use it - just call SegmentingImageAlgorithm.execute and pass the image you'd like to process, threshold and minimal segment size, just like that:
+
+```swift
+let processedImage = SegmentingImageAlgorithm.execute(for: imageToProcess, with: threshold, with: minPixelsInSector)
+
+```
+and then set processedImage to UIImageView or save it to library etc.
+ 
+## How it all works
 
 ### Convert input image to bitmap
 
