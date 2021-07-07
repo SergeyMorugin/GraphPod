@@ -27,7 +27,7 @@ pod 'GraphPod'
 ```
 and then `pod install`.
 
-### How to use GraphPod in your project
+## How to use GraphPod in your project
 After you add GraphPod in project it's very simple to use it
 - If you need image segmenting just call SegmentingImageAlgorithm.execute and pass the image you'd like to process, threshold and minimal segment size, just like that:
 
@@ -53,11 +53,9 @@ let processedImage = EdgeDetectionAlgorithm.execute(for: imageToProcess)
 let processedImage = BlurAlgorithm.execute(for: imageToProcess)
 ```
 
-## Example
+## Example App
 
-To run the example project clone the repo and run `pod install` from the Example directory first.
-
-### Example App
+To run the simple example project clone the repo and run `pod install` from the Example directory first.
 
 You can run the demo App in the Example folder, research how it works and test algorithms with different coefficients and save final results.
 
@@ -116,7 +114,7 @@ Finally get the result image.
 
 ### Convert input image to grayscale and smooth it
 
-We need it to reduce colors intensity and diversity to have only brightness value to make next calculation faster.
+We need it to reduce colors intensity and diversity to have only black and white brightness value to make next calculation faster.
 
 ```swift
 guard let grayScaledImage = image.convertToGrayScale() else { return defaultImage}
@@ -139,6 +137,17 @@ As a result of Sobel operator work we receive 2D gradient map for every pixel. T
 ```swift
  let edgesImage = ImageProcessing.createImageFromEdgesDetected(pixelValues: featureMatrix, width: processedImageWidth, height: processedImageHeight)
 ```
+
+
+## How Gauss blurring algorithm works
+
+### Convert input image 
+
+### Apply
+
+### Convert
+
+### Smth else
 
 
 ## Author
