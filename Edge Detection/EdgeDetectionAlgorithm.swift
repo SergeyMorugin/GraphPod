@@ -23,16 +23,16 @@ public final class EdgeDetectionAlgorithm {
         // 3 - Convert image to pixels grayscale matrix
         guard let pixelValuesFromGrayScaleImage = ImageProcessing.pixelValuesFromGrayScaleImage(imageRef: smoothedImage?.cgImage) else { return defaultImage }
 
-        // 4 - Operate and get magnitude feature matrix
-        let featureMatrix = operate(pixelValues: pixelValuesFromGrayScaleImage, height: Int(image.size.height), width: Int(image.size.width))
+        // 4 - Operate and get gradient matrix
+        let gradientMatrix = operate(pixelValues: pixelValuesFromGrayScaleImage, height: Int(image.size.height), width: Int(image.size.width))
 
-        // 5 - Convert edgemap to image
+        // 5 - Convert gradient matrix to an image
         let processedImageWidth = Int(image.size.width) - 2
         let processedImageHeight = Int(image.size.height) - 2
 
-        let edgesImage = ImageProcessing.createImageFromEdgesDetected(pixelValues: featureMatrix, width: processedImageWidth, height: processedImageHeight)
+        let processedImage = ImageProcessing.createImageFromEdgesDetected(pixelValues: gradientMatrix, width: processedImageWidth, height: processedImageHeight)
 
-        return edgesImage
+        return processedImage
     }
 }
 
@@ -76,7 +76,7 @@ public extension EdgeDetectionAlgorithm {
                 let gx = gx1 + gx2 + gx3 + gx4
                 let gy = gy1 + gy2 + gy3 + gy4
 
-                // Calculating magnitude
+                // Calculating gradient magnitude
                 var g = sqrt(Double((gx * gx) + (gy * gy)))
 
                 // Normalization

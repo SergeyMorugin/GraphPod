@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         resultImage.image = processedImage.0
 
         // Get process info text if needed
-        let resultText = "Found \(processedImage.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(imageToProcess.size.width)x\(imageToProcess.size.height)"
+        let resultText = "Found \(processedImage.1.roots.count) segments in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(imageToProcess.size.width)x\(imageToProcess.size.height)"
 
         // Show process info text
         resultLabel.text = resultText
