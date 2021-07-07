@@ -9,6 +9,8 @@
 import Foundation
 
 public final class SegmentingImageAlgorithm {
+    
+    // MARK: - Main method
     public static func execute(for image: UIImage, with threshold: Float, with minSize: Int) -> (UIImage, RootsDictionary) {
         var processedImage: UIImage
 

@@ -33,7 +33,15 @@ class ViewController: UIViewController {
         takeAPhoto()
     }
 
-    // MARK: - Run the algorithm processing
+    func takeAPhoto() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .savedPhotosAlbum
+        imagePickerController.allowsEditing = true
+        imagePickerController.delegate = self
+        UIApplication.shared.keyWindow?.rootViewController?.present(imagePickerController, animated: true)
+    }
+
+    // MARK: - Run the Segmentation algorithm processing
     @IBAction func onRunClick(_ sender: Any) {
         // Start the timer
         let startTime = CFAbsoluteTimeGetCurrent()
@@ -60,13 +68,18 @@ class ViewController: UIViewController {
         resultLabel.text = resultText
     }
 
-    // MARK: - Load image for processing
-    func takeAPhoto() {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .savedPhotosAlbum
-        imagePickerController.allowsEditing = true
-        imagePickerController.delegate = self
-        UIApplication.shared.keyWindow?.rootViewController?.present(imagePickerController, animated: true)
+    // MARK: - Run the Detect Edges algorithm processing
+    @IBAction func onDetectEdgesClick(_ sender: Any) {
+
+        // Get inital image
+        guard let imageToProcess = resultImage.image else { return }
+
+        // PROCESS THE IMAGE
+        let processedImage = EdgeDetectionAlgorithm.execute(for: imageToProcess)
+
+        // Set processed image to imageView
+        resultImage.image = processedImage
+
     }
 
     // MARK: - Save the processed image to library

@@ -19,6 +19,10 @@
 		4462D4AACB646B9C501B00E533D74215 /* Pods-GraphPod_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 156676D35E28B4D835EDAC05E57152DF /* Pods-GraphPod_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50E1300E37B12379A46E795DD350EBAC /* SegmentingImageAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC918522E8B6985176E1C11725C0F8 /* SegmentingImageAlgorithm.swift */; };
 		5A788B4F2B0A42FC7229EBD9AE7BAC02 /* Pods-GraphPod_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37368A0A363DAA3452ACD15BF9CD4CC6 /* Pods-GraphPod_Tests-dummy.m */; };
+		5B1454B62695AE0D0076C3B4 /* EdgeDetectionAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1454B52695AE0D0076C3B4 /* EdgeDetectionAlgorithm.swift */; };
+		5B1454BC2695AE4C0076C3B4 /* Extension UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1454BB2695AE4C0076C3B4 /* Extension UIImage.swift */; };
+		5B1454C32695AE7A0076C3B4 /* SobelOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1454C22695AE7A0076C3B4 /* SobelOperator.swift */; };
+		5B1454CD2695AEB20076C3B4 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1454CC2695AEB20076C3B4 /* ImageProcessing.swift */; };
 		652C90894AD9727558718ACB960088AE /* Pods-GraphPod_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A6173554FEBCBE87F1C14F66702C183 /* Pods-GraphPod_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DBC8EB7532E931C2FBDA71D1E0B66A4 /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA6E655DC84D06359BD0ED5E36C783 /* FBSnapshotTestCase-dummy.m */; };
 		866B3325E536AB7E5AF3AD14AB0DCE7B /* GraphPod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F0C3A98F506822CC16F66EDBA113A /* GraphPod-dummy.m */; };
@@ -73,7 +77,7 @@
 		0BEE06D1E78D26FA4E1CA663D890E8AD /* Pods-GraphPod_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GraphPod_Example-frameworks.sh"; sourceTree = "<group>"; };
 		0F538C426803AE34255FC6E35B408CCA /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
 		1128B5042E7469A9DAD1C20B34775E7D /* GraphPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GraphPod.release.xcconfig; sourceTree = "<group>"; };
-		13AC918522E8B6985176E1C11725C0F8 /* SegmentingImageAlgorithm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentingImageAlgorithm.swift; path = GraphPod/Classes/SegmentingImageAlgorithm.swift; sourceTree = "<group>"; };
+		13AC918522E8B6985176E1C11725C0F8 /* SegmentingImageAlgorithm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SegmentingImageAlgorithm.swift; sourceTree = "<group>"; };
 		13D8CA21576CE809673F5BAE86984EA1 /* Pods-GraphPod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		156676D35E28B4D835EDAC05E57152DF /* Pods-GraphPod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GraphPod_Example-umbrella.h"; sourceTree = "<group>"; };
 		179987082C2A7E13D2F04713FC671BAE /* Pods-GraphPod_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GraphPod_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -93,21 +97,25 @@
 		3F0D66CF296ABBC57EC4D0452397E235 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
 		4568279DE47DC3AB91598E1317503995 /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
 		46636CB1289D7A47181EE5736A790105 /* Pods-GraphPod_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		49BE08CA03829D0023E2F759269AEC6F /* app1.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = app1.jpg; path = docs/imgs/app1.jpg; sourceTree = "<group>"; };
+		49BE08CA03829D0023E2F759269AEC6F /* app1.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; name = app1.jpg; path = docs/imgs/app1.jpg; sourceTree = "<group>"; };
 		4A6F0C3A98F506822CC16F66EDBA113A /* GraphPod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GraphPod-dummy.m"; sourceTree = "<group>"; };
 		4C6513B09838318BD763CFD5390D1DE0 /* FBSnapshotTestCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.release.xcconfig; sourceTree = "<group>"; };
-		50AAF959F588643DAB4B4CF973914DB4 /* app2.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = app2.jpg; path = docs/imgs/app2.jpg; sourceTree = "<group>"; };
+		50AAF959F588643DAB4B4CF973914DB4 /* app2.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; name = app2.jpg; path = docs/imgs/app2.jpg; sourceTree = "<group>"; };
 		57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		57AB28D3DAA182ED219D497DA2FAB2F5 /* graphpod presentation.key */ = {isa = PBXFileReference; includeInIndex = 1; name = "graphpod presentation.key"; path = "docs/presentation/graphpod presentation.key"; sourceTree = "<group>"; };
-		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSnapshotTestCase.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D0370ED7F8AB3FB54EF649C3862284B /* Pods_GraphPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GraphPod_Tests.framework; path = "Pods-GraphPod_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57AB28D3DAA182ED219D497DA2FAB2F5 /* graphpod presentation.key */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "graphpod presentation.key"; path = "docs/presentation/graphpod presentation.key"; sourceTree = "<group>"; };
+		5B1454B52695AE0D0076C3B4 /* EdgeDetectionAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeDetectionAlgorithm.swift; sourceTree = "<group>"; };
+		5B1454BB2695AE4C0076C3B4 /* Extension UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension UIImage.swift"; sourceTree = "<group>"; };
+		5B1454C22695AE7A0076C3B4 /* SobelOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobelOperator.swift; sourceTree = "<group>"; };
+		5B1454CC2695AEB20076C3B4 /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
+		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0370ED7F8AB3FB54EF649C3862284B /* Pods_GraphPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		656116C8FA5458F45D4707110C9530EC /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
-		68134E5E3046443C4D38EC571DF28AFA /* Pods_GraphPod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GraphPod_Example.framework; path = "Pods-GraphPod_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68134E5E3046443C4D38EC571DF28AFA /* Pods_GraphPod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A8CD9E9E739DAE3C35AB214F8A06CD8 /* Pods-GraphPod_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GraphPod_Tests.modulemap"; sourceTree = "<group>"; };
 		6ABB3EB3CCC5BCA82F40FE8DC87BB778 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
-		6B832312101CA12F17D1CEA891CCAC81 /* GraphPod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GraphPod.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		6BA85ACADC1B3E8B7613F6DDF648FE60 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		6FF2FF0C4A9BC58400D91F4F912AEBCC /* BitmapImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BitmapImage.swift; path = GraphPod/Classes/BitmapImage.swift; sourceTree = "<group>"; };
+		6B832312101CA12F17D1CEA891CCAC81 /* GraphPod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GraphPod.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6BA85ACADC1B3E8B7613F6DDF648FE60 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6FF2FF0C4A9BC58400D91F4F912AEBCC /* BitmapImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BitmapImage.swift; sourceTree = "<group>"; };
 		7E1B7EA746BF6557FD565BAE12AF9198 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
 		80EA53D1D425C548802FEB5FE8E68450 /* Pods-GraphPod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		88B1DEEBF6316A84D7413645212492FF /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
@@ -116,25 +124,25 @@
 		9468E867498BBAF36F9AFFE4845F8B09 /* FBSnapshotTestCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.debug.xcconfig; sourceTree = "<group>"; };
 		96187BF3038121CC146335E9FF0B0AFF /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		99A67367E018411D614EC8536A8A1C5B /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
-		9AFA161A099CB0BB1F47C330D5429326 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9AFA161A099CB0BB1F47C330D5429326 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A99F6AB2DB22A801B2D828A6BB618A /* Pods-GraphPod_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Example-Info.plist"; sourceTree = "<group>"; };
 		A1A72DE6E0354AAC309A887D725DE9E7 /* Pods-GraphPod_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GraphPod_Example.modulemap"; sourceTree = "<group>"; };
-		AB608B42E7CE24E595D385AFE0DCE222 /* WGraph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WGraph.swift; path = GraphPod/Classes/WGraph.swift; sourceTree = "<group>"; };
+		AB608B42E7CE24E595D385AFE0DCE222 /* WGraph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WGraph.swift; sourceTree = "<group>"; };
 		AD5714C6C80FBA91E69E74B84E75685A /* Pods-GraphPod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE784824928B87918BC2C5F5E4B4A7F4 /* GraphPod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphPod-prefix.pch"; sourceTree = "<group>"; };
 		AE9FF9459FBCDC4AF88FB6B5A4CC1439 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
 		B0C0A67C8107186D7A590B54FC296369 /* Pods-GraphPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B7103CA00AED20722C5B69CA5B4F6938 /* FBSnapshotTestCase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FBSnapshotTestCase-Info.plist"; sourceTree = "<group>"; };
-		B84C0AE13D895AB42EEA784AABB5D54B /* GraphPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GraphPod.framework; path = GraphPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B84C0AE13D895AB42EEA784AABB5D54B /* GraphPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GraphPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C54D62D7C07627419607021EED38075E /* Pods-GraphPod_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GraphPod_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CBFF6C5FD9C3A84274A9314D3E940B6E /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
 		CFAEBBC7E999E9F2AED58E3005F2545F /* GraphPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GraphPod.debug.xcconfig; sourceTree = "<group>"; };
 		D08CEBB9BDD9EF7A662ECFC0305C169E /* FBSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
 		D872A3EE224412D4057C234FBC629F9C /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
-		E4755C29CA7A5605DDE0E3A23047304F /* DisjointSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DisjointSet.swift; path = GraphPod/Classes/DisjointSet.swift; sourceTree = "<group>"; };
+		E4755C29CA7A5605DDE0E3A23047304F /* DisjointSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DisjointSet.swift; sourceTree = "<group>"; };
 		E658F388F01C72599CA75537950B6095 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		EA4E978103EE17E05102F3405ACC830D /* RootsDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RootsDictionary.swift; path = GraphPod/Classes/RootsDictionary.swift; sourceTree = "<group>"; };
+		EA4E978103EE17E05102F3405ACC830D /* RootsDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootsDictionary.swift; sourceTree = "<group>"; };
 		FEE661E58CA6655B39AA49AA4C021C33 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +231,37 @@
 			path = "Target Support Files/Pods-GraphPod_Example";
 			sourceTree = "<group>";
 		};
+		5B1454B32695ADAC0076C3B4 /* Segmenting */ = {
+			isa = PBXGroup;
+			children = (
+				E4755C29CA7A5605DDE0E3A23047304F /* DisjointSet.swift */,
+				EA4E978103EE17E05102F3405ACC830D /* RootsDictionary.swift */,
+				13AC918522E8B6985176E1C11725C0F8 /* SegmentingImageAlgorithm.swift */,
+				AB608B42E7CE24E595D385AFE0DCE222 /* WGraph.swift */,
+				6FF2FF0C4A9BC58400D91F4F912AEBCC /* BitmapImage.swift */,
+			);
+			path = Segmenting;
+			sourceTree = "<group>";
+		};
+		5B1454B42695ADED0076C3B4 /* Edge Detection */ = {
+			isa = PBXGroup;
+			children = (
+				5B1454C12695AE680076C3B4 /* Operator */,
+				5B1454B52695AE0D0076C3B4 /* EdgeDetectionAlgorithm.swift */,
+				5B1454BB2695AE4C0076C3B4 /* Extension UIImage.swift */,
+				5B1454CC2695AEB20076C3B4 /* ImageProcessing.swift */,
+			);
+			path = "Edge Detection";
+			sourceTree = "<group>";
+		};
+		5B1454C12695AE680076C3B4 /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				5B1454C22695AE7A0076C3B4 /* SobelOperator.swift */,
+			);
+			path = Operator;
+			sourceTree = "<group>";
+		};
 		647188606C8CEE4B2AAA86EE26EC86C5 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,11 +325,8 @@
 		99183B01022DC59C81A4E520998AFAFE /* GraphPod */ = {
 			isa = PBXGroup;
 			children = (
-				6FF2FF0C4A9BC58400D91F4F912AEBCC /* BitmapImage.swift */,
-				E4755C29CA7A5605DDE0E3A23047304F /* DisjointSet.swift */,
-				EA4E978103EE17E05102F3405ACC830D /* RootsDictionary.swift */,
-				13AC918522E8B6985176E1C11725C0F8 /* SegmentingImageAlgorithm.swift */,
-				AB608B42E7CE24E595D385AFE0DCE222 /* WGraph.swift */,
+				5B1454B42695ADED0076C3B4 /* Edge Detection */,
+				5B1454B32695ADAC0076C3B4 /* Segmenting */,
 				FDCD71FFABB6037A2C3E11F61FD77137 /* Pod */,
 				823C5646CE98ABBA710AB1B1860DFB09 /* Support Files */,
 			);
@@ -328,7 +364,6 @@
 				B69B2ECE2D2C9A3924A9231138CE0BBC /* Support Files */,
 				906402ECC4C6C5EB58DD365FD2C64E92 /* SwiftSupport */,
 			);
-			name = FBSnapshotTestCase;
 			path = FBSnapshotTestCase;
 			sourceTree = "<group>";
 		};
@@ -581,9 +616,13 @@
 				6DBC8EB7532E931C2FBDA71D1E0B66A4 /* FBSnapshotTestCase-dummy.m in Sources */,
 				8CE3BF0ACE07EA42DD5DAC871BF4B767 /* FBSnapshotTestCase.m in Sources */,
 				E8AC509D18EBF21B1FEA909652A01108 /* FBSnapshotTestCasePlatform.m in Sources */,
+				5B1454C32695AE7A0076C3B4 /* SobelOperator.swift in Sources */,
 				88396E68DC05A379282F3B374F75F43C /* FBSnapshotTestController.m in Sources */,
+				5B1454B62695AE0D0076C3B4 /* EdgeDetectionAlgorithm.swift in Sources */,
+				5B1454CD2695AEB20076C3B4 /* ImageProcessing.swift in Sources */,
 				9D65089019D558E5A9661F2DCAD20313 /* SwiftSupport.swift in Sources */,
 				11C410135C7E89353B480AC8DE0BFB77 /* UIApplication+StrictKeyWindow.m in Sources */,
+				5B1454BC2695AE4C0076C3B4 /* Extension UIImage.swift in Sources */,
 				2DCFF0CE0BD295F1D46D3247F36B192C /* UIImage+Compare.m in Sources */,
 				14AD81D52FAD9CF2C065C61FB00C3B4F /* UIImage+Diff.m in Sources */,
 				A525E29E0A8079B35B793D8A2B5FBDF2 /* UIImage+Snapshot.m in Sources */,
@@ -1000,8 +1039,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
