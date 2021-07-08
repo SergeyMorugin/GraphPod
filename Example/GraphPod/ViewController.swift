@@ -45,22 +45,25 @@ class ViewController: UIViewController {
         guard let processingImage = resultImage.image else { return }
        
         print("Gauss smooth: \(CFAbsoluteTimeGetCurrent() - startTime) s.")
-        guard let image = processingImage.toBitmapImage() else { return }
+        guard var image = processingImage.toBitmapImage() else { return }
         //print(image.pixels.count)
         
-        let threshold = thresholdValues[thresholdPicker.selectedRow(inComponent: 0)]
+        /*let threshold = thresholdValues[thresholdPicker.selectedRow(inComponent: 0)]
         let minPixelsInSectro = minSizeValues[thresholdPicker.selectedRow(inComponent: 1)]
-        let result = SegmentingImageAlgorithm.execute(image: image, threshold: threshold, minSize: minPixelsInSectro)
+        let result = SegmentingImageAlgorithm.execute(image: image, threshold: threshold, minSize: minPixelsInSectro)*/
         //print(result)
-       
         
-        let im = UIImage.fromBitmapImage(bitmapImage: result!.0)
+        image = image.fastGaussBlur(r: 3)
+
+        
+        let im = UIImage.fromBitmapImage(bitmapImage: image)
         im?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
 
         resultImage.image = im
-        let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(processingImage.size.width)x\(processingImage.size.height)"
+        print(CFAbsoluteTimeGetCurrent() - startTime)
+        /*let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(processingImage.size.width)x\(processingImage.size.height)"
         print(resultText)
-        resultLabel.text = resultText
+        resultLabel.text = resultText*/
     }
     
     
