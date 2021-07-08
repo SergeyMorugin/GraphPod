@@ -241,7 +241,7 @@ extension BitmapImage {
 
     
     
-    /*func boxBlur2 (_ scl: [UInt8], _ tcl: inout [UInt8], _ r: Int) {
+    func boxBlur2 (_ scl: [UInt8], _ tcl: inout [UInt8], _ r: Int) {
         for i in (0..<height){
             for j in (0..<width){
                 var valR: Int = 0;
@@ -272,11 +272,9 @@ extension BitmapImage {
         var output2 = [UInt8].init(repeating: 0, count: width*height*bytesPerComponent)
         boxBlur2(pixels, &output1,(bxs[0]-1)/2)
         boxBlur2(output1, &output2, (bxs[1]-1)/2)
-        print(output2)
         boxBlur2(output2, &output1, (bxs[2]-1)/2)
-        print(output1)
         return BitmapImage(width: width, height: height, pixels: output1)
-    }*/
+    }
     
 }
 

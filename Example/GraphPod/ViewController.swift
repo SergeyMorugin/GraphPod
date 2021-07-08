@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         let result = SegmentingImageAlgorithm.execute(image: image, threshold: threshold, minSize: minPixelsInSectro)*/
         //print(result)
         
-        image = image.fastGaussBlur(r: 3)
+        image = image.fastGaussBlur2(r: 3)
 
         
         let im = UIImage.fromBitmapImage(bitmapImage: image)
