@@ -24,7 +24,7 @@ class BitmapImagePerformanceTests: XCTestCase {
         let bitmap = BitmapImage(width: 2, height: 2, pixels: pixels)
         var result = [Float](repeating: 0, count: 1_000_000)
         self.measure {
-            (0..<1_000_000).forEach { i in
+            for i in (0..<1_000_000) {
                 result[i] = bitmap.diff(x1: 0, y1: 0, x2: 1, y2: 1)
             }
         }
@@ -64,10 +64,10 @@ class BitmapImagePerformanceTests: XCTestCase {
         self.measure {
             var result = [Float](repeating: 0, count: 1_000_000)
             let dispatchGroup = DispatchGroup()
-            (0..<10).forEach { i in
+            for i in (0..<2){
                 dispatchGroup.enter()
                 DispatchQueue.global(qos: .userInteractive).async {
-                    (0..<100_000).forEach { j in
+                    for j in (0..<500_000) {
                         let _ = bitmap.diff(x1: 0, y1: 0, x2: 1, y2: 1)
                     }
                     dispatchGroup.leave()
