@@ -59,9 +59,9 @@ To run the simple example project clone the repo and run `pod install` from the 
 
 You can run the demo App in the Example folder, research how it works and test algorithms with different coefficients and save final results.
 
-![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app3.jpg?raw=true)
-![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app4.jpg?raw=true)
-![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app5.jpg?raw=true)
+![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app3b.png?raw=true){:height="35%" width="35%"}
+![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app4b.png?raw=true)){:height="35%" width="35%"}
+![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app5b.png?raw=true)){:height="35%" width="35%"}
 
 
 ## How Segmenting algorithm works
