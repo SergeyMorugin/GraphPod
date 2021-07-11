@@ -18,5 +18,12 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "GraphPod/Classes/**/*"
+  "source_files": "GraphPod/Classes/**/*",
+  "testspecs": [
+    {
+      "name": "Tests",
+      "test_type": "unit",
+      "source_files": "Example/Tests/*.{swift}"
+    }
+  ]
 }

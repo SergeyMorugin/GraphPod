@@ -8,6 +8,9 @@
 
 import UIKit
 import GraphPod
+import Metal
+
+public class SomeClassFromMyShaderFramework {}
 
 class ViewController: UIViewController {
     @IBOutlet weak var thresholdPicker: UIPickerView!
@@ -17,6 +20,87 @@ class ViewController: UIViewController {
     let thresholdValues: [Float] = [0.01,0.1,1,5,10,20,50,100,200,300]
     let minSizeValues = [1,5,10,20,50,100,200,300, 500, 1000,10000]
 
+    
+    func runMetal() {
+        let count = 50_000_000
+        let elementsPerSum = 10_000
+
+        // Data type, has to be the same as in the shader
+        typealias DataType = CInt
+
+        let device = MTLCreateSystemDefaultDevice()!
+        
+        /*let frameworkBundle = Bundle(for: SomeClassFromMyShaderFramework.self)
+        guard let library = try? device.makeDefaultLibrary(bundle: frameworkBundle) else {
+            fatalError("Could not load default library from specified bundle")
+        }*/
+        let library = device.makeDefaultLibrary()
+        //let library = self.library(device: device)
+        let parsum = library!.makeFunction(name: "parsum")!
+        let pipeline = try! device.makeComputePipelineState(function: parsum)
+
+        // Our data, randomly generated:
+        var data = (0..<count).map{ _ in DataType(arc4random_uniform(100)) }
+        var dataCount = CUnsignedInt(count)
+        var elementsPerSumC = CUnsignedInt(elementsPerSum)
+        // Number of individual results = count / elementsPerSum (rounded up):
+        let resultsCount = (count + elementsPerSum - 1) / elementsPerSum
+
+        // Our data in a buffer (copied):
+        let dataBuffer = device.makeBuffer(bytes: &data, length: MemoryLayout<DataType>.stride * count, options: [])!
+        // A buffer for individual results (zero initialized)
+        let resultsBuffer = device.makeBuffer(length: MemoryLayout<DataType>.stride * resultsCount, options: [])!
+        // Our results in convenient form to compute the actual result later:
+        let pointer = resultsBuffer.contents().bindMemory(to: DataType.self, capacity: resultsCount)
+        let results = UnsafeBufferPointer<DataType>(start: pointer, count: resultsCount)
+
+        let queue = device.makeCommandQueue()!
+        let cmds = queue.makeCommandBuffer()!
+        let encoder = cmds.makeComputeCommandEncoder()!
+
+        encoder.setComputePipelineState(pipeline)
+
+        encoder.setBuffer(dataBuffer, offset: 0, index: 0)
+
+        encoder.setBytes(&dataCount, length: MemoryLayout<CUnsignedInt>.size, index: 1)
+        encoder.setBuffer(resultsBuffer, offset: 0, index: 2)
+        encoder.setBytes(&elementsPerSumC, length: MemoryLayout<CUnsignedInt>.size, index: 3)
+
+        // We have to calculate the sum `resultCount` times => amount of threadgroups is `resultsCount` / `threadExecutionWidth` (rounded up) because each threadgroup will process `threadExecutionWidth` threads
+        let threadgroupsPerGrid = MTLSize(width: (resultsCount + pipeline.threadExecutionWidth - 1) / pipeline.threadExecutionWidth, height: 1, depth: 1)
+
+        // Here we set that each threadgroup should process `threadExecutionWidth` threads, the only important thing for performance is that this number is a multiple of `threadExecutionWidth` (here 1 times)
+        let threadsPerThreadgroup = MTLSize(width: pipeline.threadExecutionWidth, height: 1, depth: 1)
+
+        encoder.dispatchThreadgroups(threadgroupsPerGrid, threadsPerThreadgroup: threadsPerThreadgroup)
+        encoder.endEncoding()
+
+        var start, end : UInt64
+        var result : DataType = 0
+
+        start = mach_absolute_time()
+        cmds.commit()
+        cmds.waitUntilCompleted()
+        for elem in results {
+            //result += elem
+        }
+
+        end = mach_absolute_time()
+
+        print("Metal result: \(result), time: \(Double(end - start) / Double(NSEC_PER_SEC))")
+        result = 0
+
+        start = mach_absolute_time()
+        data.withUnsafeBufferPointer { buffer in
+            for elem in buffer {
+                //result += elem
+            }
+        }
+        end = mach_absolute_time()
+
+        print("CPU result: \(result), time: \(Double(end - start) / Double(NSEC_PER_SEC))")
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +122,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onRunClick(_ sender: Any) {
+        
         print("Run")
+        runMetal()
+        return
         
         let startTime = CFAbsoluteTimeGetCurrent()
         // Get inital image

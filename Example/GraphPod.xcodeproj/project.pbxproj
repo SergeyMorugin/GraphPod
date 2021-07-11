@@ -14,24 +14,17 @@
 		3420FB512690BD8100D7AC2F /* WGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB4C2690BD8100D7AC2F /* WGraphTests.swift */; };
 		3420FB542690BFD600D7AC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3420FB522690BFD600D7AC2F /* Main.storyboard */; };
 		3420FB552690C13B00D7AC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3420FB522690BFD600D7AC2F /* Main.storyboard */; };
-		3493469A2690D26400FF727C /* BitmapImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB4A2690BD8100D7AC2F /* BitmapImageTests.swift */; };
-		3493469B2690D26400FF727C /* DisjointSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB4B2690BD8100D7AC2F /* DisjointSetTests.swift */; };
-		3493469C2690D26400FF727C /* BitmapColorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB492690BD8100D7AC2F /* BitmapColorTest.swift */; };
-		3493469D2690D26400FF727C /* WGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB4C2690BD8100D7AC2F /* WGraphTests.swift */; };
-		3493469E2690D26400FF727C /* RootsDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420FB482690BD8100D7AC2F /* RootsDictionaryTests.swift */; };
 		349346A22690D26400FF727C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3420FB522690BFD600D7AC2F /* Main.storyboard */; };
 		349346B22690D30D00FF727C /* BitmapImagePerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AB2690D30900FF727C /* BitmapImagePerformanceTests.swift */; };
 		349346B32690D31000FF727C /* DisjointSetPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AD2690D30900FF727C /* DisjointSetPerformanceTests.swift */; };
 		349346B42690D31400FF727C /* SegmentingImageAlgorithmPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AC2690D30900FF727C /* SegmentingImageAlgorithmPerformanceTests.swift */; };
 		349346B52690D31800FF727C /* WGraphPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AA2690D30900FF727C /* WGraphPerformanceTests.swift */; };
-		34ED369E2691C92500E05B0E /* BitmapImagePerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AB2690D30900FF727C /* BitmapImagePerformanceTests.swift */; };
-		34ED369F2691C92800E05B0E /* DisjointSetPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AD2690D30900FF727C /* DisjointSetPerformanceTests.swift */; };
-		34ED36A02691C92B00E05B0E /* SegmentingImageAlgorithmPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AC2690D30900FF727C /* SegmentingImageAlgorithmPerformanceTests.swift */; };
-		34ED36A12691C92E00E05B0E /* WGraphPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AA2690D30900FF727C /* WGraphPerformanceTests.swift */; };
+		34EE8565269AD1960074ABD0 /* parsum.metal in Sources */ = {isa = PBXBuildFile; fileRef = 34EE8564269AD1960074ABD0 /* parsum.metal */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		76A3CC76E83308F0D2DB5136 /* Pods_GraphPod_Performance_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700F73D005DA2B5851FAD2C6 /* Pods_GraphPod_Performance_Tests.framework */; };
 		8E5941D03191FD204D4CE139 /* Pods_GraphPod_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68476C214C82A0642A5F81C1 /* Pods_GraphPod_Tests.framework */; };
 		F1852C5040C3C539F9361D20 /* Pods_GraphPod_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F027625DA31DC9E35FB30E3B /* Pods_GraphPod_Example.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25ECE254FFB03DC3BF3EE537 /* Pods-GraphPod_Performance_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Performance_Tests.release.xcconfig"; path = "Target Support Files/Pods-GraphPod_Performance_Tests/Pods-GraphPod_Performance_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2DCC70612667804A3FC0AE0B /* Pods-GraphPod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Example.debug.xcconfig"; path = "Target Support Files/Pods-GraphPod_Example/Pods-GraphPod_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3420FB482690BD8100D7AC2F /* RootsDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootsDictionaryTests.swift; sourceTree = "<group>"; };
 		3420FB492690BD8100D7AC2F /* BitmapColorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmapColorTest.swift; sourceTree = "<group>"; };
@@ -61,12 +55,13 @@
 		3420FB4B2690BD8100D7AC2F /* DisjointSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisjointSetTests.swift; sourceTree = "<group>"; };
 		3420FB4C2690BD8100D7AC2F /* WGraphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGraphTests.swift; sourceTree = "<group>"; };
 		3420FB532690BFD600D7AC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		349346A72690D26400FF727C /* GraphPod_Performance_Tests .xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GraphPod_Performance_Tests .xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		349346A72690D26400FF727C /* GraphPod_Performance_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphPod_Performance_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		349346A82690D26500FF727C /* GraphPod_Tests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GraphPod_Tests copy-Info.plist"; path = "/Users/matthew/Documents/IOSProjects/Geekbrains/GraphPod/Example/GraphPod_Tests copy-Info.plist"; sourceTree = "<absolute>"; };
 		349346AA2690D30900FF727C /* WGraphPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGraphPerformanceTests.swift; sourceTree = "<group>"; };
 		349346AB2690D30900FF727C /* BitmapImagePerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmapImagePerformanceTests.swift; sourceTree = "<group>"; };
 		349346AC2690D30900FF727C /* SegmentingImageAlgorithmPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentingImageAlgorithmPerformanceTests.swift; sourceTree = "<group>"; };
 		349346AD2690D30900FF727C /* DisjointSetPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisjointSetPerformanceTests.swift; sourceTree = "<group>"; };
+		34EE8564269AD1960074ABD0 /* parsum.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = parsum.metal; sourceTree = "<group>"; };
 		38348CD0814D2C49D565008C /* Pods-GraphPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Example.release.xcconfig"; path = "Target Support Files/Pods-GraphPod_Example/Pods-GraphPod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		423091CABFAD2C9C5D6E0645 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* GraphPod_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphPod_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,11 +73,13 @@
 		607FACE51AFB9204008FA782 /* GraphPod_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphPod_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68476C214C82A0642A5F81C1 /* Pods_GraphPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		700F73D005DA2B5851FAD2C6 /* Pods_GraphPod_Performance_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Performance_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		721E46F95328FF0E90AE3B40 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		75289DD11DD289840E9457C5 /* Pods-GraphPod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Tests.debug.xcconfig"; path = "Target Support Files/Pods-GraphPod_Tests/Pods-GraphPod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		83BCC48F45AA899F6799C15E /* Pods-GraphPod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Tests.release.xcconfig"; path = "Target Support Files/Pods-GraphPod_Tests/Pods-GraphPod_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C35D1F3E0E0ADD77D75B48CC /* GraphPod.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GraphPod.podspec; path = ../GraphPod.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F027625DA31DC9E35FB30E3B /* Pods_GraphPod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5DB7B52D525279D547D242 /* Pods-GraphPod_Performance_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Performance_Tests.debug.xcconfig"; path = "Target Support Files/Pods-GraphPod_Performance_Tests/Pods-GraphPod_Performance_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A3CC76E83308F0D2DB5136 /* Pods_GraphPod_Performance_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +140,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* GraphPod_Example.app */,
 				607FACE51AFB9204008FA782 /* GraphPod_Tests.xctest */,
-				349346A72690D26400FF727C /* GraphPod_Performance_Tests .xctest */,
+				349346A72690D26400FF727C /* GraphPod_Performance_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +154,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				34EE8564269AD1960074ABD0 /* parsum.metal */,
 			);
 			name = "Example for GraphPod";
 			path = GraphPod;
@@ -205,6 +204,7 @@
 			children = (
 				F027625DA31DC9E35FB30E3B /* Pods_GraphPod_Example.framework */,
 				68476C214C82A0642A5F81C1 /* Pods_GraphPod_Tests.framework */,
+				700F73D005DA2B5851FAD2C6 /* Pods_GraphPod_Performance_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -216,6 +216,8 @@
 				38348CD0814D2C49D565008C /* Pods-GraphPod_Example.release.xcconfig */,
 				75289DD11DD289840E9457C5 /* Pods-GraphPod_Tests.debug.xcconfig */,
 				83BCC48F45AA899F6799C15E /* Pods-GraphPod_Tests.release.xcconfig */,
+				FC5DB7B52D525279D547D242 /* Pods-GraphPod_Performance_Tests.debug.xcconfig */,
+				25ECE254FFB03DC3BF3EE537 /* Pods-GraphPod_Performance_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -223,22 +225,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		349346952690D26400FF727C /* GraphPod_Performance_Tests  */ = {
+		349346952690D26400FF727C /* GraphPod_Performance_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 349346A42690D26400FF727C /* Build configuration list for PBXNativeTarget "GraphPod_Performance_Tests " */;
+			buildConfigurationList = 349346A42690D26400FF727C /* Build configuration list for PBXNativeTarget "GraphPod_Performance_Tests" */;
 			buildPhases = (
+				0CF95D0F5FF84E421769EB3F /* [CP] Check Pods Manifest.lock */,
 				349346992690D26400FF727C /* Sources */,
 				3493469F2690D26400FF727C /* Frameworks */,
 				349346A12690D26400FF727C /* Resources */,
+				2931FD31D6F0BEFA608416BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				349346962690D26400FF727C /* PBXTargetDependency */,
 			);
-			name = "GraphPod_Performance_Tests ";
+			name = GraphPod_Performance_Tests;
 			productName = Tests;
-			productReference = 349346A72690D26400FF727C /* GraphPod_Performance_Tests .xctest */;
+			productReference = 349346A72690D26400FF727C /* GraphPod_Performance_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		607FACCF1AFB9204008FA782 /* GraphPod_Example */ = {
@@ -320,7 +324,7 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* GraphPod_Example */,
 				607FACE41AFB9204008FA782 /* GraphPod_Tests */,
-				349346952690D26400FF727C /* GraphPod_Performance_Tests  */,
+				349346952690D26400FF727C /* GraphPod_Performance_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -355,6 +359,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0CF95D0F5FF84E421769EB3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GraphPod_Performance_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2931FD31D6F0BEFA608416BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphPod_Performance_Tests/Pods-GraphPod_Performance_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GraphPod_Performance_Tests/Pods-GraphPod_Performance_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4BBC8ACE6F4460C62081C82E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,15 +486,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3493469A2690D26400FF727C /* BitmapImageTests.swift in Sources */,
 				349346B42690D31400FF727C /* SegmentingImageAlgorithmPerformanceTests.swift in Sources */,
 				349346B52690D31800FF727C /* WGraphPerformanceTests.swift in Sources */,
 				349346B32690D31000FF727C /* DisjointSetPerformanceTests.swift in Sources */,
 				349346B22690D30D00FF727C /* BitmapImagePerformanceTests.swift in Sources */,
-				3493469B2690D26400FF727C /* DisjointSetTests.swift in Sources */,
-				3493469C2690D26400FF727C /* BitmapColorTest.swift in Sources */,
-				3493469D2690D26400FF727C /* WGraphTests.swift in Sources */,
-				3493469E2690D26400FF727C /* RootsDictionaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34EE8565269AD1960074ABD0 /* parsum.metal in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -468,10 +508,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3420FB4F2690BD8100D7AC2F /* BitmapImageTests.swift in Sources */,
-				34ED36A02691C92B00E05B0E /* SegmentingImageAlgorithmPerformanceTests.swift in Sources */,
-				34ED36A12691C92E00E05B0E /* WGraphPerformanceTests.swift in Sources */,
-				34ED369F2691C92800E05B0E /* DisjointSetPerformanceTests.swift in Sources */,
-				34ED369E2691C92500E05B0E /* BitmapImagePerformanceTests.swift in Sources */,
 				3420FB502690BD8100D7AC2F /* DisjointSetTests.swift in Sources */,
 				3420FB4E2690BD8100D7AC2F /* BitmapColorTest.swift in Sources */,
 				3420FB512690BD8100D7AC2F /* WGraphTests.swift in Sources */,
@@ -516,6 +552,7 @@
 /* Begin XCBuildConfiguration section */
 		349346A52690D26400FF727C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5DB7B52D525279D547D242 /* Pods-GraphPod_Performance_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -537,6 +574,7 @@
 		};
 		349346A62690D26400FF727C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25ECE254FFB03DC3BF3EE537 /* Pods-GraphPod_Performance_Tests.release.xcconfig */;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -737,7 +775,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		349346A42690D26400FF727C /* Build configuration list for PBXNativeTarget "GraphPod_Performance_Tests " */ = {
+		349346A42690D26400FF727C /* Build configuration list for PBXNativeTarget "GraphPod_Performance_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				349346A52690D26400FF727C /* Debug */,
