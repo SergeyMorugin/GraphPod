@@ -160,14 +160,11 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
 
     // MARK: - Extract image
     private func extractImage(from info: [UIImagePickerController.InfoKey: Any]) -> UIImage? {
-        // Пытаемся извлечь отредактированное изображение
         if let image = info[.editedImage] as? UIImage {
             return image
-            // Пытаемся извлечь оригинальное
         } else if let image = info[.originalImage] as? UIImage {
             return image
         } else {
-            // Если изображение не получено, возвращаем nil
             return nil
         }
     }

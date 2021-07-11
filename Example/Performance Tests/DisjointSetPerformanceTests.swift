@@ -17,7 +17,6 @@ class DisjointSetPerformanceTests: XCTestCase {
         }
     }
     
-    
     func testColorizeBitmap() throws {
         let disjointSet = DisjointSet.init(count: 10000)
         self.measure {
