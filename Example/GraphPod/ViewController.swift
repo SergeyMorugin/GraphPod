@@ -94,8 +94,8 @@ class ViewController: UIViewController {
     func setPicker() {
         self.thresholdPicker.delegate = self
         self.thresholdPicker.dataSource = self
-        thresholdPicker.selectRow(4, inComponent: 0, animated: false)
-        thresholdPicker.selectRow(2, inComponent: 1, animated: false)
+        thresholdPicker.selectRow(9, inComponent: 0, animated: false)
+        thresholdPicker.selectRow(7, inComponent: 1, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
