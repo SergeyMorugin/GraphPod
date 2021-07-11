@@ -5,39 +5,69 @@
 [![License](https://img.shields.io/cocoapods/l/GraphPod.svg?style=flat)](https://cocoapods.org/pods/GraphPod)
 [![Platform](https://img.shields.io/cocoapods/p/GraphPod.svg?style=flat)](https://cocoapods.org/pods/GraphPod)
 
-GraphPod is a pure Swift implementation of an image segmentation functionality based on weighted graph, Kruskal algorithm and disjoint-set data structure. GraphPod allows you to upload any image or use camera's one or choose any from saved in Photo library and get the segmented image as a result for further processing in machine learning.
+GraphPod is a pure Swift implemented library for image processing. GraphPod can:
+ - Segment the image based on weighted graph, Kruskal algorithm and disjoint-set data structure.
+ - GraphPod can detect image objects edges - it is done with Sobel operator applying. 
+ - Graphod can blur the image using direct gauss blurring. You don't need to import UIKit.
+ - GraphPod allows you to upload any image or use camera's one or choose any from saved in Photo library and get the processed image as a result for further processing in machine learning.
 
 It includes copious in-source documentation, unit tests.
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 ## Requirements
+
+iOS 9 and more.
 
 ## Installation
 
 GraphPod is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+it simply add the following line to your Podfile:
 
-```ruby
+```swift
 pod 'GraphPod'
+```
+and then `pod install`.
+
+## How to use GraphPod in your project
+After you add GraphPod in project it's very simple to use it
+- If you need image segmenting just call SegmentingImageAlgorithm.execute and pass the image you'd like to process, threshold and minimal segment size, just like that:
+
+```swift
+let processedImage = SegmentingImageAlgorithm.execute(for: imageToProcess, with: threshold, with: minPixelsInSector)
+```
+and then set processedImage to UIImageView or save it to library or whatever you prefer.
+Read more about threshold and minPixelsInSector below.
+
+
+
+- If you need to detect edges call EdgeDetectionAlgorithm.execute and pass the image to process:
+
+```swift
+let processedImage = EdgeDetectionAlgorithm.execute(for: imageToProcess)
+```
+
+
+
+- To blur the image call BlurAlgorithm.execute:
+
+```swift
+let processedImage = BlurAlgorithm.execute(for: imageToProcess)
 ```
 
 ## Example App
 
-You can run the App in the Example folder, research how it works and test algorithms with different coefficients, save results.
+To run the simple example project clone the repo and run `pod install` from the Example directory first.
 
-![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-optimizing-1/docs/imgs/app2.jpg?raw=true)
+You can run the demo App in the Example folder, research how it works and test algorithms with different coefficients and save final results.
 
-## Documentation
+![simulator1](https://user-images.githubusercontent.com/63192967/124740431-784b9200-df23-11eb-96c2-b6cedcceacb8.png)
+![simulator2](https://user-images.githubusercontent.com/63192967/124749888-78508f80-df2d-11eb-93ef-3ce18caeaa46.png)
 
 
-##  Fast image segmentation algorithm by using Graphs
+## How Segmenting algorithm works
 
 ### Convert input image to bitmap
 
-The library works just with our BitmapImage format image data. It requres to convert UIImage to BitmapImage format as below.
+The library works with BitmapImage data format. First we need to convert UIImage to Bitmap format as below as Bitmap gives best efficiency in loop iterating through image pixels color data.
 
 ```swift
 let bitmapImage = UIImage(named:"testImage").toBitmapImage()
@@ -52,12 +82,12 @@ Smoothing is necessary to smooth the neighbor pixels intensity and make it easie
 Graph is a data structure with every image pixel as a vertex and edges between four neighbor pixels. We need weighted graph here as an image segment will be created according to each edge weight. As a weight we take neighbored pixels rgb intensity difference.
 
 ```swift
-var wGrath = bitmapImage.createWGraph()
+var wGraph = bitmapImage.createWGraph()
 ```
 
-### Create segments using disjoint-set data structure and threshold coefficient
+### Create segments using disjoint-set data structure, threshold and minPixelsInSector coefficients
 
-Segment is a pixels group combined together by edges weight between them. If edge weight is below threshold it will be grouped into segment that means one and only parent pixel (in other words "tree root") will be set for this pair. 
+Segment is a pixels group combined together by edges weight between them. If edge weight is below threshold it will be grouped into one segment that means one and only parent pixel (other words "tree root") will be set for this pair. Segment size defined by minPixelsInSector value. The more minPixelsInSector the more segment size.
 
 ```swift
 let pixelsCombinedInSegments = wGrath.createSegmentSets(threshold: threshold, minSize: minSize)
@@ -78,6 +108,47 @@ Bitmap allows us to create result image with the best performance.
 ### Convert bitmap to UIImage
 
 Finally get the result image.
+
+
+## How Edge detection algorithm works
+
+### Convert input image to grayscale and smooth it
+
+We need it to reduce colors intensity and diversity to have only black and white brightness value to make next calculation faster.
+
+```swift
+guard let grayScaledImage = image.convertToGrayScale() else { return defaultImage}
+
+let smoothedImage = grayScaledImage.smoothing(sigma: 0.6)
+```
+
+### Next we convert grayscaled smoothed image to pixels color intensity array
+
+```swift
+ guard let pixelValuesFromGrayScaleImage = ImageProcessing.pixelValuesFromGrayScaleImage(imageRef: smoothedImage?.cgImage) else { return defaultImage }
+```
+### Then we apply Sobel operator to each element in this array
+
+It gives us brightness gradient value for each pixel. It shows us how intense the brightness fluctuation in each pixel. If brightness change of a neighbor pixel  is bigger than chosen one it means we got an edge.
+
+### Convert gradient matrix into image
+
+As a result of Sobel operator work we receive 2D gradient map for every pixel. This map we can convert to an image:
+```swift
+ let edgesImage = ImageProcessing.createImageFromEdgesDetected(pixelValues: featureMatrix, width: processedImageWidth, height: processedImageHeight)
+```
+
+
+## How Gauss blurring algorithm works
+
+### Convert input image 
+
+### Apply
+
+### Convert
+
+### Smth else
+
 
 ## Author
 
