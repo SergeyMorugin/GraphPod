@@ -81,7 +81,26 @@ class ViewController: UIViewController {
         resultImage.image = processedImage
 
     }
+    
+    @IBAction func onGaussBlurClick(_ sender: Any) {
+        // Start the timer
+        let startTime = CFAbsoluteTimeGetCurrent()
 
+        // Get inital image
+        guard let imageToProcess = resultImage.image else { return }
+
+        // Set processed image to imageView
+        guard let bitmapImage = imageToProcess.toBitmapImage() else { return }
+        guard let imageToProcess = UIImage.fromBitmapImage(bitmapImage: bitmapImage) else {return}
+        guard let bitmapImage = imageToProcess.toBitmapImage() else { return }
+        let blurredImage = bitmapImage.fastGaussBlur(radius: 3)
+        
+        resultImage.image = UIImage.fromBitmapImage(bitmapImage: blurredImage)
+        // Show process info text
+        resultLabel.text =  "Gauss blur in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s" +
+            " for image \(imageToProcess.size.width)x\(imageToProcess.size.height)"
+    }
+    
     // MARK: - Save the processed image to library
     @IBAction func onSaveImageClick(_ sender: Any) {
         guard let image = resultImage.image else {
@@ -118,7 +137,6 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         } else {
             return minSizeValues.count
         }
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
