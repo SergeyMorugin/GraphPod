@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import GraphPod
+import GraphPod
 
 
 class BitmapImagePerformanceTests: XCTestCase {

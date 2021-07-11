@@ -8,171 +8,172 @@
 
 /* Begin PBXBuildFile section */
 		00224C929D57F45B70E87359E719948D /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE661E58CA6655B39AA49AA4C021C33 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		063064BB0B9112C84869668CEFC8FE2F /* BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89279A46D7B91F5050C7D2DB5000758A /* BitmapImage.swift */; };
 		11C410135C7E89353B480AC8DE0BFB77 /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F538C426803AE34255FC6E35B408CCA /* UIApplication+StrictKeyWindow.m */; };
 		121439AB6B4061E1B6222256817548FA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E658F388F01C72599CA75537950B6095 /* XCTest.framework */; };
 		14AD81D52FAD9CF2C065C61FB00C3B4F /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = 4568279DE47DC3AB91598E1317503995 /* UIImage+Diff.m */; };
-		1DE0F11A1C1075B02189000C3F05FB82 /* Pods-GraphPod_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B21A6C1739A1EE5A3CEC0F9B15CAE7 /* Pods-GraphPod_Example-dummy.m */; };
+		1DE0F11A1C1075B02189000C3F05FB82 /* Pods-GraphPod_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC8C1EC91AF8B6C02F621803E30E238 /* Pods-GraphPod_Example-dummy.m */; };
+		1F7690F9D0197038ADAD52A46B514F29 /* SobelOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309B3C0C0B5A00624B53B6638A6132D /* SobelOperator.swift */; };
+		2C2205B8EE9AB1CBEF9D70DBD4DF61BA /* Pods-GraphPod_Performance_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C720AEE26DFBCEBF8332B615A0A02FA /* Pods-GraphPod_Performance_Tests-dummy.m */; };
 		2DCFF0CE0BD295F1D46D3247F36B192C /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 235A78CFFA6D8B8D86CACD733531CB13 /* UIImage+Compare.m */; };
 		2E4C0BD2363ABABB6470FBA5415985AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3280BB5E7B57C31D41117A74F76E9DF3 /* QuartzCore.framework */; };
-		345D2B772695CCA400EF22F8 /* EdgeDetectionAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B722695CCA400EF22F8 /* EdgeDetectionAlgorithm.swift */; };
-		345D2B782695CCA400EF22F8 /* EdgeDetectionAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B722695CCA400EF22F8 /* EdgeDetectionAlgorithm.swift */; };
-		345D2B792695CCA400EF22F8 /* EdgeDetectionAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B722695CCA400EF22F8 /* EdgeDetectionAlgorithm.swift */; };
-		345D2B7A2695CCA400EF22F8 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B732695CCA400EF22F8 /* ImageProcessing.swift */; };
-		345D2B7B2695CCA400EF22F8 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B732695CCA400EF22F8 /* ImageProcessing.swift */; };
-		345D2B7C2695CCA400EF22F8 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B732695CCA400EF22F8 /* ImageProcessing.swift */; };
-		345D2B7D2695CCA400EF22F8 /* Extension UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B742695CCA400EF22F8 /* Extension UIImage.swift */; };
-		345D2B7E2695CCA400EF22F8 /* Extension UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B742695CCA400EF22F8 /* Extension UIImage.swift */; };
-		345D2B7F2695CCA400EF22F8 /* Extension UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B742695CCA400EF22F8 /* Extension UIImage.swift */; };
-		345D2B802695CCA400EF22F8 /* SobelOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B762695CCA400EF22F8 /* SobelOperator.swift */; };
-		345D2B812695CCA400EF22F8 /* SobelOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B762695CCA400EF22F8 /* SobelOperator.swift */; };
-		345D2B822695CCA400EF22F8 /* SobelOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B762695CCA400EF22F8 /* SobelOperator.swift */; };
-		345D2B832695CCB400EF22F8 /* RootsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B682695CC8300EF22F8 /* RootsDictionary.swift */; };
-		345D2B842695CCB400EF22F8 /* RootsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B682695CC8300EF22F8 /* RootsDictionary.swift */; };
-		345D2B852695CCB500EF22F8 /* RootsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B682695CC8300EF22F8 /* RootsDictionary.swift */; };
-		345D2B862695CCB900EF22F8 /* DisjointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B6A2695CC8300EF22F8 /* DisjointSet.swift */; };
-		345D2B872695CCB900EF22F8 /* DisjointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B6A2695CC8300EF22F8 /* DisjointSet.swift */; };
-		345D2B882695CCBA00EF22F8 /* DisjointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B6A2695CC8300EF22F8 /* DisjointSet.swift */; };
-		345D2B892695CCC000EF22F8 /* WGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B6B2695CC8300EF22F8 /* WGraph.swift */; };
-		345D2B8A2695CCC100EF22F8 /* WGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B6B2695CC8300EF22F8 /* WGraph.swift */; };
-		345D2B8B2695CCC100EF22F8 /* WGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B6B2695CC8300EF22F8 /* WGraph.swift */; };
-		345D2B8C2695CCCA00EF22F8 /* SegmentingImageAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B692695CC8300EF22F8 /* SegmentingImageAlgorithm.swift */; };
-		345D2B8D2695CCCA00EF22F8 /* SegmentingImageAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B692695CC8300EF22F8 /* SegmentingImageAlgorithm.swift */; };
-		345D2B8E2695CCCB00EF22F8 /* SegmentingImageAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B692695CC8300EF22F8 /* SegmentingImageAlgorithm.swift */; };
-		345D2B8F2695CCD100EF22F8 /* BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B672695CC8300EF22F8 /* BitmapImage.swift */; };
-		345D2B902695CCD200EF22F8 /* BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B672695CC8300EF22F8 /* BitmapImage.swift */; };
-		345D2B912695CCD300EF22F8 /* BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2B672695CC8300EF22F8 /* BitmapImage.swift */; };
 		40039E0AF0D764360B1D4FC4F7950D2E /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A67367E018411D614EC8536A8A1C5B /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4462D4AACB646B9C501B00E533D74215 /* Pods-GraphPod_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 156676D35E28B4D835EDAC05E57152DF /* Pods-GraphPod_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A788B4F2B0A42FC7229EBD9AE7BAC02 /* Pods-GraphPod_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37368A0A363DAA3452ACD15BF9CD4CC6 /* Pods-GraphPod_Tests-dummy.m */; };
-		652C90894AD9727558718ACB960088AE /* Pods-GraphPod_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A6173554FEBCBE87F1C14F66702C183 /* Pods-GraphPod_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40451E97EB2DFDAE2AF492A25B324F0E /* SegmentingImageAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B80F5860CB3AE11F46E86F17424E3 /* SegmentingImageAlgorithm.swift */; };
+		41822EBD07285274CA01EB97468A392F /* WGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9875727E76747E8D04ABA7B6A1AC57B /* WGraph.swift */; };
+		4462D4AACB646B9C501B00E533D74215 /* Pods-GraphPod_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F2E03EB4843FD0E369EB534BF310009 /* Pods-GraphPod_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56BC212432FA981F4D41BE8DAF35EEEF /* GraphPod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F68968B682E08EAC10066BE2EB7E3D19 /* GraphPod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A788B4F2B0A42FC7229EBD9AE7BAC02 /* Pods-GraphPod_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A71DD685809D4CF26C0829848FB30E6B /* Pods-GraphPod_Tests-dummy.m */; };
+		63C8E5F8D3A67B3486E254681189A31F /* Extension UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D97C9195593FC1FE441C5B59725011 /* Extension UIImage.swift */; };
+		652C90894AD9727558718ACB960088AE /* Pods-GraphPod_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 833A57F8C9C28050D2B499C3AB52F06A /* Pods-GraphPod_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DBC8EB7532E931C2FBDA71D1E0B66A4 /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA6E655DC84D06359BD0ED5E36C783 /* FBSnapshotTestCase-dummy.m */; };
-		866B3325E536AB7E5AF3AD14AB0DCE7B /* GraphPod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F0C3A98F506822CC16F66EDBA113A /* GraphPod-dummy.m */; };
+		7DF52E52DA84C8937679457803D3EE7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		88396E68DC05A379282F3B374F75F43C /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B7EA746BF6557FD565BAE12AF9198 /* FBSnapshotTestController.m */; };
+		89AAEF0DA48648B8DCDF66C648F0188F /* DisjointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55AD9E66B61E2EA0900FDAD05C3D6D4 /* DisjointSet.swift */; };
 		8CE3BF0ACE07EA42DD5DAC871BF4B767 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 277B6BE10C665F515606A22FD60C6DCC /* FBSnapshotTestCase.m */; };
 		90142C6259374E18E640396A59AD379A /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9FF9459FBCDC4AF88FB6B5A4CC1439 /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95F67482EC146F76EB84955DF5659F1E /* GraphPod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F96C295DF16BBA40A67FD99E9D86B464 /* GraphPod-dummy.m */; };
 		973B5E5E0254E005FE2EB5F0D4B26C7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
-		985675EC1A7F3BCD2D0458638249605F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		9D65089019D558E5A9661F2DCAD20313 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0D66CF296ABBC57EC4D0452397E235 /* SwiftSupport.swift */; };
 		A525E29E0A8079B35B793D8A2B5FBDF2 /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = D872A3EE224412D4057C234FBC629F9C /* UIImage+Snapshot.m */; };
+		A8BDB69DE2B1AD65AD9D69D8B4F637EC /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57800F846FF25C4A871A84D1132527A0 /* ImageProcessing.swift */; };
 		B74CD6E6EBEA0B642776BCB37850415D /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 284833D18C244D2B42966B6EE425AA59 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		B9A769B7D4102D5BDFE9FADA5FD36199 /* GraphPod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E4656A23A82800CE4B85BE7A8BDA26 /* GraphPod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBB16FF6257AE871931BCD1E523ED145 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		BBEEA8826626DB1351C6CE367DA3B9E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
+		BC629C1E23ED65D92D5971795399F186 /* EdgeDetectionAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336DF87074F0CFA7297FE8E0B3D50A9 /* EdgeDetectionAlgorithm.swift */; };
 		BD4953074A12E769ED4E6C94F5E73694 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA24A38BA9EE106B59E3D4C8DD1CE0E /* UIKit.framework */; };
 		C49D52712466511E332C952834C81FE1 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B1DEEBF6316A84D7413645212492FF /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9EE76ADF7E1C9CFC968ABEABFE51FD5 /* Pods-GraphPod_Performance_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C81503D3A9D9FC05E9CA257FC40051A7 /* Pods-GraphPod_Performance_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA63ADACAC6C2BF1E30108E6BEF68A09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		D04AAC8B22E4A4DC4F39891C4E52F251 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 96187BF3038121CC146335E9FF0B0AFF /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		D07F8F17B1A379A069285CADC105C578 /* RootsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D202AE69AE71D221B0F4BFFCF952C /* RootsDictionary.swift */; };
 		E8AC509D18EBF21B1FEA909652A01108 /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ABB3EB3CCC5BCA82F40FE8DC87BB778 /* FBSnapshotTestCasePlatform.m */; };
 		F1AAAE00BB32B733B238E2B4E8424506 /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = 656116C8FA5458F45D4707110C9530EC /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		F720FAF13A108CE6901E0A8B0580E1E8 /* FBSnapshotTestCase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E5923010B02074CAA9AAF6EA02D66AA /* FBSnapshotTestCase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		221A523BE4CFF701BE94E64E869742EB /* PBXContainerItemProxy */ = {
+		22612BF3AB09C6C6DA9F0AE2CEA86A76 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5AF20D865E9E372C556CEBD29108654A;
 			remoteInfo = "Pods-GraphPod_Example";
 		};
-		3021C57B5A26B9E50AA25680F2B69AB7 /* PBXContainerItemProxy */ = {
+		2B1940A51B6377ECEFB91EB83E0E7D24 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 482F2D453C57BA2A89FF9A1D7CD9AA8B;
 			remoteInfo = GraphPod;
 		};
-		A84CACDC4C432B689B1D307854DD9B6E /* PBXContainerItemProxy */ = {
+		6BAD16A1587752D75EF17F59052B5598 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 98A98149697C80CEF8D5772791E92E66;
 			remoteInfo = FBSnapshotTestCase;
 		};
+		9DF7E9078D0A51F55C6421DFC6356529 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98A98149697C80CEF8D5772791E92E66;
+			remoteInfo = FBSnapshotTestCase;
+		};
+		C4633BF60E51082500F3C6D651040CE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AF20D865E9E372C556CEBD29108654A;
+			remoteInfo = "Pods-GraphPod_Example";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00445E395FCC6A9DEBF7DE6CB83F9F30 /* Pods-GraphPod_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GraphPod_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		0BEE06D1E78D26FA4E1CA663D890E8AD /* Pods-GraphPod_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GraphPod_Example-frameworks.sh"; sourceTree = "<group>"; };
+		007505C46D58EF66F303A9BFC09534E9 /* Pods-GraphPod_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GraphPod_Example-frameworks.sh"; sourceTree = "<group>"; };
+		0BE71C00C3CCCC1E073C99C815651521 /* Pods-GraphPod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		0DFCA160DDD8DE95B8E091C2E8A6047E /* GraphPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GraphPod.debug.xcconfig; sourceTree = "<group>"; };
 		0F538C426803AE34255FC6E35B408CCA /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
-		1128B5042E7469A9DAD1C20B34775E7D /* GraphPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GraphPod.release.xcconfig; sourceTree = "<group>"; };
-		13D8CA21576CE809673F5BAE86984EA1 /* Pods-GraphPod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		156676D35E28B4D835EDAC05E57152DF /* Pods-GraphPod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GraphPod_Example-umbrella.h"; sourceTree = "<group>"; };
-		179987082C2A7E13D2F04713FC671BAE /* Pods-GraphPod_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GraphPod_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		14D97C9195593FC1FE441C5B59725011 /* Extension UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Extension UIImage.swift"; sourceTree = "<group>"; };
 		1ADA6E655DC84D06359BD0ED5E36C783 /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
-		1C2F67FB2A01E22A2C1B6D63BA9F5577 /* GraphPod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GraphPod.modulemap; sourceTree = "<group>"; };
 		1DA24A38BA9EE106B59E3D4C8DD1CE0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		208FB6D7FBE8C6C023D2F208D750AD0B /* Pods-GraphPod_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Tests-Info.plist"; sourceTree = "<group>"; };
-		22B21A6C1739A1EE5A3CEC0F9B15CAE7 /* Pods-GraphPod_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GraphPod_Example-dummy.m"; sourceTree = "<group>"; };
+		1FBF523F858DECD6CBFC5A1A70761116 /* Pods-GraphPod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		235A78CFFA6D8B8D86CACD733531CB13 /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
-		2456C0A1D0D532F5EFF1B80C70B41729 /* GraphPod-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GraphPod-Info.plist"; sourceTree = "<group>"; };
+		2540B77D02076A4FFE6442415959D353 /* Pods-GraphPod_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		2558EF1912E5590BB0834FA57024AC6E /* Pods-GraphPod_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GraphPod_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		277B6BE10C665F515606A22FD60C6DCC /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = FBSnapshotTestCase/FBSnapshotTestCase.m; sourceTree = "<group>"; };
+		279D202AE69AE71D221B0F4BFFCF952C /* RootsDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootsDictionary.swift; sourceTree = "<group>"; };
 		284833D18C244D2B42966B6EE425AA59 /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
-		2987643F612E8A04D9AEB9B607336079 /* Pods-GraphPod_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		3280BB5E7B57C31D41117A74F76E9DF3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		345D2B672695CC8300EF22F8 /* BitmapImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmapImage.swift; sourceTree = "<group>"; };
-		345D2B682695CC8300EF22F8 /* RootsDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootsDictionary.swift; sourceTree = "<group>"; };
-		345D2B692695CC8300EF22F8 /* SegmentingImageAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentingImageAlgorithm.swift; sourceTree = "<group>"; };
-		345D2B6A2695CC8300EF22F8 /* DisjointSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisjointSet.swift; sourceTree = "<group>"; };
-		345D2B6B2695CC8300EF22F8 /* WGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGraph.swift; sourceTree = "<group>"; };
-		345D2B722695CCA400EF22F8 /* EdgeDetectionAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeDetectionAlgorithm.swift; sourceTree = "<group>"; };
-		345D2B732695CCA400EF22F8 /* ImageProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
-		345D2B742695CCA400EF22F8 /* Extension UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension UIImage.swift"; sourceTree = "<group>"; };
-		345D2B762695CCA400EF22F8 /* SobelOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobelOperator.swift; sourceTree = "<group>"; };
-		36E4656A23A82800CE4B85BE7A8BDA26 /* GraphPod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphPod-umbrella.h"; sourceTree = "<group>"; };
-		37368A0A363DAA3452ACD15BF9CD4CC6 /* Pods-GraphPod_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GraphPod_Tests-dummy.m"; sourceTree = "<group>"; };
+		36B656F1C0860D6C2994E1B95CA9DC51 /* Pods-GraphPod_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		3F0D66CF296ABBC57EC4D0452397E235 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
 		4568279DE47DC3AB91598E1317503995 /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
-		46636CB1289D7A47181EE5736A790105 /* Pods-GraphPod_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		49BE08CA03829D0023E2F759269AEC6F /* app1.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; name = app1.jpg; path = docs/imgs/app1.jpg; sourceTree = "<group>"; };
-		4A6F0C3A98F506822CC16F66EDBA113A /* GraphPod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GraphPod-dummy.m"; sourceTree = "<group>"; };
 		4C6513B09838318BD763CFD5390D1DE0 /* FBSnapshotTestCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.release.xcconfig; sourceTree = "<group>"; };
-		50AAF959F588643DAB4B4CF973914DB4 /* app2.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; name = app2.jpg; path = docs/imgs/app2.jpg; sourceTree = "<group>"; };
+		50A987B3EE020EB7883920633F8EBBDB /* Pods-GraphPod_Performance_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GraphPod_Performance_Tests.modulemap"; sourceTree = "<group>"; };
+		5309B3C0C0B5A00624B53B6638A6132D /* SobelOperator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SobelOperator.swift; sourceTree = "<group>"; };
+		560F877DCD319F89FED51E13F2830903 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		56A9A0C476D06862D9202817C7E7E8BB /* Pods-GraphPod_Performance_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GraphPod_Performance_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		57AB28D3DAA182ED219D497DA2FAB2F5 /* graphpod presentation.key */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "graphpod presentation.key"; path = "docs/presentation/graphpod presentation.key"; sourceTree = "<group>"; };
-		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D0370ED7F8AB3FB54EF649C3862284B /* Pods_GraphPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57800F846FF25C4A871A84D1132527A0 /* ImageProcessing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
+		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSnapshotTestCase.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0370ED7F8AB3FB54EF649C3862284B /* Pods_GraphPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GraphPod_Tests.framework; path = "Pods-GraphPod_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F2E03EB4843FD0E369EB534BF310009 /* Pods-GraphPod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GraphPod_Example-umbrella.h"; sourceTree = "<group>"; };
 		656116C8FA5458F45D4707110C9530EC /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
-		68134E5E3046443C4D38EC571DF28AFA /* Pods_GraphPod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A8CD9E9E739DAE3C35AB214F8A06CD8 /* Pods-GraphPod_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GraphPod_Tests.modulemap"; sourceTree = "<group>"; };
+		66EE1C326C59D112E468308A59F8B26D /* GraphPod-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GraphPod-Info.plist"; sourceTree = "<group>"; };
+		68134E5E3046443C4D38EC571DF28AFA /* Pods_GraphPod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GraphPod_Example.framework; path = "Pods-GraphPod_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABB3EB3CCC5BCA82F40FE8DC87BB778 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
-		6B832312101CA12F17D1CEA891CCAC81 /* GraphPod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GraphPod.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		6BA85ACADC1B3E8B7613F6DDF648FE60 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		78634D02D413B0F28385E826C4768475 /* GraphPod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GraphPod.modulemap; sourceTree = "<group>"; };
+		7A3B80F5860CB3AE11F46E86F17424E3 /* SegmentingImageAlgorithm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SegmentingImageAlgorithm.swift; sourceTree = "<group>"; };
+		7ABBAC8B77BFCF83BACA480500FADB6B /* Pods_GraphPod_Performance_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GraphPod_Performance_Tests.framework; path = "Pods-GraphPod_Performance_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C720AEE26DFBCEBF8332B615A0A02FA /* Pods-GraphPod_Performance_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GraphPod_Performance_Tests-dummy.m"; sourceTree = "<group>"; };
+		7D3159C7EF3CFBF34061EBF9F8BE6AC8 /* Pods-GraphPod_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Tests-Info.plist"; sourceTree = "<group>"; };
+		7D77B704C662BBAE758FCF8CA0D51F79 /* GraphPod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphPod-prefix.pch"; sourceTree = "<group>"; };
 		7E1B7EA746BF6557FD565BAE12AF9198 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
-		80EA53D1D425C548802FEB5FE8E68450 /* Pods-GraphPod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		833A57F8C9C28050D2B499C3AB52F06A /* Pods-GraphPod_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GraphPod_Tests-umbrella.h"; sourceTree = "<group>"; };
+		8344F0873148B72E044C7FD2C7D1D481 /* app2.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = app2.jpg; path = docs/imgs/app2.jpg; sourceTree = "<group>"; };
+		84A657DF0FEF18215E44E86E2A198C5B /* Pods-GraphPod_Performance_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Performance_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		88B1DEEBF6316A84D7413645212492FF /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
-		8A6173554FEBCBE87F1C14F66702C183 /* Pods-GraphPod_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GraphPod_Tests-umbrella.h"; sourceTree = "<group>"; };
+		89279A46D7B91F5050C7D2DB5000758A /* BitmapImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BitmapImage.swift; sourceTree = "<group>"; };
+		8A3DFE5E2C37205ABE8768EDFEFDF148 /* Pods-GraphPod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8E5923010B02074CAA9AAF6EA02D66AA /* FBSnapshotTestCase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-umbrella.h"; sourceTree = "<group>"; };
+		925B3A0B0369F414233A7C58D55F5276 /* Pods-GraphPod_Performance_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Performance_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		93CC682AC46024363898BE0B3F31436B /* Pods-GraphPod_Performance_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GraphPod_Performance_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		9468E867498BBAF36F9AFFE4845F8B09 /* FBSnapshotTestCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.debug.xcconfig; sourceTree = "<group>"; };
 		96187BF3038121CC146335E9FF0B0AFF /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		99A67367E018411D614EC8536A8A1C5B /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
-		9AFA161A099CB0BB1F47C330D5429326 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0A99F6AB2DB22A801B2D828A6BB618A /* Pods-GraphPod_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Example-Info.plist"; sourceTree = "<group>"; };
-		A1A72DE6E0354AAC309A887D725DE9E7 /* Pods-GraphPod_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GraphPod_Example.modulemap"; sourceTree = "<group>"; };
-		AD5714C6C80FBA91E69E74B84E75685A /* Pods-GraphPod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		AE784824928B87918BC2C5F5E4B4A7F4 /* GraphPod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphPod-prefix.pch"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A32E8285BF0E55162DFE398224454119 /* Pods-GraphPod_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Example-Info.plist"; sourceTree = "<group>"; };
+		A71DD685809D4CF26C0829848FB30E6B /* Pods-GraphPod_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GraphPod_Tests-dummy.m"; sourceTree = "<group>"; };
 		AE9FF9459FBCDC4AF88FB6B5A4CC1439 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
-		B0C0A67C8107186D7A590B54FC296369 /* Pods-GraphPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Example.release.xcconfig"; sourceTree = "<group>"; };
+		B60122C089B82067990E566DA42B182F /* Pods-GraphPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B7103CA00AED20722C5B69CA5B4F6938 /* FBSnapshotTestCase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FBSnapshotTestCase-Info.plist"; sourceTree = "<group>"; };
-		B84C0AE13D895AB42EEA784AABB5D54B /* GraphPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GraphPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C54D62D7C07627419607021EED38075E /* Pods-GraphPod_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GraphPod_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B84C0AE13D895AB42EEA784AABB5D54B /* GraphPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GraphPod.framework; path = GraphPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D78605C288E4DB265F52744274C774 /* Pods-GraphPod_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GraphPod_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		B939FE52CD4C34E1EABBBB52D0775CA3 /* Pods-GraphPod_Performance_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Performance_Tests-Info.plist"; sourceTree = "<group>"; };
+		BA9371310F3EC83251B504589BBE96F2 /* app1.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = app1.jpg; path = docs/imgs/app1.jpg; sourceTree = "<group>"; };
+		BAB414A90651A1A85D0ECCEF95E171E6 /* graphpod presentation.key */ = {isa = PBXFileReference; includeInIndex = 1; name = "graphpod presentation.key"; path = "docs/presentation/graphpod presentation.key"; sourceTree = "<group>"; };
+		C455AA7330147EF4D332493177B4B6A1 /* GraphPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GraphPod.release.xcconfig; sourceTree = "<group>"; };
+		C6AE6A007C0351B3CC629481FEC6DF7C /* Pods-GraphPod_Performance_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Performance_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C81503D3A9D9FC05E9CA257FC40051A7 /* Pods-GraphPod_Performance_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GraphPod_Performance_Tests-umbrella.h"; sourceTree = "<group>"; };
 		CBFF6C5FD9C3A84274A9314D3E940B6E /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
-		CFAEBBC7E999E9F2AED58E3005F2545F /* GraphPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GraphPod.debug.xcconfig; sourceTree = "<group>"; };
 		D08CEBB9BDD9EF7A662ECFC0305C169E /* FBSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
 		D872A3EE224412D4057C234FBC629F9C /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
+		DDC8C1EC91AF8B6C02F621803E30E238 /* Pods-GraphPod_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GraphPod_Example-dummy.m"; sourceTree = "<group>"; };
+		E336DF87074F0CFA7297FE8E0B3D50A9 /* EdgeDetectionAlgorithm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EdgeDetectionAlgorithm.swift; sourceTree = "<group>"; };
+		E4A6E10ABD7CAF157146486B5D936023 /* Pods-GraphPod_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GraphPod_Example.modulemap"; sourceTree = "<group>"; };
+		E4AEFD452C29C2E8B2E80FD0111D803A /* Pods-GraphPod_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GraphPod_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E55AD9E66B61E2EA0900FDAD05C3D6D4 /* DisjointSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DisjointSet.swift; sourceTree = "<group>"; };
 		E658F388F01C72599CA75537950B6095 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F013DD4A40426E6EC127A3BE68D42756 /* GraphPod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GraphPod.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F68968B682E08EAC10066BE2EB7E3D19 /* GraphPod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphPod-umbrella.h"; sourceTree = "<group>"; };
+		F96C295DF16BBA40A67FD99E9D86B464 /* GraphPod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GraphPod-dummy.m"; sourceTree = "<group>"; };
+		F9875727E76747E8D04ABA7B6A1AC57B /* WGraph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WGraph.swift; sourceTree = "<group>"; };
+		FB5D8408984353ED805E43A63A070EB1 /* Pods-GraphPod_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GraphPod_Tests.modulemap"; sourceTree = "<group>"; };
 		FEE661E58CA6655B39AA49AA4C021C33 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
+		FF094D8302E2B51EDDDB791991F050BA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4001745642D899776A2830B7623B5466 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				985675EC1A7F3BCD2D0458638249605F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		52DE2FF3AFC5B0FE19D1A71D5D1A0E49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,6 +190,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D12A5A256306C845E3820EF3CBB261AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DF52E52DA84C8937679457803D3EE7B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E581515110D66F94F80A6937831489A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,48 +209,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6EA8CED6AE80B372DD846626F639BE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBB16FF6257AE871931BCD1E523ED145 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		300D3EA85BF614FB6471F6474D364959 /* Development Pods */ = {
+		07C4E7B437DD63EA65C6A42282015D34 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				99183B01022DC59C81A4E520998AFAFE /* GraphPod */,
+				E0FA654FE05D92DCC8507BE4C43AED84 /* GraphPod */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		345D2B662695CC8300EF22F8 /* Segmenting */ = {
+		2D65600DB59216FEFECD7B802013544C /* Pods-GraphPod_Performance_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				345D2B672695CC8300EF22F8 /* BitmapImage.swift */,
-				345D2B682695CC8300EF22F8 /* RootsDictionary.swift */,
-				345D2B692695CC8300EF22F8 /* SegmentingImageAlgorithm.swift */,
-				345D2B6A2695CC8300EF22F8 /* DisjointSet.swift */,
-				345D2B6B2695CC8300EF22F8 /* WGraph.swift */,
+				50A987B3EE020EB7883920633F8EBBDB /* Pods-GraphPod_Performance_Tests.modulemap */,
+				56A9A0C476D06862D9202817C7E7E8BB /* Pods-GraphPod_Performance_Tests-acknowledgements.markdown */,
+				84A657DF0FEF18215E44E86E2A198C5B /* Pods-GraphPod_Performance_Tests-acknowledgements.plist */,
+				7C720AEE26DFBCEBF8332B615A0A02FA /* Pods-GraphPod_Performance_Tests-dummy.m */,
+				93CC682AC46024363898BE0B3F31436B /* Pods-GraphPod_Performance_Tests-frameworks.sh */,
+				B939FE52CD4C34E1EABBBB52D0775CA3 /* Pods-GraphPod_Performance_Tests-Info.plist */,
+				C81503D3A9D9FC05E9CA257FC40051A7 /* Pods-GraphPod_Performance_Tests-umbrella.h */,
+				C6AE6A007C0351B3CC629481FEC6DF7C /* Pods-GraphPod_Performance_Tests.debug.xcconfig */,
+				925B3A0B0369F414233A7C58D55F5276 /* Pods-GraphPod_Performance_Tests.release.xcconfig */,
 			);
-			name = Segmenting;
-			path = GraphPod/Classes/Segmenting;
+			name = "Pods-GraphPod_Performance_Tests";
+			path = "Target Support Files/Pods-GraphPod_Performance_Tests";
 			sourceTree = "<group>";
 		};
-		345D2B712695CCA400EF22F8 /* Edge Detection */ = {
+		32C2BEE7C2EC0D5CF515BFF1158D5FE8 /* Edge Detection */ = {
 			isa = PBXGroup;
 			children = (
-				345D2B722695CCA400EF22F8 /* EdgeDetectionAlgorithm.swift */,
-				345D2B732695CCA400EF22F8 /* ImageProcessing.swift */,
-				345D2B742695CCA400EF22F8 /* Extension UIImage.swift */,
-				345D2B752695CCA400EF22F8 /* Operator */,
+				E336DF87074F0CFA7297FE8E0B3D50A9 /* EdgeDetectionAlgorithm.swift */,
+				14D97C9195593FC1FE441C5B59725011 /* Extension UIImage.swift */,
+				57800F846FF25C4A871A84D1132527A0 /* ImageProcessing.swift */,
+				A1BBA3AE565C8B97315C2AEC3A629432 /* Operator */,
 			);
 			name = "Edge Detection";
 			path = "GraphPod/Classes/Edge Detection";
-			sourceTree = "<group>";
-		};
-		345D2B752695CCA400EF22F8 /* Operator */ = {
-			isa = PBXGroup;
-			children = (
-				345D2B762695CCA400EF22F8 /* SobelOperator.swift */,
-			);
-			path = Operator;
 			sourceTree = "<group>";
 		};
 		4BA2479549DD918290454B1CDCD0B92B /* Core */ = {
@@ -265,73 +278,59 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		5996053E855AD86788758C55DAF19A1C /* Pods-GraphPod_Example */ = {
+		5CC5DD41278DB8C38FF6AB10D3FA66E3 /* Pods-GraphPod_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A1A72DE6E0354AAC309A887D725DE9E7 /* Pods-GraphPod_Example.modulemap */,
-				179987082C2A7E13D2F04713FC671BAE /* Pods-GraphPod_Example-acknowledgements.markdown */,
-				2987643F612E8A04D9AEB9B607336079 /* Pods-GraphPod_Example-acknowledgements.plist */,
-				22B21A6C1739A1EE5A3CEC0F9B15CAE7 /* Pods-GraphPod_Example-dummy.m */,
-				0BEE06D1E78D26FA4E1CA663D890E8AD /* Pods-GraphPod_Example-frameworks.sh */,
-				A0A99F6AB2DB22A801B2D828A6BB618A /* Pods-GraphPod_Example-Info.plist */,
-				156676D35E28B4D835EDAC05E57152DF /* Pods-GraphPod_Example-umbrella.h */,
-				13D8CA21576CE809673F5BAE86984EA1 /* Pods-GraphPod_Example.debug.xcconfig */,
-				B0C0A67C8107186D7A590B54FC296369 /* Pods-GraphPod_Example.release.xcconfig */,
+				FB5D8408984353ED805E43A63A070EB1 /* Pods-GraphPod_Tests.modulemap */,
+				2558EF1912E5590BB0834FA57024AC6E /* Pods-GraphPod_Tests-acknowledgements.markdown */,
+				2540B77D02076A4FFE6442415959D353 /* Pods-GraphPod_Tests-acknowledgements.plist */,
+				A71DD685809D4CF26C0829848FB30E6B /* Pods-GraphPod_Tests-dummy.m */,
+				B8D78605C288E4DB265F52744274C774 /* Pods-GraphPod_Tests-frameworks.sh */,
+				7D3159C7EF3CFBF34061EBF9F8BE6AC8 /* Pods-GraphPod_Tests-Info.plist */,
+				833A57F8C9C28050D2B499C3AB52F06A /* Pods-GraphPod_Tests-umbrella.h */,
+				0BE71C00C3CCCC1E073C99C815651521 /* Pods-GraphPod_Tests.debug.xcconfig */,
+				1FBF523F858DECD6CBFC5A1A70761116 /* Pods-GraphPod_Tests.release.xcconfig */,
 			);
-			name = "Pods-GraphPod_Example";
-			path = "Target Support Files/Pods-GraphPod_Example";
+			name = "Pods-GraphPod_Tests";
+			path = "Target Support Files/Pods-GraphPod_Tests";
 			sourceTree = "<group>";
 		};
-		647188606C8CEE4B2AAA86EE26EC86C5 /* Targets Support Files */ = {
+		6DEFAAB6EE0AF405670E40C927D72D23 /* Segmenting */ = {
 			isa = PBXGroup;
 			children = (
-				5996053E855AD86788758C55DAF19A1C /* Pods-GraphPod_Example */,
-				8F413B2EA7C948404F63645A3853261A /* Pods-GraphPod_Tests */,
+				89279A46D7B91F5050C7D2DB5000758A /* BitmapImage.swift */,
+				E55AD9E66B61E2EA0900FDAD05C3D6D4 /* DisjointSet.swift */,
+				279D202AE69AE71D221B0F4BFFCF952C /* RootsDictionary.swift */,
+				7A3B80F5860CB3AE11F46E86F17424E3 /* SegmentingImageAlgorithm.swift */,
+				F9875727E76747E8D04ABA7B6A1AC57B /* WGraph.swift */,
 			);
-			name = "Targets Support Files";
+			name = Segmenting;
+			path = GraphPod/Classes/Segmenting;
 			sourceTree = "<group>";
 		};
-		823C5646CE98ABBA710AB1B1860DFB09 /* Support Files */ = {
+		70AB635BEEE53AA7682F1E517D94D70D /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				1C2F67FB2A01E22A2C1B6D63BA9F5577 /* GraphPod.modulemap */,
-				4A6F0C3A98F506822CC16F66EDBA113A /* GraphPod-dummy.m */,
-				2456C0A1D0D532F5EFF1B80C70B41729 /* GraphPod-Info.plist */,
-				AE784824928B87918BC2C5F5E4B4A7F4 /* GraphPod-prefix.pch */,
-				36E4656A23A82800CE4B85BE7A8BDA26 /* GraphPod-umbrella.h */,
-				CFAEBBC7E999E9F2AED58E3005F2545F /* GraphPod.debug.xcconfig */,
-				1128B5042E7469A9DAD1C20B34775E7D /* GraphPod.release.xcconfig */,
+				BA9371310F3EC83251B504589BBE96F2 /* app1.jpg */,
+				8344F0873148B72E044C7FD2C7D1D481 /* app2.jpg */,
+				F013DD4A40426E6EC127A3BE68D42756 /* GraphPod.podspec */,
+				BAB414A90651A1A85D0ECCEF95E171E6 /* graphpod presentation.key */,
+				FF094D8302E2B51EDDDB791991F050BA /* LICENSE */,
+				560F877DCD319F89FED51E13F2830903 /* README.md */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/GraphPod";
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		880049DEF676EEC5617664645A95C0FD /* Products */ = {
+		7805B7A04A7E81DAABE2495722CAA671 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */,
 				B84C0AE13D895AB42EEA784AABB5D54B /* GraphPod.framework */,
 				68134E5E3046443C4D38EC571DF28AFA /* Pods_GraphPod_Example.framework */,
+				7ABBAC8B77BFCF83BACA480500FADB6B /* Pods_GraphPod_Performance_Tests.framework */,
 				5D0370ED7F8AB3FB54EF649C3862284B /* Pods_GraphPod_Tests.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		8F413B2EA7C948404F63645A3853261A /* Pods-GraphPod_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				6A8CD9E9E739DAE3C35AB214F8A06CD8 /* Pods-GraphPod_Tests.modulemap */,
-				C54D62D7C07627419607021EED38075E /* Pods-GraphPod_Tests-acknowledgements.markdown */,
-				46636CB1289D7A47181EE5736A790105 /* Pods-GraphPod_Tests-acknowledgements.plist */,
-				37368A0A363DAA3452ACD15BF9CD4CC6 /* Pods-GraphPod_Tests-dummy.m */,
-				00445E395FCC6A9DEBF7DE6CB83F9F30 /* Pods-GraphPod_Tests-frameworks.sh */,
-				208FB6D7FBE8C6C023D2F208D750AD0B /* Pods-GraphPod_Tests-Info.plist */,
-				8A6173554FEBCBE87F1C14F66702C183 /* Pods-GraphPod_Tests-umbrella.h */,
-				AD5714C6C80FBA91E69E74B84E75685A /* Pods-GraphPod_Tests.debug.xcconfig */,
-				80EA53D1D425C548802FEB5FE8E68450 /* Pods-GraphPod_Tests.release.xcconfig */,
-			);
-			name = "Pods-GraphPod_Tests";
-			path = "Target Support Files/Pods-GraphPod_Tests";
 			sourceTree = "<group>";
 		};
 		906402ECC4C6C5EB58DD365FD2C64E92 /* SwiftSupport */ = {
@@ -342,16 +341,28 @@
 			name = SwiftSupport;
 			sourceTree = "<group>";
 		};
-		99183B01022DC59C81A4E520998AFAFE /* GraphPod */ = {
+		A1BBA3AE565C8B97315C2AEC3A629432 /* Operator */ = {
 			isa = PBXGroup;
 			children = (
-				345D2B712695CCA400EF22F8 /* Edge Detection */,
-				345D2B662695CC8300EF22F8 /* Segmenting */,
-				FDCD71FFABB6037A2C3E11F61FD77137 /* Pod */,
-				823C5646CE98ABBA710AB1B1860DFB09 /* Support Files */,
+				5309B3C0C0B5A00624B53B6638A6132D /* SobelOperator.swift */,
 			);
-			name = GraphPod;
-			path = ../..;
+			name = Operator;
+			path = Operator;
+			sourceTree = "<group>";
+		};
+		B4EFCB591E3023AFA1E6B561CAA20B57 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				78634D02D413B0F28385E826C4768475 /* GraphPod.modulemap */,
+				F96C295DF16BBA40A67FD99E9D86B464 /* GraphPod-dummy.m */,
+				66EE1C326C59D112E468308A59F8B26D /* GraphPod-Info.plist */,
+				7D77B704C662BBAE758FCF8CA0D51F79 /* GraphPod-prefix.pch */,
+				F68968B682E08EAC10066BE2EB7E3D19 /* GraphPod-umbrella.h */,
+				0DFCA160DDD8DE95B8E091C2E8A6047E /* GraphPod.debug.xcconfig */,
+				C455AA7330147EF4D332493177B4B6A1 /* GraphPod.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/GraphPod";
 			sourceTree = "<group>";
 		};
 		B69B2ECE2D2C9A3924A9231138CE0BBC /* Support Files */ = {
@@ -384,19 +395,49 @@
 				B69B2ECE2D2C9A3924A9231138CE0BBC /* Support Files */,
 				906402ECC4C6C5EB58DD365FD2C64E92 /* SwiftSupport */,
 			);
+			name = FBSnapshotTestCase;
 			path = FBSnapshotTestCase;
+			sourceTree = "<group>";
+		};
+		BDEF65154897123341318977F9E1B2AE /* Pods-GraphPod_Example */ = {
+			isa = PBXGroup;
+			children = (
+				E4A6E10ABD7CAF157146486B5D936023 /* Pods-GraphPod_Example.modulemap */,
+				E4AEFD452C29C2E8B2E80FD0111D803A /* Pods-GraphPod_Example-acknowledgements.markdown */,
+				36B656F1C0860D6C2994E1B95CA9DC51 /* Pods-GraphPod_Example-acknowledgements.plist */,
+				DDC8C1EC91AF8B6C02F621803E30E238 /* Pods-GraphPod_Example-dummy.m */,
+				007505C46D58EF66F303A9BFC09534E9 /* Pods-GraphPod_Example-frameworks.sh */,
+				A32E8285BF0E55162DFE398224454119 /* Pods-GraphPod_Example-Info.plist */,
+				5F2E03EB4843FD0E369EB534BF310009 /* Pods-GraphPod_Example-umbrella.h */,
+				8A3DFE5E2C37205ABE8768EDFEFDF148 /* Pods-GraphPod_Example.debug.xcconfig */,
+				B60122C089B82067990E566DA42B182F /* Pods-GraphPod_Example.release.xcconfig */,
+			);
+			name = "Pods-GraphPod_Example";
+			path = "Target Support Files/Pods-GraphPod_Example";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				300D3EA85BF614FB6471F6474D364959 /* Development Pods */,
+				07C4E7B437DD63EA65C6A42282015D34 /* Development Pods */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
 				E81A37DBDE41E671312C56736544E2FA /* Pods */,
-				880049DEF676EEC5617664645A95C0FD /* Products */,
-				647188606C8CEE4B2AAA86EE26EC86C5 /* Targets Support Files */,
+				7805B7A04A7E81DAABE2495722CAA671 /* Products */,
+				F7C498CB24372917B6B7E2CB912BC7DE /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		E0FA654FE05D92DCC8507BE4C43AED84 /* GraphPod */ = {
+			isa = PBXGroup;
+			children = (
+				32C2BEE7C2EC0D5CF515BFF1158D5FE8 /* Edge Detection */,
+				70AB635BEEE53AA7682F1E517D94D70D /* Pod */,
+				6DEFAAB6EE0AF405670E40C927D72D23 /* Segmenting */,
+				B4EFCB591E3023AFA1E6B561CAA20B57 /* Support Files */,
+			);
+			name = GraphPod;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		E81A37DBDE41E671312C56736544E2FA /* Pods */ = {
@@ -405,6 +446,16 @@
 				BD2D60DE56CBB8C87BA07E0C1CCD0592 /* FBSnapshotTestCase */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F7C498CB24372917B6B7E2CB912BC7DE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BDEF65154897123341318977F9E1B2AE /* Pods-GraphPod_Example */,
+				2D65600DB59216FEFECD7B802013544C /* Pods-GraphPod_Performance_Tests */,
+				5CC5DD41278DB8C38FF6AB10D3FA66E3 /* Pods-GraphPod_Tests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		FB2668559AE577E6E8078C0C291AD417 /* iOS */ = {
@@ -416,19 +467,6 @@
 				E658F388F01C72599CA75537950B6095 /* XCTest.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		FDCD71FFABB6037A2C3E11F61FD77137 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				49BE08CA03829D0023E2F759269AEC6F /* app1.jpg */,
-				50AAF959F588643DAB4B4CF973914DB4 /* app2.jpg */,
-				6B832312101CA12F17D1CEA891CCAC81 /* GraphPod.podspec */,
-				57AB28D3DAA182ED219D497DA2FAB2F5 /* graphpod presentation.key */,
-				6BA85ACADC1B3E8B7613F6DDF648FE60 /* LICENSE */,
-				9AFA161A099CB0BB1F47C330D5429326 /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,11 +495,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A260754536DF6E740EACEEFC532C988E /* Headers */ = {
+		665C4C7231F1CB0DABB402D525AAA3D2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9A769B7D4102D5BDFE9FADA5FD36199 /* GraphPod-umbrella.h in Headers */,
+				56BC212432FA981F4D41BE8DAF35EEEF /* GraphPod-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F2B47C5A4E507DF26310310309B1BFC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9EE76ADF7E1C9CFC968ABEABFE51FD5 /* Pods-GraphPod_Performance_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,14 +522,34 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		01010A6BDFF29449257650FA15566B47 /* Pods-GraphPod_Performance_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BDA7EF96EB5FFF3CFCD1BA6C5F8FE00 /* Build configuration list for PBXNativeTarget "Pods-GraphPod_Performance_Tests" */;
+			buildPhases = (
+				6F2B47C5A4E507DF26310310309B1BFC /* Headers */,
+				86465AC76486395C89E455F948816AF1 /* Sources */,
+				F6EA8CED6AE80B372DD846626F639BE4 /* Frameworks */,
+				FC9B0A8E6E5848FAFA0E0149D37CA4C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9F98B83B1C8AB8DE70135B33888BF43 /* PBXTargetDependency */,
+				53C1A0E5AC95867BD5F72EB0129DB1F0 /* PBXTargetDependency */,
+			);
+			name = "Pods-GraphPod_Performance_Tests";
+			productName = "Pods-GraphPod_Performance_Tests";
+			productReference = 7ABBAC8B77BFCF83BACA480500FADB6B /* Pods_GraphPod_Performance_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		482F2D453C57BA2A89FF9A1D7CD9AA8B /* GraphPod */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1328229F8C5F29B4EB4FF9793CBB8195 /* Build configuration list for PBXNativeTarget "GraphPod" */;
+			buildConfigurationList = 18CBD2CC2E76D72E8257B888031F2280 /* Build configuration list for PBXNativeTarget "GraphPod" */;
 			buildPhases = (
-				A260754536DF6E740EACEEFC532C988E /* Headers */,
-				CBC4F2423E15C012CB8DA5B32BCEA74A /* Sources */,
-				4001745642D899776A2830B7623B5466 /* Frameworks */,
-				8C76DC6C0088246FCAA410EB45BF40A3 /* Resources */,
+				665C4C7231F1CB0DABB402D525AAA3D2 /* Headers */,
+				1ECB46831BBB3A1E6A023FE5CD19763D /* Sources */,
+				D12A5A256306C845E3820EF3CBB261AE /* Frameworks */,
+				62D518FA875D7FCAEB28E014D61C718C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -506,7 +572,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				885CF5137E0276A5C230F94715FBBF74 /* PBXTargetDependency */,
+				43289BF78D562C726C06A9570744CD14 /* PBXTargetDependency */,
 			);
 			name = "Pods-GraphPod_Example";
 			productName = "Pods-GraphPod_Example";
@@ -543,8 +609,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				7D00974EC95FB8B597F91D7B4D9D6150 /* PBXTargetDependency */,
-				19C757915D497425AAECB26EE1B2600C /* PBXTargetDependency */,
+				B53321AD475EE3DE5445E811559FF02D /* PBXTargetDependency */,
+				E5151A4F019E28C0DB9B69FA2377178E /* PBXTargetDependency */,
 			);
 			name = "Pods-GraphPod_Tests";
 			productName = "Pods-GraphPod_Tests";
@@ -569,13 +635,14 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 880049DEF676EEC5617664645A95C0FD /* Products */;
+			productRefGroup = 7805B7A04A7E81DAABE2495722CAA671 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				98A98149697C80CEF8D5772791E92E66 /* FBSnapshotTestCase */,
 				482F2D453C57BA2A89FF9A1D7CD9AA8B /* GraphPod */,
 				5AF20D865E9E372C556CEBD29108654A /* Pods-GraphPod_Example */,
+				01010A6BDFF29449257650FA15566B47 /* Pods-GraphPod_Performance_Tests */,
 				FE0DEAC57902D8B5A6BCB12CAB07703E /* Pods-GraphPod_Tests */,
 			);
 		};
@@ -596,7 +663,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C76DC6C0088246FCAA410EB45BF40A3 /* Resources */ = {
+		62D518FA875D7FCAEB28E014D61C718C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -610,6 +677,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC9B0A8E6E5848FAFA0E0149D37CA4C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -617,16 +691,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				345D2B912695CCD300EF22F8 /* BitmapImage.swift in Sources */,
-				345D2B8B2695CCC100EF22F8 /* WGraph.swift in Sources */,
-				345D2B7F2695CCA400EF22F8 /* Extension UIImage.swift in Sources */,
-				345D2B792695CCA400EF22F8 /* EdgeDetectionAlgorithm.swift in Sources */,
-				345D2B822695CCA400EF22F8 /* SobelOperator.swift in Sources */,
-				345D2B852695CCB500EF22F8 /* RootsDictionary.swift in Sources */,
 				5A788B4F2B0A42FC7229EBD9AE7BAC02 /* Pods-GraphPod_Tests-dummy.m in Sources */,
-				345D2B7C2695CCA400EF22F8 /* ImageProcessing.swift in Sources */,
-				345D2B882695CCBA00EF22F8 /* DisjointSet.swift in Sources */,
-				345D2B8E2695CCCB00EF22F8 /* SegmentingImageAlgorithm.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ECB46831BBB3A1E6A023FE5CD19763D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				063064BB0B9112C84869668CEFC8FE2F /* BitmapImage.swift in Sources */,
+				89AAEF0DA48648B8DCDF66C648F0188F /* DisjointSet.swift in Sources */,
+				BC629C1E23ED65D92D5971795399F186 /* EdgeDetectionAlgorithm.swift in Sources */,
+				63C8E5F8D3A67B3486E254681189A31F /* Extension UIImage.swift in Sources */,
+				95F67482EC146F76EB84955DF5659F1E /* GraphPod-dummy.m in Sources */,
+				A8BDB69DE2B1AD65AD9D69D8B4F637EC /* ImageProcessing.swift in Sources */,
+				D07F8F17B1A379A069285CADC105C578 /* RootsDictionary.swift in Sources */,
+				40451E97EB2DFDAE2AF492A25B324F0E /* SegmentingImageAlgorithm.swift in Sources */,
+				1F7690F9D0197038ADAD52A46B514F29 /* SobelOperator.swift in Sources */,
+				41822EBD07285274CA01EB97468A392F /* WGraph.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,16 +716,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				345D2B902695CCD200EF22F8 /* BitmapImage.swift in Sources */,
-				345D2B8A2695CCC100EF22F8 /* WGraph.swift in Sources */,
-				345D2B7E2695CCA400EF22F8 /* Extension UIImage.swift in Sources */,
-				345D2B782695CCA400EF22F8 /* EdgeDetectionAlgorithm.swift in Sources */,
-				345D2B812695CCA400EF22F8 /* SobelOperator.swift in Sources */,
-				345D2B842695CCB400EF22F8 /* RootsDictionary.swift in Sources */,
 				1DE0F11A1C1075B02189000C3F05FB82 /* Pods-GraphPod_Example-dummy.m in Sources */,
-				345D2B7B2695CCA400EF22F8 /* ImageProcessing.swift in Sources */,
-				345D2B872695CCB900EF22F8 /* DisjointSet.swift in Sources */,
-				345D2B8D2695CCCA00EF22F8 /* SegmentingImageAlgorithm.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86465AC76486395C89E455F948816AF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C2205B8EE9AB1CBEF9D70DBD4DF61BA /* Pods-GraphPod_Performance_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,43 +744,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBC4F2423E15C012CB8DA5B32BCEA74A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				345D2B8F2695CCD100EF22F8 /* BitmapImage.swift in Sources */,
-				345D2B892695CCC000EF22F8 /* WGraph.swift in Sources */,
-				345D2B7D2695CCA400EF22F8 /* Extension UIImage.swift in Sources */,
-				345D2B772695CCA400EF22F8 /* EdgeDetectionAlgorithm.swift in Sources */,
-				345D2B802695CCA400EF22F8 /* SobelOperator.swift in Sources */,
-				345D2B832695CCB400EF22F8 /* RootsDictionary.swift in Sources */,
-				866B3325E536AB7E5AF3AD14AB0DCE7B /* GraphPod-dummy.m in Sources */,
-				345D2B7A2695CCA400EF22F8 /* ImageProcessing.swift in Sources */,
-				345D2B862695CCB900EF22F8 /* DisjointSet.swift in Sources */,
-				345D2B8C2695CCCA00EF22F8 /* SegmentingImageAlgorithm.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		19C757915D497425AAECB26EE1B2600C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-GraphPod_Example";
-			target = 5AF20D865E9E372C556CEBD29108654A /* Pods-GraphPod_Example */;
-			targetProxy = 221A523BE4CFF701BE94E64E869742EB /* PBXContainerItemProxy */;
-		};
-		7D00974EC95FB8B597F91D7B4D9D6150 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FBSnapshotTestCase;
-			target = 98A98149697C80CEF8D5772791E92E66 /* FBSnapshotTestCase */;
-			targetProxy = A84CACDC4C432B689B1D307854DD9B6E /* PBXContainerItemProxy */;
-		};
-		885CF5137E0276A5C230F94715FBBF74 /* PBXTargetDependency */ = {
+		43289BF78D562C726C06A9570744CD14 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GraphPod;
 			target = 482F2D453C57BA2A89FF9A1D7CD9AA8B /* GraphPod */;
-			targetProxy = 3021C57B5A26B9E50AA25680F2B69AB7 /* PBXContainerItemProxy */;
+			targetProxy = 2B1940A51B6377ECEFB91EB83E0E7D24 /* PBXContainerItemProxy */;
+		};
+		53C1A0E5AC95867BD5F72EB0129DB1F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-GraphPod_Example";
+			target = 5AF20D865E9E372C556CEBD29108654A /* Pods-GraphPod_Example */;
+			targetProxy = 22612BF3AB09C6C6DA9F0AE2CEA86A76 /* PBXContainerItemProxy */;
+		};
+		B53321AD475EE3DE5445E811559FF02D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSnapshotTestCase;
+			target = 98A98149697C80CEF8D5772791E92E66 /* FBSnapshotTestCase */;
+			targetProxy = 9DF7E9078D0A51F55C6421DFC6356529 /* PBXContainerItemProxy */;
+		};
+		C9F98B83B1C8AB8DE70135B33888BF43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSnapshotTestCase;
+			target = 98A98149697C80CEF8D5772791E92E66 /* FBSnapshotTestCase */;
+			targetProxy = 6BAD16A1587752D75EF17F59052B5598 /* PBXContainerItemProxy */;
+		};
+		E5151A4F019E28C0DB9B69FA2377178E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-GraphPod_Example";
+			target = 5AF20D865E9E372C556CEBD29108654A /* Pods-GraphPod_Example */;
+			targetProxy = C4633BF60E51082500F3C6D651040CE4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -772,7 +848,7 @@
 		};
 		30A417B3C1D33179C8A0CC45856E952A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0C0A67C8107186D7A590B54FC296369 /* Pods-GraphPod_Example.release.xcconfig */;
+			baseConfigurationReference = B60122C089B82067990E566DA42B182F /* Pods-GraphPod_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -836,7 +912,7 @@
 		};
 		4009A7072DCBBAF7DA38D28B8D6CC8DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13D8CA21576CE809673F5BAE86984EA1 /* Pods-GraphPod_Example.debug.xcconfig */;
+			baseConfigurationReference = 8A3DFE5E2C37205ABE8768EDFEFDF148 /* Pods-GraphPod_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -868,7 +944,7 @@
 		};
 		57FA824498F2E772144A87DDC8A31D4D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD5714C6C80FBA91E69E74B84E75685A /* Pods-GraphPod_Tests.debug.xcconfig */;
+			baseConfigurationReference = 0BE71C00C3CCCC1E073C99C815651521 /* Pods-GraphPod_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -900,7 +976,7 @@
 		};
 		621FA8E15EDD16476C376CC28598926C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80EA53D1D425C548802FEB5FE8E68450 /* Pods-GraphPod_Tests.release.xcconfig */;
+			baseConfigurationReference = 1FBF523F858DECD6CBFC5A1A70761116 /* Pods-GraphPod_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -931,9 +1007,9 @@
 			};
 			name = Release;
 		};
-		6C1D4219C67E19CB20DEF6699F9AE91F /* Debug */ = {
+		8055865DBF9664F70D4AF8979BB3B72F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFAEBBC7E999E9F2AED58E3005F2545F /* GraphPod.debug.xcconfig */;
+			baseConfigurationReference = C455AA7330147EF4D332493177B4B6A1 /* GraphPod.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -955,6 +1031,39 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A4FE4B121294D7CCCE9CA9660E43D367 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6AE6A007C0351B3CC629481FEC6DF7C /* Pods-GraphPod_Performance_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GraphPod_Performance_Tests/Pods-GraphPod_Performance_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GraphPod_Performance_Tests/Pods-GraphPod_Performance_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -990,37 +1099,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		B4277593048988140567A7D6459D9011 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1128B5042E7469A9DAD1C20B34775E7D /* GraphPod.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GraphPod/GraphPod-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GraphPod/GraphPod-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GraphPod/GraphPod.modulemap";
-				PRODUCT_MODULE_NAME = GraphPod;
-				PRODUCT_NAME = GraphPod;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1077,20 +1155,84 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D893EAEEC5F55BCEBE4DE86CCECD6754 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DFCA160DDD8DE95B8E091C2E8A6047E /* GraphPod.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GraphPod/GraphPod-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GraphPod/GraphPod-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GraphPod/GraphPod.modulemap";
+				PRODUCT_MODULE_NAME = GraphPod;
+				PRODUCT_NAME = GraphPod;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E9D863636B2DD0B800E48E6E73FBE41D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 925B3A0B0369F414233A7C58D55F5276 /* Pods-GraphPod_Performance_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GraphPod_Performance_Tests/Pods-GraphPod_Performance_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GraphPod_Performance_Tests/Pods-GraphPod_Performance_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1328229F8C5F29B4EB4FF9793CBB8195 /* Build configuration list for PBXNativeTarget "GraphPod" */ = {
+		18CBD2CC2E76D72E8257B888031F2280 /* Build configuration list for PBXNativeTarget "GraphPod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6C1D4219C67E19CB20DEF6699F9AE91F /* Debug */,
-				B4277593048988140567A7D6459D9011 /* Release */,
+				D893EAEEC5F55BCEBE4DE86CCECD6754 /* Debug */,
+				8055865DBF9664F70D4AF8979BB3B72F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1109,6 +1251,15 @@
 			buildConfigurations = (
 				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
 				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BDA7EF96EB5FFF3CFCD1BA6C5F8FE00 /* Build configuration list for PBXNativeTarget "Pods-GraphPod_Performance_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4FE4B121294D7CCCE9CA9660E43D367 /* Debug */,
+				E9D863636B2DD0B800E48E6E73FBE41D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
