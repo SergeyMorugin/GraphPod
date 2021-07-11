@@ -59,9 +59,9 @@ To run the simple example project clone the repo and run `pod install` from the 
 
 You can run the demo App in the Example folder, research how it works and test algorithms with different coefficients and save final results.
 
-![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app3b.png?raw=true){:height="35%" width="35%"}
-![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app4b.png?raw=true)){:height="35%" width="35%"}
-![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app5b.png?raw=true)){:height="35%" width="35%"}
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app3b.png?raw=true"><img src="https://github.com/SergeyMorugin/GraphPod/raw/feature/ms-opt-4/docs/imgs/app3b.png?raw=true" alt="GraphPod" style="max-width:270px;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app4b.png?raw=true"><img src="https://github.com/SergeyMorugin/GraphPod/raw/feature/ms-opt-4/docs/imgs/app4b.png?raw=true" alt="GraphPod" style="max-width:270px;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app5b.png?raw=true"><img src="https://github.com/SergeyMorugin/GraphPod/raw/feature/ms-opt-4/docs/imgs/app5b.png?raw=true" alt="GraphPod" style="max-width:270px;"></a>
 
 
 ## How Segmenting algorithm works
