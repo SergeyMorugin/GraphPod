@@ -62,6 +62,8 @@ You can run the demo App in the Example folder, research how it works and test a
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app3b.png?raw=true"><img src="https://github.com/SergeyMorugin/GraphPod/raw/feature/ms-opt-4/docs/imgs/app3b.png?raw=true" alt="GraphPod" style="width:270px;"/></a>
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app4b.png?raw=true"><img src="https://github.com/SergeyMorugin/GraphPod/raw/feature/ms-opt-4/docs/imgs/app4b.png?raw=true" alt="GraphPod" style="width:270px;"/></a>
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app5b.png?raw=true"><img src="https://github.com/SergeyMorugin/GraphPod/raw/feature/ms-opt-4/docs/imgs/app5b.png?raw=true" alt="GraphPod" style="width:270px;"/></a>
+[[https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app5.jpg?raw=true|width=270px]]
+
 
 
 ## How Segmenting algorithm works
