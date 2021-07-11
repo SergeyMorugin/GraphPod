@@ -59,8 +59,9 @@ To run the simple example project clone the repo and run `pod install` from the 
 
 You can run the demo App in the Example folder, research how it works and test algorithms with different coefficients and save final results.
 
-![simulator1](https://user-images.githubusercontent.com/63192967/124740431-784b9200-df23-11eb-96c2-b6cedcceacb8.png)
-![simulator2](https://user-images.githubusercontent.com/63192967/124749888-78508f80-df2d-11eb-93ef-3ce18caeaa46.png)
+![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app3.jpg?raw=true)
+![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app4.jpg?raw=true)
+![GraphPod](https://github.com/SergeyMorugin/GraphPod/blob/feature/ms-opt-4/docs/imgs/app5.jpg?raw=true)
 
 
 ## How Segmenting algorithm works
@@ -139,15 +140,12 @@ As a result of Sobel operator work we receive 2D gradient map for every pixel. T
 ```
 
 
-## How Gauss blurring algorithm works
+## Gauss blurring algorithm
 
-### Convert input image 
-
-### Apply
-
-### Convert
-
-### Smth else
+The library implements a fast Gaussian blur algorithm with O (n) complexity
+```swift
+ let blurredImage = bitmapImage.fastGaussBlur(radius: 3)
+```
 
 
 ## Author
