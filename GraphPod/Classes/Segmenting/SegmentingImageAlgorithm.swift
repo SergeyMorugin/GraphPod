@@ -11,32 +11,11 @@ import Foundation
 public final class SegmentingImageAlgorithm {
     
     // MARK: - Main method
-    public static func execute(for image: UIImage, with threshold: Float, with minSize: Int) -> (UIImage, RootsDictionary) {
-        var processedImage: UIImage
-
-        // Get image size
-        let height = Int(image.size.height)
-        let width = Int(image.size.width)
-
-        // Get inital image bitmap
-        let imageBitmap = image.toBitmapImage()
-
-        // Create weighted graph
-        var wGraph = imageBitmap!.createWGraph()
-
-        // Sort edges by weight
-        wGraph.sortEdges()
-
-       // Create segments
-        let pixelsCombinedInSegments = wGraph.createSegmentSets(threshold: threshold, minSize: minSize)
-
-        // Create segments colored bitmap
-        let (bitmapImage, roots) = pixelsCombinedInSegments.colorizeBitmap(withWidth: width, andHeight: height)
-
-        // Get image from bitmap
-        processedImage = UIImage.fromBitmapImage(bitmapImage: bitmapImage)!
-        processedImage.cgImage?.copy(colorSpace: image.cgImage!.colorSpace!)
-
-        return (processedImage, roots)
+    public static func execute(image: BitmapImage, threshold: Float, minSize: Int) -> (BitmapImage, RootsDictionary, DisjointSet)? {
+        var wGrath = image.createWGraph()
+        wGrath.sortEdges()
+        let pixelsCombinedInSegments = wGrath.createSegmentSets(threshold: threshold, minSize: minSize)
+        let (bitmapImage, roots) = pixelsCombinedInSegments.colorizeBitmap(withWidth: image.width, andHeight: image.height)
+        return (bitmapImage, roots, pixelsCombinedInSegments)
     }
 }

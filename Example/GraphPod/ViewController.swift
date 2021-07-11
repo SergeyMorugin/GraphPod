@@ -43,28 +43,24 @@ class ViewController: UIViewController {
 
     // MARK: - Run the Segmentation algorithm processing
     @IBAction func onRunClick(_ sender: Any) {
-        // Start the timer
+        print("Run")
+        
         let startTime = CFAbsoluteTimeGetCurrent()
-
         // Get inital image
-        guard let imageToProcess = resultImage.image else { return }
-
-        // Get threshold value from UIPicker
+        guard let processingImage = resultImage.image else { return }
+       
+        guard let image = processingImage.toBitmapImage() else { return }
+        
         let threshold = thresholdValues[thresholdPicker.selectedRow(inComponent: 0)]
+        let minPixelsInSectro = minSizeValues[thresholdPicker.selectedRow(inComponent: 1)]
+        let result = SegmentingImageAlgorithm.execute(image: image, threshold: threshold, minSize: minPixelsInSectro)
+       
+        let im = UIImage.fromBitmapImage(bitmapImage: result!.0)
+        im?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
 
-        // Get segment min size value from UIPicker
-        let minPixelsInSector = minSizeValues[thresholdPicker.selectedRow(inComponent: 1)]
-
-        // PROCESS THE IMAGE
-        let processedImage = SegmentingImageAlgorithm.execute(for: imageToProcess, with: threshold, with: minPixelsInSector)
-
-        // Set processed image to imageView
-        resultImage.image = processedImage.0
-
-        // Get process info text if needed
-        let resultText = "Found \(processedImage.1.roots.count) segments in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(imageToProcess.size.width)x\(imageToProcess.size.height)"
-
-        // Show process info text
+        resultImage.image = im
+        let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(processingImage.size.width)x\(processingImage.size.height)"
+        print(resultText)
         resultLabel.text = resultText
     }
 
