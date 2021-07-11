@@ -59,14 +59,14 @@ class ViewController: UIViewController {
         im?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
 
         resultImage.image = im
-        let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s for image \(processingImage.size.width)x\(processingImage.size.height)"
+        let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s for image \(processingImage.size.width)x\(processingImage.size.height)"
         print(resultText)
         resultLabel.text = resultText
     }
 
     // MARK: - Run the Detect Edges algorithm processing
     @IBAction func onDetectEdgesClick(_ sender: Any) {
-
+        let startTime = CFAbsoluteTimeGetCurrent()
         // Get inital image
         guard let imageToProcess = resultImage.image else { return }
 
@@ -75,7 +75,8 @@ class ViewController: UIViewController {
 
         // Set processed image to imageView
         resultImage.image = processedImage
-
+        resultLabel.text =  "Detect edges in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s" +
+            " for image \(imageToProcess.size.width)x\(imageToProcess.size.height)"
     }
     
     @IBAction func onGaussBlurClick(_ sender: Any) {
@@ -93,7 +94,7 @@ class ViewController: UIViewController {
         
         resultImage.image = UIImage.fromBitmapImage(bitmapImage: blurredImage)
         // Show process info text
-        resultLabel.text =  "Gauss blur in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000) s" +
+        resultLabel.text =  "Gauss blur in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s" +
             " for image \(imageToProcess.size.width)x\(imageToProcess.size.height)"
     }
     
