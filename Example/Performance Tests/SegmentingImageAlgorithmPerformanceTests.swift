@@ -7,13 +7,13 @@
 //
 
 import XCTest
-@testable import GraphPod
+import GraphPod
 
 class SegmentingImageAlgorithmPerformanceTests: XCTestCase {
     
     // test performance for 100x100px image
     func testPerformanceImage1() throws {
-        let image =  UIImage(named: "test1")
+        let image =  UIImage(named: "testImage100on100")
         let bitmap = image!.toBitmapImage()!
         self.measure {
             let _ = SegmentingImageAlgorithm.execute(image: bitmap, threshold: 10, minSize: 10)
@@ -22,7 +22,7 @@ class SegmentingImageAlgorithmPerformanceTests: XCTestCase {
     
     // test performance for 1000x1000px image
     func testPerformanceImage2() throws {
-        let image =  UIImage(named: "test2")
+        let image =  UIImage(named: "defaultImage")
         let bitmap = image!.toBitmapImage()!
         self.measure {
             let _ = SegmentingImageAlgorithm.execute(image: bitmap, threshold: 10, minSize: 10)

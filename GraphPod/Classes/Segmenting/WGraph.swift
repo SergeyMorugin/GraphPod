@@ -29,16 +29,21 @@ public struct WGraph {
     }
 }
 
-
 public extension WGraph {
     mutating func createSegmentSets(threshold: Float, minSize: Int) -> DisjointSet {
+
+        // Set Disjoint-set array
         let disjointSet = DisjointSet(count: vertexCount)
-        // Set thresholds
+
+        // Set thresholds array
         var thresholds = [Float](repeating: threshold, count: vertexCount)
+
+        // Sort edges by weight
         if !edgesIsSorted {
             sortEdges()
         }
-        // Core sorting over .map
+
+        // Core sorting
         edges.forEach {
             var a = disjointSet.rootForElementOn(index: $0.a)
             let b = disjointSet.rootForElementOn(index: $0.b)

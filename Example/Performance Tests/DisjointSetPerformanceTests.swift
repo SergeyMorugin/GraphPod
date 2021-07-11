@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import GraphPod
+import GraphPod
 
 class DisjointSetPerformanceTests: XCTestCase {
 
@@ -16,7 +16,6 @@ class DisjointSetPerformanceTests: XCTestCase {
             let _ = DisjointSet.init(count: 1000000)
         }
     }
-    
     
     func testColorizeBitmap() throws {
         let disjointSet = DisjointSet.init(count: 10000)

@@ -6,9 +6,6 @@
 //  Copyright © 2021 Ostagram Inc. All rights reserved.
 //
 
-//import UIKit
-
-
 public struct DisjointSetElement {
     public var rank: Int
     public var parent: Int
@@ -27,7 +24,7 @@ public final class DisjointSet {
         }
     }
     
-    // MARK:  Find element
+    // MARK: - Find root for element
     public func rootForElementOn(index: Int) -> Int {
         var y = index
         while y != elements[y].parent {
@@ -37,7 +34,7 @@ public final class DisjointSet {
         return y
     }
     
-    // MARK: Join elements
+    // MARK: - Join elements
     public func joinSetsBy(index1: Int, index2: Int) {
         if elements[index1].rank > elements[index2].rank {
             elements[index2].parent = index1
@@ -61,6 +58,7 @@ public final class DisjointSet {
     }
 }
 
+// MARK: - Extension
 public extension DisjointSet {
     func colorizeBitmap(withWidth width: Int, andHeight height: Int) -> (BitmapImage, RootsDictionary) {
         var rootsDictionary = RootsDictionary()

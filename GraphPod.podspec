@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GraphPod'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Swift implementation of an image procesing functionality.'
 
 
@@ -28,4 +28,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'GraphPod/Classes/**/*'
+  s.test_spec 'Tests' do |test_spec|
+      test_spec.source_files = 'Example/Tests/*.{swift}'
+    end
 end

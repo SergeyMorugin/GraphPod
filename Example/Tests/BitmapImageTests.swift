@@ -30,7 +30,6 @@ class BitmapImageTests: XCTestCase {
     }
     
     func testCreateGraph() throws {
-        let pixelCount = 16
         let bitmap = BitmapImage(width: 4, height: 4, pixels: Array(0..<(16*4)))
         
         let wGraph = bitmap.createWGraph()
