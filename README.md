@@ -47,10 +47,10 @@ let processedImage = EdgeDetectionAlgorithm.execute(for: imageToProcess)
 
 
 
-- To blur the image call BlurAlgorithm.execute:
+- To blur the image apply extended bitmapImage method - bitmapImage.fastGaussBlur:
 
 ```swift
-let processedImage = BlurAlgorithm.execute(for: imageToProcess)
+let blurredImage = bitmapImage.fastGaussBlur(radius: 3)
 ```
 
 ## Example App
