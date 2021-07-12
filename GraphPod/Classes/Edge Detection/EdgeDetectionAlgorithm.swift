@@ -14,6 +14,9 @@ public final class EdgeDetectionAlgorithm {
 
         let defaultImage = UIImage(named: "defaultImage")!
 
+        // 0 - Convert to grayscale bitmap
+        //let grayScaleBitmap = image.convertToGrayScaleBitmap(image: image)
+
         // 1 - convert colored input image to grayscale
         guard let grayScaledImage = image.convertToGrayScale() else { return defaultImage}
 
@@ -31,6 +34,8 @@ public final class EdgeDetectionAlgorithm {
         let processedImageHeight = Int(image.size.height) - 2
 
         let processedImage = ImageProcessing.createImageFromEdgesDetected(pixelValues: gradientMatrix, width: processedImageWidth, height: processedImageHeight)
+
+        //let processedImage = UIImage.fromBitmapImage(bitmapImage: grayScaleBitmap)!
 
         return processedImage
     }

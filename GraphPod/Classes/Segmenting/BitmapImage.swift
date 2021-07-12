@@ -270,6 +270,31 @@ extension UIImage {
         context?.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         return BitmapImage(width: Int(size.width), height: Int(size.height), pixels: pixelData)
     }
+
+    public func convertToGrayScaleBitmap(image: UIImage) -> BitmapImage? {
+
+        // Create image rectangle with current image width/height
+        let imageRect:CGRect = CGRect(x:0, y:0, width:image.size.width, height: image.size.height)
+
+        let size = self.size
+        let dataSize = size.width * size.height
+
+        // Grayscale color space
+        let colorSpace = CGColorSpaceCreateDeviceGray()
+        let width = image.size.width
+        let height = image.size.height
+
+        // Create bitmap content with current image size and grayscale colorspace
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
+        var pixelData = [UInt8](repeating: 0, count: Int(dataSize))
+
+        // Draw image into current context, with specified rectangle
+        // using previously defined context (with grayscale colorspace)
+        let context = CGContext(data: &pixelData, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
+        context?.draw(image.cgImage!, in: imageRect)
+
+        return BitmapImage(width: Int(size.width), height: Int(size.height), pixels: pixelData)
+    }
     
     public static func fromBitmapImage(bitmapImage: BitmapImage)-> UIImage? {
         var pixels = bitmapImage.pixels
