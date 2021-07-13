@@ -42,60 +42,90 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Run the Segmentation algorithm processing
-    @IBAction func onRunClick(_ sender: Any) {
-        print("Run")
-        
+    @IBAction func onSegmentationRunClick(_ sender: Any) {
         let startTime = CFAbsoluteTimeGetCurrent()
-        // Get inital image
-        guard let processingImage = resultImage.image else { return }
-       
-        guard let image = processingImage.toBitmapImage() else { return }
-        
-        let threshold = thresholdValues[thresholdPicker.selectedRow(inComponent: 0)]
-        let minPixelsInSectro = minSizeValues[thresholdPicker.selectedRow(inComponent: 1)]
-        let result = SegmentingImageAlgorithm.execute(image: image, threshold: threshold, minSize: minPixelsInSectro)
-       
-        let im = UIImage.fromBitmapImage(bitmapImage: result!.0)
-        im?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
 
-        resultImage.image = im
-        let resultText = "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s for image \(processingImage.size.width)x\(processingImage.size.height)"
-        print(resultText)
-        resultLabel.text = resultText
+        // Get inital UIImage
+        guard let processingImage = resultImage.image else { return }
+
+  //=======================Execute the algorithm=================================
+
+        // Convert processing image to bitmap
+        guard let bitmap = processingImage.toBitmapImage() else { return }
+
+        // Get threshold and minSegmentSize
+        let threshold = thresholdValues[thresholdPicker.selectedRow(inComponent: 0)]
+        let minPixelsInSegment = minSizeValues[thresholdPicker.selectedRow(inComponent: 1)]
+
+        // Get processed bitmap result
+        let result = SegmentingImageAlgorithm.execute(input: bitmap, threshold: threshold, minSize: minPixelsInSegment)
+
+ //======================Convert result to UIImage===============================
+
+        // Convert processed bitmap to UIImage
+        let processedImage = UIImage.fromBitmapImage(bitmapImage: result!.0)
+        processedImage?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
+
+        resultImage.image = processedImage
+
+ //======================Show result info text===================================
+
+        resultLabel.text =  "Found \(result!.1.roots.count) sections in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s for image \(processingImage.size.width)x\(processingImage.size.height)"
     }
 
     // MARK: - Run the Detect Edges algorithm processing
     @IBAction func onDetectEdgesClick(_ sender: Any) {
         let startTime = CFAbsoluteTimeGetCurrent()
-        // Get inital image
-        guard let imageToProcess = resultImage.image else { return }
 
-        // PROCESS THE IMAGE
-        let processedImage = EdgeDetectionAlgorithm.execute(for: imageToProcess)
+        // Get inital UImage
+        guard let processingImage = resultImage.image else { return }
 
-        // Set processed image to imageView
+   //=======================Execute the algorithm==================================
+
+        // Convert processing UImage to bitmap
+        guard let bitmap = processingImage.toBitmapImage() else { return }
+
+        // Get processed bitmap result
+        let result = EdgeDetectionAlgorithm.execute(input: bitmap)
+
+   //======================Convert result to UIImage===============================
+        
+        let processedImageWidth = Int(processingImage.size.width) - 2
+        let processedImageHeight = Int(processingImage.size.height) - 2
+
+        let processedImage = UIImage.createFromEdgesDetectedBitmap(pixelValues: result, width: processedImageWidth, height: processedImageHeight)
+
         resultImage.image = processedImage
+
+    //======================Show result info text================================
+
         resultLabel.text =  "Detect edges in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s" +
-            " for image \(imageToProcess.size.width)x\(imageToProcess.size.height)"
+            " for image \(processingImage.size.width)x\(processingImage.size.height)"
     }
-    
+
+    // MARK: - Run the Gauss Blur Algorithm
     @IBAction func onGaussBlurClick(_ sender: Any) {
-        // Start the timer
         let startTime = CFAbsoluteTimeGetCurrent()
 
         // Get inital image
-        guard let imageToProcess = resultImage.image else { return }
+        guard let processingImage = resultImage.image else { return }
 
-        // Set processed image to imageView
-        guard let bitmapImage = imageToProcess.toBitmapImage() else { return }
-        guard let imageToProcess = UIImage.fromBitmapImage(bitmapImage: bitmapImage) else {return}
-        guard let bitmapImage = imageToProcess.toBitmapImage() else { return }
+    //=======================Execute the algorithm==============================
+
+        // Convert processing UImage to bitmap
+        guard let bitmapImage = processingImage.toBitmapImage() else { return }
+
+        // Get processed bitmap result
         let blurredImage = bitmapImage.fastGaussBlur(radius: 3)
+
+    //======================Convert result to UIImage============================
         
         resultImage.image = UIImage.fromBitmapImage(bitmapImage: blurredImage)
-        // Show process info text
+
+    //======================Show result info text================================
+
         resultLabel.text =  "Gauss blur in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s" +
-            " for image \(imageToProcess.size.width)x\(imageToProcess.size.height)"
+            " for image \(processingImage.size.width)x\(processingImage.size.height)"
     }
     
     // MARK: - Save the processed image to library

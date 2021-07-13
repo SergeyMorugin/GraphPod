@@ -23,6 +23,9 @@
 		4462D4AACB646B9C501B00E533D74215 /* Pods-GraphPod_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F2E03EB4843FD0E369EB534BF310009 /* Pods-GraphPod_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56BC212432FA981F4D41BE8DAF35EEEF /* GraphPod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F68968B682E08EAC10066BE2EB7E3D19 /* GraphPod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A788B4F2B0A42FC7229EBD9AE7BAC02 /* Pods-GraphPod_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A71DD685809D4CF26C0829848FB30E6B /* Pods-GraphPod_Tests-dummy.m */; };
+		5BD436F7269C722100E7FD23 /* Extension BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD436F6269C722100E7FD23 /* Extension BitmapImage.swift */; };
+		5BD4371D269DA64200E7FD23 /* UIImage converters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4371C269DA64200E7FD23 /* UIImage converters.swift */; };
+		5BD43729269DA66700E7FD23 /* GaussBlurAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD43728269DA66700E7FD23 /* GaussBlurAlgorithm.swift */; };
 		63C8E5F8D3A67B3486E254681189A31F /* Extension UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D97C9195593FC1FE441C5B59725011 /* Extension UIImage.swift */; };
 		652C90894AD9727558718ACB960088AE /* Pods-GraphPod_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 833A57F8C9C28050D2B499C3AB52F06A /* Pods-GraphPod_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DBC8EB7532E931C2FBDA71D1E0B66A4 /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA6E655DC84D06359BD0ED5E36C783 /* FBSnapshotTestCase-dummy.m */; };
@@ -35,7 +38,6 @@
 		973B5E5E0254E005FE2EB5F0D4B26C7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		9D65089019D558E5A9661F2DCAD20313 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0D66CF296ABBC57EC4D0452397E235 /* SwiftSupport.swift */; };
 		A525E29E0A8079B35B793D8A2B5FBDF2 /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = D872A3EE224412D4057C234FBC629F9C /* UIImage+Snapshot.m */; };
-		A8BDB69DE2B1AD65AD9D69D8B4F637EC /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57800F846FF25C4A871A84D1132527A0 /* ImageProcessing.swift */; };
 		B74CD6E6EBEA0B642776BCB37850415D /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 284833D18C244D2B42966B6EE425AA59 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BBB16FF6257AE871931BCD1E523ED145 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		BBEEA8826626DB1351C6CE367DA3B9E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
@@ -111,26 +113,28 @@
 		4C6513B09838318BD763CFD5390D1DE0 /* FBSnapshotTestCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.release.xcconfig; sourceTree = "<group>"; };
 		50A987B3EE020EB7883920633F8EBBDB /* Pods-GraphPod_Performance_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GraphPod_Performance_Tests.modulemap"; sourceTree = "<group>"; };
 		5309B3C0C0B5A00624B53B6638A6132D /* SobelOperator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SobelOperator.swift; sourceTree = "<group>"; };
-		560F877DCD319F89FED51E13F2830903 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		560F877DCD319F89FED51E13F2830903 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		56A9A0C476D06862D9202817C7E7E8BB /* Pods-GraphPod_Performance_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GraphPod_Performance_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		57800F846FF25C4A871A84D1132527A0 /* ImageProcessing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
-		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSnapshotTestCase.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D0370ED7F8AB3FB54EF649C3862284B /* Pods_GraphPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GraphPod_Tests.framework; path = "Pods-GraphPod_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BD436F6269C722100E7FD23 /* Extension BitmapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension BitmapImage.swift"; sourceTree = "<group>"; };
+		5BD4371C269DA64200E7FD23 /* UIImage converters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage converters.swift"; path = "../GraphPod/Classes/Converters/UIImage converters.swift"; sourceTree = "<group>"; };
+		5BD43728269DA66700E7FD23 /* GaussBlurAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GaussBlurAlgorithm.swift; path = "../GraphPod/Classes/Gauss Blur/GaussBlurAlgorithm.swift"; sourceTree = "<group>"; };
+		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0370ED7F8AB3FB54EF649C3862284B /* Pods_GraphPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2E03EB4843FD0E369EB534BF310009 /* Pods-GraphPod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GraphPod_Example-umbrella.h"; sourceTree = "<group>"; };
 		656116C8FA5458F45D4707110C9530EC /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
 		66EE1C326C59D112E468308A59F8B26D /* GraphPod-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GraphPod-Info.plist"; sourceTree = "<group>"; };
-		68134E5E3046443C4D38EC571DF28AFA /* Pods_GraphPod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GraphPod_Example.framework; path = "Pods-GraphPod_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68134E5E3046443C4D38EC571DF28AFA /* Pods_GraphPod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABB3EB3CCC5BCA82F40FE8DC87BB778 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
 		78634D02D413B0F28385E826C4768475 /* GraphPod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GraphPod.modulemap; sourceTree = "<group>"; };
 		7A3B80F5860CB3AE11F46E86F17424E3 /* SegmentingImageAlgorithm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SegmentingImageAlgorithm.swift; sourceTree = "<group>"; };
-		7ABBAC8B77BFCF83BACA480500FADB6B /* Pods_GraphPod_Performance_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GraphPod_Performance_Tests.framework; path = "Pods-GraphPod_Performance_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ABBAC8B77BFCF83BACA480500FADB6B /* Pods_GraphPod_Performance_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Performance_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C720AEE26DFBCEBF8332B615A0A02FA /* Pods-GraphPod_Performance_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GraphPod_Performance_Tests-dummy.m"; sourceTree = "<group>"; };
 		7D3159C7EF3CFBF34061EBF9F8BE6AC8 /* Pods-GraphPod_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Tests-Info.plist"; sourceTree = "<group>"; };
 		7D77B704C662BBAE758FCF8CA0D51F79 /* GraphPod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphPod-prefix.pch"; sourceTree = "<group>"; };
 		7E1B7EA746BF6557FD565BAE12AF9198 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
 		833A57F8C9C28050D2B499C3AB52F06A /* Pods-GraphPod_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GraphPod_Tests-umbrella.h"; sourceTree = "<group>"; };
-		8344F0873148B72E044C7FD2C7D1D481 /* app2.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = app2.jpg; path = docs/imgs/app2.jpg; sourceTree = "<group>"; };
+		8344F0873148B72E044C7FD2C7D1D481 /* app2.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; name = app2.jpg; path = docs/imgs/app2.jpg; sourceTree = "<group>"; };
 		84A657DF0FEF18215E44E86E2A198C5B /* Pods-GraphPod_Performance_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Performance_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		88B1DEEBF6316A84D7413645212492FF /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
 		89279A46D7B91F5050C7D2DB5000758A /* BitmapImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BitmapImage.swift; sourceTree = "<group>"; };
@@ -141,17 +145,17 @@
 		9468E867498BBAF36F9AFFE4845F8B09 /* FBSnapshotTestCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.debug.xcconfig; sourceTree = "<group>"; };
 		96187BF3038121CC146335E9FF0B0AFF /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		99A67367E018411D614EC8536A8A1C5B /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A32E8285BF0E55162DFE398224454119 /* Pods-GraphPod_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Example-Info.plist"; sourceTree = "<group>"; };
 		A71DD685809D4CF26C0829848FB30E6B /* Pods-GraphPod_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GraphPod_Tests-dummy.m"; sourceTree = "<group>"; };
 		AE9FF9459FBCDC4AF88FB6B5A4CC1439 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
 		B60122C089B82067990E566DA42B182F /* Pods-GraphPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B7103CA00AED20722C5B69CA5B4F6938 /* FBSnapshotTestCase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FBSnapshotTestCase-Info.plist"; sourceTree = "<group>"; };
-		B84C0AE13D895AB42EEA784AABB5D54B /* GraphPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GraphPod.framework; path = GraphPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B84C0AE13D895AB42EEA784AABB5D54B /* GraphPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GraphPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D78605C288E4DB265F52744274C774 /* Pods-GraphPod_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GraphPod_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		B939FE52CD4C34E1EABBBB52D0775CA3 /* Pods-GraphPod_Performance_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GraphPod_Performance_Tests-Info.plist"; sourceTree = "<group>"; };
-		BA9371310F3EC83251B504589BBE96F2 /* app1.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = app1.jpg; path = docs/imgs/app1.jpg; sourceTree = "<group>"; };
-		BAB414A90651A1A85D0ECCEF95E171E6 /* graphpod presentation.key */ = {isa = PBXFileReference; includeInIndex = 1; name = "graphpod presentation.key"; path = "docs/presentation/graphpod presentation.key"; sourceTree = "<group>"; };
+		BA9371310F3EC83251B504589BBE96F2 /* app1.jpg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.jpeg; name = app1.jpg; path = docs/imgs/app1.jpg; sourceTree = "<group>"; };
+		BAB414A90651A1A85D0ECCEF95E171E6 /* graphpod presentation.key */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "graphpod presentation.key"; path = "docs/presentation/graphpod presentation.key"; sourceTree = "<group>"; };
 		C455AA7330147EF4D332493177B4B6A1 /* GraphPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GraphPod.release.xcconfig; sourceTree = "<group>"; };
 		C6AE6A007C0351B3CC629481FEC6DF7C /* Pods-GraphPod_Performance_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GraphPod_Performance_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C81503D3A9D9FC05E9CA257FC40051A7 /* Pods-GraphPod_Performance_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GraphPod_Performance_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -164,13 +168,13 @@
 		E4AEFD452C29C2E8B2E80FD0111D803A /* Pods-GraphPod_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GraphPod_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E55AD9E66B61E2EA0900FDAD05C3D6D4 /* DisjointSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DisjointSet.swift; sourceTree = "<group>"; };
 		E658F388F01C72599CA75537950B6095 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		F013DD4A40426E6EC127A3BE68D42756 /* GraphPod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GraphPod.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F013DD4A40426E6EC127A3BE68D42756 /* GraphPod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GraphPod.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F68968B682E08EAC10066BE2EB7E3D19 /* GraphPod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphPod-umbrella.h"; sourceTree = "<group>"; };
 		F96C295DF16BBA40A67FD99E9D86B464 /* GraphPod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GraphPod-dummy.m"; sourceTree = "<group>"; };
 		F9875727E76747E8D04ABA7B6A1AC57B /* WGraph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WGraph.swift; sourceTree = "<group>"; };
 		FB5D8408984353ED805E43A63A070EB1 /* Pods-GraphPod_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GraphPod_Tests.modulemap"; sourceTree = "<group>"; };
 		FEE661E58CA6655B39AA49AA4C021C33 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
-		FF094D8302E2B51EDDDB791991F050BA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		FF094D8302E2B51EDDDB791991F050BA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,7 +254,7 @@
 			children = (
 				E336DF87074F0CFA7297FE8E0B3D50A9 /* EdgeDetectionAlgorithm.swift */,
 				14D97C9195593FC1FE441C5B59725011 /* Extension UIImage.swift */,
-				57800F846FF25C4A871A84D1132527A0 /* ImageProcessing.swift */,
+				5BD436F6269C722100E7FD23 /* Extension BitmapImage.swift */,
 				A1BBA3AE565C8B97315C2AEC3A629432 /* Operator */,
 			);
 			name = "Edge Detection";
@@ -276,6 +280,22 @@
 				D872A3EE224412D4057C234FBC629F9C /* UIImage+Snapshot.m */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		5BD43702269DA10D00E7FD23 /* Gauss Blur */ = {
+			isa = PBXGroup;
+			children = (
+				5BD43728269DA66700E7FD23 /* GaussBlurAlgorithm.swift */,
+			);
+			path = "Gauss Blur";
+			sourceTree = "<group>";
+		};
+		5BD4370F269DA50C00E7FD23 /* Converters */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4371C269DA64200E7FD23 /* UIImage converters.swift */,
+			);
+			path = Converters;
 			sourceTree = "<group>";
 		};
 		5CC5DD41278DB8C38FF6AB10D3FA66E3 /* Pods-GraphPod_Tests */ = {
@@ -346,7 +366,6 @@
 			children = (
 				5309B3C0C0B5A00624B53B6638A6132D /* SobelOperator.swift */,
 			);
-			name = Operator;
 			path = Operator;
 			sourceTree = "<group>";
 		};
@@ -395,7 +414,6 @@
 				B69B2ECE2D2C9A3924A9231138CE0BBC /* Support Files */,
 				906402ECC4C6C5EB58DD365FD2C64E92 /* SwiftSupport */,
 			);
-			name = FBSnapshotTestCase;
 			path = FBSnapshotTestCase;
 			sourceTree = "<group>";
 		};
@@ -431,6 +449,8 @@
 		E0FA654FE05D92DCC8507BE4C43AED84 /* GraphPod */ = {
 			isa = PBXGroup;
 			children = (
+				5BD4370F269DA50C00E7FD23 /* Converters */,
+				5BD43702269DA10D00E7FD23 /* Gauss Blur */,
 				32C2BEE7C2EC0D5CF515BFF1158D5FE8 /* Edge Detection */,
 				70AB635BEEE53AA7682F1E517D94D70D /* Pod */,
 				6DEFAAB6EE0AF405670E40C927D72D23 /* Segmenting */,
@@ -700,11 +720,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				063064BB0B9112C84869668CEFC8FE2F /* BitmapImage.swift in Sources */,
+				5BD436F7269C722100E7FD23 /* Extension BitmapImage.swift in Sources */,
 				89AAEF0DA48648B8DCDF66C648F0188F /* DisjointSet.swift in Sources */,
+				5BD43729269DA66700E7FD23 /* GaussBlurAlgorithm.swift in Sources */,
 				BC629C1E23ED65D92D5971795399F186 /* EdgeDetectionAlgorithm.swift in Sources */,
+				5BD4371D269DA64200E7FD23 /* UIImage converters.swift in Sources */,
 				63C8E5F8D3A67B3486E254681189A31F /* Extension UIImage.swift in Sources */,
 				95F67482EC146F76EB84955DF5659F1E /* GraphPod-dummy.m in Sources */,
-				A8BDB69DE2B1AD65AD9D69D8B4F637EC /* ImageProcessing.swift in Sources */,
 				D07F8F17B1A379A069285CADC105C578 /* RootsDictionary.swift in Sources */,
 				40451E97EB2DFDAE2AF492A25B324F0E /* SegmentingImageAlgorithm.swift in Sources */,
 				1F7690F9D0197038ADAD52A46B514F29 /* SobelOperator.swift in Sources */,
@@ -1155,8 +1177,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

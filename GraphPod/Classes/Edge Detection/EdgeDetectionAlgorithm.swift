@@ -7,43 +7,29 @@
 
 import Foundation
 
-public final class EdgeDetectionAlgorithm {
+protocol EdgeDetectionable {
+    static func execute(input: BitmapImage) -> BitmapImage?
+    static func operate(pixelValues: [UInt8], height: Int, width: Int) -> [UInt8]
+}
+
+public final class EdgeDetectionAlgorithm: EdgeDetectionable {
 
     // MARK: - Main method
-    public static func execute(for image: UIImage) -> UIImage {
+    public static func execute(input: BitmapImage) -> BitmapImage? {
 
-        let defaultImage = UIImage(named: "defaultImage")!
+        // 1 - Create grayscale bitmap
+        let grayScaleBitmap = input.toGrayScaleBitmap()
 
-        // 0 - Convert to grayscale bitmap
-        //let grayScaleBitmap = image.convertToGrayScaleBitmap(image: image)
+        // 2 - Operate and get gradient matrix
+        let gradientMatrix = operate(pixelValues: grayScaleBitmap!.pixels, height: Int(input.height), width: Int(input.width))
 
-        // 1 - convert colored input image to grayscale
-        guard let grayScaledImage = image.convertToGrayScale() else { return defaultImage}
-
-        // 2 - Gaussian smoothing image
-        let smoothedImage = grayScaledImage.smoothing(sigma: 0.6)
-
-        // 3 - Convert image to pixels grayscale matrix
-        guard let pixelValuesFromGrayScaleImage = ImageProcessing.pixelValuesFromGrayScaleImage(imageRef: smoothedImage?.cgImage) else { return defaultImage }
-
-        // 4 - Operate and get gradient matrix
-        let gradientMatrix = operate(pixelValues: pixelValuesFromGrayScaleImage, height: Int(image.size.height), width: Int(image.size.width))
-
-        // 5 - Convert gradient matrix to an image
-        let processedImageWidth = Int(image.size.width) - 2
-        let processedImageHeight = Int(image.size.height) - 2
-
-        let processedImage = ImageProcessing.createImageFromEdgesDetected(pixelValues: gradientMatrix, width: processedImageWidth, height: processedImageHeight)
-
-        //let processedImage = UIImage.fromBitmapImage(bitmapImage: grayScaleBitmap)!
-
-        return processedImage
+        return BitmapImage(width: input.width, height: input.height, pixels: gradientMatrix)
     }
 }
 
 
 // MARK: - Extensions
-public extension EdgeDetectionAlgorithm {
+extension EdgeDetectionable {
     static func operate(pixelValues: [UInt8], height: Int, width: Int) -> [UInt8] {
         var edge: [UInt8] = []
         let oper = Sobel()
