@@ -117,8 +117,8 @@
 		56A9A0C476D06862D9202817C7E7E8BB /* Pods-GraphPod_Performance_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GraphPod_Performance_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5BD436F6269C722100E7FD23 /* Extension BitmapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension BitmapImage.swift"; sourceTree = "<group>"; };
-		5BD4371C269DA64200E7FD23 /* UIImage converters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage converters.swift"; path = "../GraphPod/Classes/Converters/UIImage converters.swift"; sourceTree = "<group>"; };
-		5BD43728269DA66700E7FD23 /* GaussBlurAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GaussBlurAlgorithm.swift; path = "../GraphPod/Classes/Gauss Blur/GaussBlurAlgorithm.swift"; sourceTree = "<group>"; };
+		5BD4371C269DA64200E7FD23 /* UIImage converters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage converters.swift"; sourceTree = "<group>"; };
+		5BD43728269DA66700E7FD23 /* GaussBlurAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaussBlurAlgorithm.swift; sourceTree = "<group>"; };
 		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0370ED7F8AB3FB54EF649C3862284B /* Pods_GraphPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2E03EB4843FD0E369EB534BF310009 /* Pods-GraphPod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GraphPod_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -287,7 +287,8 @@
 			children = (
 				5BD43728269DA66700E7FD23 /* GaussBlurAlgorithm.swift */,
 			);
-			path = "Gauss Blur";
+			name = "Gauss Blur";
+			path = "GraphPod/Classes/Gauss Blur";
 			sourceTree = "<group>";
 		};
 		5BD4370F269DA50C00E7FD23 /* Converters */ = {
@@ -295,7 +296,8 @@
 			children = (
 				5BD4371C269DA64200E7FD23 /* UIImage converters.swift */,
 			);
-			path = Converters;
+			name = Converters;
+			path = GraphPod/Classes/Converters;
 			sourceTree = "<group>";
 		};
 		5CC5DD41278DB8C38FF6AB10D3FA66E3 /* Pods-GraphPod_Tests */ = {

@@ -51,9 +51,15 @@ extension UIImage {
     }
 
     // MARK: - Convert Edge Detected bitmap to UIImage
-    public static func createFromEdgesDetectedBitmap(pixelValues: BitmapImage?, width: Int, height: Int) ->  UIImage {
+    public static func createFromEdgesDetectedBitmap(bitmapImage: BitmapImage?) ->  UIImage {
         var imageRef: CGImage?
-        if let pixelValues = pixelValues?.pixels {
+        let imageSizeConvertOffset = 2
+
+        guard let imageSize = bitmapImage else { return UIImage(named: "defaultImage")!}
+        let width = imageSize.width - imageSizeConvertOffset
+        let height = imageSize.height - imageSizeConvertOffset
+
+        if let pixelValues = bitmapImage?.pixels {
             let bitsPerComponent = 8
             let bytesPerPixel = 1
             let bitsPerPixel = bytesPerPixel * bitsPerComponent
