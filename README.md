@@ -5,11 +5,12 @@
 [![License](https://img.shields.io/cocoapods/l/GraphPod.svg?style=flat)](https://cocoapods.org/pods/GraphPod)
 [![Platform](https://img.shields.io/cocoapods/p/GraphPod.svg?style=flat)](https://cocoapods.org/pods/GraphPod)
 
-GraphPod is a pure Swift implemented library for image processing. GraphPod can:
+GraphPod is a pure Swift implemented library for image processing based on bitmap data structure. GraphPod can:
  - Segment the image based on weighted graph, Kruskal algorithm and disjoint-set data structure.
  - GraphPod can detect image objects edges - it is done with Sobel operator applying. 
  - Graphod can blur the image using direct gauss blurring. You don't need to import UIKit.
  - GraphPod allows you to upload any image or use camera's one or choose any from saved in Photo library and get the processed image as a result for further processing in machine learning.
+ - GraphPod includes different types images converters to/from bitmap you can use in your own app.
 
 It includes copious in-source documentation, unit tests.
 
@@ -28,32 +29,53 @@ pod 'GraphPod'
 and then `pod install`.
 
 ## How to use GraphPod in your project
-After you add GraphPod in project it's very simple to use it
+After you add GraphPod in project it's very simple to use it:
+
+- First you need to convert the image you'd like to process to bitmap. Bitmap is a simple data structure with every image pixel color data and it's allow us to make algorithm really fast. To safely convert image to bitmap call converter included to GraphPod:
+
+```swift
+guard let bitmap = processingImage.toBitmapImage() else { return }
+```
+
 - If you need image segmenting just call SegmentingImageAlgorithm.execute and pass the image you'd like to process, threshold and minimal segment size, just like that:
 
 ```swift
-let processedImage = SegmentingImageAlgorithm.execute(for: imageToProcess, with: threshold, with: minPixelsInSector)
+let segmentedResult = SegmentingImageAlgorithm.execute(input: bitmap, threshold: threshold, minSize: minPixelsInSegment)
 ```
-and then set processedImage to UIImageView or save it to library or whatever you prefer.
+And then convert segmentedResult bitmap to image or pass it to the next processing. 
+To convert segmented bitmap to image call:
+
+```swift
+let processedImage = UIImage.fromBitmapImage(bitmapImage: result.0)
+processedImage?.cgImage?.copy(colorSpace: processingImage.cgImage!.colorSpace!)
+```
 Read more about threshold and minPixelsInSector below.
 
-
-
-- If you need to detect edges call EdgeDetectionAlgorithm.execute and pass the image to process:
+- If you need to detect edges call EdgeDetectionAlgorithm.execute and pass the bitmap to process:
 
 ```swift
-let processedImage = EdgeDetectionAlgorithm.execute(for: imageToProcess)
+let edgeDetectedResult = EdgeDetectionAlgorithm.execute(input: bitmap)
 ```
-
-
-
-- To blur the image apply extended bitmapImage method - bitmapImage.fastGaussBlur:
+And then convert edgesDetectedResult bitmap to image or process it further.
+To convert edgesDetected call special converter:
 
 ```swift
-let blurredImage = bitmapImage.fastGaussBlur(radius: 3)
+let processedImage = UIImage.createFromEdgesDetectedBitmap(bitmapImage: edgeDetectedResult)
 ```
 
-## Example App
+- To blur the image call .fastGaussBlur to previously bitmapped input image and set radius:
+
+```swift
+let blurredResult = bitmap.fastGaussBlur(radius: 3)
+```
+And then convert blurredResult to image as usual or get the processed bitmap and do the next things.
+Use converter to convert:
+
+```swift
+let processedImage = UIImage.fromBitmapImage(bitmapImage: blurredResult.0)
+```
+
+## Example App. 
 
 To run the simple example project clone the repo and run `pod install` from the Example directory first.
 
