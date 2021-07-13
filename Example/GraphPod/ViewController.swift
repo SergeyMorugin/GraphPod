@@ -90,10 +90,7 @@ class ViewController: UIViewController {
 
    //======================Convert result to UIImage===============================
         
-        let processedImageWidth = Int(processingImage.size.width) - 2
-        let processedImageHeight = Int(processingImage.size.height) - 2
-
-        let processedImage = UIImage.createFromEdgesDetectedBitmap(pixelValues: result, width: processedImageWidth, height: processedImageHeight)
+        let processedImage = UIImage.createFromEdgesDetectedBitmap(bitmapImage: result)
 
         resultImage.image = processedImage
 
@@ -113,14 +110,16 @@ class ViewController: UIViewController {
     //=======================Execute the algorithm==============================
 
         // Convert processing UImage to bitmap
-        guard let bitmapImage = processingImage.toBitmapImage() else { return }
+        guard let bitmap = processingImage.toBitmapImage() else { return }
 
         // Get processed bitmap result
-        let blurredImage = bitmapImage.fastGaussBlur(radius: 3)
+        let blurredResult = bitmap.fastGaussBlur(radius: 3)
 
     //======================Convert result to UIImage============================
         
-        resultImage.image = UIImage.fromBitmapImage(bitmapImage: blurredImage)
+        let processedImage = UIImage.fromBitmapImage(bitmapImage: blurredResult)
+
+        resultImage.image = processedImage
 
     //======================Show result info text================================
 
