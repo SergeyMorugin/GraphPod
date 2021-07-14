@@ -23,6 +23,7 @@
 		4462D4AACB646B9C501B00E533D74215 /* Pods-GraphPod_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F2E03EB4843FD0E369EB534BF310009 /* Pods-GraphPod_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56BC212432FA981F4D41BE8DAF35EEEF /* GraphPod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F68968B682E08EAC10066BE2EB7E3D19 /* GraphPod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A788B4F2B0A42FC7229EBD9AE7BAC02 /* Pods-GraphPod_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A71DD685809D4CF26C0829848FB30E6B /* Pods-GraphPod_Tests-dummy.m */; };
+		5B63CDD1269EE74000AB81AC /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4374E269EBB9100E7FD23 /* CameraView.swift */; };
 		5BD436F7269C722100E7FD23 /* Extension BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD436F6269C722100E7FD23 /* Extension BitmapImage.swift */; };
 		5BD4371D269DA64200E7FD23 /* UIImage converters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4371C269DA64200E7FD23 /* UIImage converters.swift */; };
 		5BD43729269DA66700E7FD23 /* GaussBlurAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD43728269DA66700E7FD23 /* GaussBlurAlgorithm.swift */; };
@@ -119,6 +120,7 @@
 		5BD436F6269C722100E7FD23 /* Extension BitmapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension BitmapImage.swift"; sourceTree = "<group>"; };
 		5BD4371C269DA64200E7FD23 /* UIImage converters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage converters.swift"; sourceTree = "<group>"; };
 		5BD43728269DA66700E7FD23 /* GaussBlurAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaussBlurAlgorithm.swift; sourceTree = "<group>"; };
+		5BD4374E269EBB9100E7FD23 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0370ED7F8AB3FB54EF649C3862284B /* Pods_GraphPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphPod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2E03EB4843FD0E369EB534BF310009 /* Pods-GraphPod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GraphPod_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -300,6 +302,15 @@
 			path = GraphPod/Classes/Converters;
 			sourceTree = "<group>";
 		};
+		5BD4374D269EBB6300E7FD23 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4374E269EBB9100E7FD23 /* CameraView.swift */,
+			);
+			name = Camera;
+			path = GraphPod/Classes/Camera;
+			sourceTree = "<group>";
+		};
 		5CC5DD41278DB8C38FF6AB10D3FA66E3 /* Pods-GraphPod_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +462,7 @@
 		E0FA654FE05D92DCC8507BE4C43AED84 /* GraphPod */ = {
 			isa = PBXGroup;
 			children = (
+				5BD4374D269EBB6300E7FD23 /* Camera */,
 				5BD4370F269DA50C00E7FD23 /* Converters */,
 				5BD43702269DA10D00E7FD23 /* Gauss Blur */,
 				32C2BEE7C2EC0D5CF515BFF1158D5FE8 /* Edge Detection */,
@@ -723,6 +735,7 @@
 			files = (
 				063064BB0B9112C84869668CEFC8FE2F /* BitmapImage.swift in Sources */,
 				5BD436F7269C722100E7FD23 /* Extension BitmapImage.swift in Sources */,
+				5B63CDD1269EE74000AB81AC /* CameraView.swift in Sources */,
 				89AAEF0DA48648B8DCDF66C648F0188F /* DisjointSet.swift in Sources */,
 				5BD43729269DA66700E7FD23 /* GaussBlurAlgorithm.swift in Sources */,
 				BC629C1E23ED65D92D5971795399F186 /* EdgeDetectionAlgorithm.swift in Sources */,

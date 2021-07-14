@@ -19,6 +19,7 @@
 		349346B32690D31000FF727C /* DisjointSetPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AD2690D30900FF727C /* DisjointSetPerformanceTests.swift */; };
 		349346B42690D31400FF727C /* SegmentingImageAlgorithmPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AC2690D30900FF727C /* SegmentingImageAlgorithmPerformanceTests.swift */; };
 		349346B52690D31800FF727C /* WGraphPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349346AA2690D30900FF727C /* WGraphPerformanceTests.swift */; };
+		5B63CDD3269EE7A700AB81AC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63CDD2269EE7A700AB81AC /* CameraViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -61,6 +62,7 @@
 		349346AD2690D30900FF727C /* DisjointSetPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisjointSetPerformanceTests.swift; sourceTree = "<group>"; };
 		38348CD0814D2C49D565008C /* Pods-GraphPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphPod_Example.release.xcconfig"; path = "Target Support Files/Pods-GraphPod_Example/Pods-GraphPod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		423091CABFAD2C9C5D6E0645 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		5B63CDD2269EE7A700AB81AC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* GraphPod_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphPod_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				3420FB522690BFD600D7AC2F /* Main.storyboard */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				5B63CDD2269EE7A700AB81AC /* CameraViewController.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -496,6 +499,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				5B63CDD3269EE7A700AB81AC /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
