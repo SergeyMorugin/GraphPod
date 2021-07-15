@@ -8,6 +8,7 @@
 
 import AVFoundation
 import UIKit
+import GraphPod
 
 @available(iOS 10.0, *)
 public final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -117,19 +118,44 @@ public final class CameraViewController: UIViewController, AVCaptureVideoDataOut
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         connection.videoOrientation = orientation
 
-        let comicEffect = CIFilter(name: "CIComicEffect")
 
+        // MARK: - Use CPU
         let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+
         let cameraImage = CIImage(cvImageBuffer: pixelBuffer!)
 
-        comicEffect!.setValue(cameraImage, forKey: kCIInputImageKey)
+        let bitmap = cameraImage.toBitmapImage(context: context)
 
-        let cgImage = self.context.createCGImage(comicEffect!.outputImage!, from: cameraImage.extent)!
+        let result = SegmentingImageAlgorithm.execute(input: bitmap, threshold: 100.0, minSize: 200)
+        let processedImage = UIImage.fromBitmapImage(bitmapImage: result!.0)
+
+//        let result = EdgeDetectionAlgorithm.execute(input: bitmap)
+//        let processedImage = UIImage.createFromEdgesDetectedBitmap(bitmapImage: result!)
+
 
         DispatchQueue.main.async {
-            let filteredImage = UIImage(cgImage: cgImage)
-            self.filteredImage.image = filteredImage
+            self.filteredImage.image = processedImage
         }
+
+
+
+
+// MARK: - Use CIFilter - TO DO
+//        let comicEffect = CIFilter(name: "CIComicEffect")
+//
+//        let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+//        let cameraImage = CIImage(cvImageBuffer: pixelBuffer!)
+//
+//        comicEffect!.setValue(cameraImage, forKey: kCIInputImageKey)
+//
+//        let cgImage = self.context.createCGImage(comicEffect!.outputImage!, from: cameraImage.extent)!
+//
+//        DispatchQueue.main.async {
+//            let filteredImage = UIImage(cgImage: cgImage)
+//            self.filteredImage.image = filteredImage
+//        }
+
+
     }
 }
 
