@@ -158,21 +158,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-ZV-ic5">
-                                <rect key="frame" x="20" y="88" width="374" height="515"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G2f-af-vpw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-ZV-ic5">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="698"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8j-FJ-olQ">
+                                        <rect key="frame" x="0.0" y="698" width="414" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="cMv-5W-3Nw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qY-ea-iCx">
+                                        <rect key="frame" x="0.0" y="758" width="414" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="U9E-rR-qGV"/>
+                                        </constraints>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="onBackClick:" destination="xBq-Ia-b6I" eventType="touchUpInside" id="eot-eZ-cxn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tpi-Mp-JkH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Tpi-Mp-JkH" firstAttribute="bottom" secondItem="Fea-ZV-ic5" secondAttribute="bottom" constant="259" id="2Uz-P0-KiJ"/>
-                            <constraint firstItem="Tpi-Mp-JkH" firstAttribute="trailing" secondItem="Fea-ZV-ic5" secondAttribute="trailing" constant="20" id="Ixz-Ga-sWO"/>
-                            <constraint firstItem="Fea-ZV-ic5" firstAttribute="leading" secondItem="Tpi-Mp-JkH" secondAttribute="leading" constant="20" id="Rbs-ya-2i4"/>
-                            <constraint firstItem="Fea-ZV-ic5" firstAttribute="top" secondItem="Tpi-Mp-JkH" secondAttribute="top" constant="44" id="SIf-OQ-ZVM"/>
+                            <constraint firstItem="Tpi-Mp-JkH" firstAttribute="trailing" secondItem="G2f-af-vpw" secondAttribute="trailing" id="2v2-e4-nTZ"/>
+                            <constraint firstItem="G2f-af-vpw" firstAttribute="leading" secondItem="Tpi-Mp-JkH" secondAttribute="leading" id="DqV-bD-2Go"/>
+                            <constraint firstItem="Tpi-Mp-JkH" firstAttribute="bottom" secondItem="G2f-af-vpw" secondAttribute="bottom" id="X0J-rx-5JV"/>
+                            <constraint firstItem="G2f-af-vpw" firstAttribute="top" secondItem="Tpi-Mp-JkH" secondAttribute="top" id="ZVW-rE-7ep"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="filteredImage" destination="Fea-ZV-ic5" id="0rq-hD-DUF"/>
+                        <outlet property="resultControl" destination="Y8j-FJ-olQ" id="rcR-ge-jUN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9y-xe-NdQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

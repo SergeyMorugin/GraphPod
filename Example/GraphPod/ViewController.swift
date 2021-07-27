@@ -146,6 +146,15 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let threshold = thresholdValues[thresholdPicker.selectedRow(inComponent: 0)]
+        let minPixelsInSegment = minSizeValues[thresholdPicker.selectedRow(inComponent: 1)]
+        if let cameraController = segue.destination as? CameraViewController {
+            cameraController.minSizeValue = minPixelsInSegment
+            cameraController.thresholdValue = threshold
+        }
+    }
 }
 
 

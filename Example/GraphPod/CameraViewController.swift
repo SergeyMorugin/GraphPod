@@ -12,6 +12,10 @@ import GraphPod
 
 @available(iOS 10.0, *)
 public final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+    @IBOutlet weak var resultControl: UILabel!
+    
+    var thresholdValue: Float = 100.0
+    var minSizeValue: Int = 200
 
     var captureSession = AVCaptureSession()
     var backCamera: AVCaptureDevice?
@@ -52,7 +56,10 @@ public final class CameraViewController: UIViewController, AVCaptureVideoDataOut
             })
         }
     }
-
+    @IBAction func onBackClick(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func setupDevice() {
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
         let devices = deviceDiscoverySession.devices
@@ -118,23 +125,29 @@ public final class CameraViewController: UIViewController, AVCaptureVideoDataOut
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         connection.videoOrientation = orientation
 
-
+        let startTime = CFAbsoluteTimeGetCurrent()
         // MARK: - Use CPU
         let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+        let timePint1 = CFAbsoluteTimeGetCurrent() - startTime
 
         let cameraImage = CIImage(cvImageBuffer: pixelBuffer!)
+        let timePint2 = CFAbsoluteTimeGetCurrent() - startTime
 
         let bitmap = cameraImage.toBitmapImage(context: context)
+        let timePint3 = CFAbsoluteTimeGetCurrent() - startTime
 
-        let result = SegmentingImageAlgorithm.execute(input: bitmap, threshold: 100.0, minSize: 200)
+        let result = SegmentingImageAlgorithm.execute(input: bitmap, threshold: thresholdValue, minSize: minSizeValue)
+        let timePint4 = CFAbsoluteTimeGetCurrent() - startTime
         let processedImage = UIImage.fromBitmapImage(bitmapImage: result!.0)
-
+        
 //        let result = EdgeDetectionAlgorithm.execute(input: bitmap)
 //        let processedImage = UIImage.createFromEdgesDetectedBitmap(bitmapImage: result!)
 
 
         DispatchQueue.main.async {
             self.filteredImage.image = processedImage
+            self.resultControl.text = "\(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s" +
+                " for \(cameraImage.extent.width)x\(cameraImage.extent.height)"
         }
 
 
