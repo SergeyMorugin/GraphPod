@@ -19,9 +19,9 @@ public struct BitmapColor: Equatable {
 }
 
 public struct BitmapImage: Equatable {
-    let width: Int
-    let height: Int
-    var pixels: [UInt8]
+    public let width: Int
+    public let height: Int
+    public var pixels: [UInt8]
     let bytesPerComponent = 4
     
     public init(width: Int, height: Int, pixels: [UInt8]) {

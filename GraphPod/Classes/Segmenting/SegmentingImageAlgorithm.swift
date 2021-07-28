@@ -9,17 +9,17 @@
 import Foundation
 
 protocol Segmentationable {
-    static func execute(input: BitmapImage, threshold: Float, minSize: Int) -> (BitmapImage, RootsDictionary, DisjointSet)?
+    static func execute(image: BitmapImage, threshold: Float, minSize: Int) -> (BitmapImage, RootsDictionary, DisjointSet)?
 }
 
 public final class SegmentingImageAlgorithm: Segmentationable {
     
     // MARK: - Main method
-    public static func execute(input: BitmapImage, threshold: Float, minSize: Int) -> (BitmapImage, RootsDictionary, DisjointSet)? {
-        var wGraph = input.createWGraph()
+    public static func execute(image: BitmapImage, threshold: Float, minSize: Int) -> (BitmapImage, RootsDictionary, DisjointSet)? {
+        var wGraph = image.createWGraph()
         wGraph.sortEdges()
         let pixelsCombinedInSegments = wGraph.createSegmentSets(threshold: threshold, minSize: minSize)
-        let (bitmapImage, roots) = pixelsCombinedInSegments.colorizeBitmap(withWidth: input.width, andHeight: input.height)
+        let (bitmapImage, roots) = pixelsCombinedInSegments.colorizeBitmap(withWidth: image.width, andHeight: image.height)
         return (bitmapImage, roots, pixelsCombinedInSegments)
     }
 }

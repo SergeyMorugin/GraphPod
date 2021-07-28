@@ -12,6 +12,12 @@ public struct Edge: Equatable {
     var a: Int = 0
     var b: Int = 0
     var weight: Float = 0
+    
+    public init(a: Int, b: Int, weight: Float){
+        self.a = a
+        self.b = b
+        self.weight = weight
+    }
 }
 
 public struct WGraph {

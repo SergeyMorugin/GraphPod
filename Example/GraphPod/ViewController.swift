@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         let minPixelsInSegment = minSizeValues[thresholdPicker.selectedRow(inComponent: 1)]
 
         // Get processed bitmap result
-        let result = SegmentingImageAlgorithm.execute(input: bitmap, threshold: threshold, minSize: minPixelsInSegment)
+        let result = SegmentingImageAlgorithm.execute(image: bitmap, threshold: threshold, minSize: minPixelsInSegment)
 
  //======================Convert result to UIImage===============================
 

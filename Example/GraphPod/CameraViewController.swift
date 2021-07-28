@@ -136,7 +136,7 @@ public final class CameraViewController: UIViewController, AVCaptureVideoDataOut
         let bitmap = cameraImage.toBitmapImage(context: context)
         let timePint3 = CFAbsoluteTimeGetCurrent() - startTime
 
-        let result = SegmentingImageAlgorithm.execute(input: bitmap, threshold: thresholdValue, minSize: minSizeValue)
+        let result = SegmentingImageAlgorithm.execute(image: bitmap, threshold: thresholdValue, minSize: minSizeValue)
         let timePint4 = CFAbsoluteTimeGetCurrent() - startTime
         let processedImage = UIImage.fromBitmapImage(bitmapImage: result!.0)
         
