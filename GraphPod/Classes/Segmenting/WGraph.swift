@@ -39,7 +39,10 @@ public extension WGraph {
     mutating func createSegmentSets(threshold: Float, minSize: Int) -> DisjointSet {
 
         // Set Disjoint-set array
+    
+        let startTime = CFAbsoluteTimeGetCurrent()
         let disjointSet = DisjointSet(count: vertexCount)
+        //print("DisjointSet init in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s")
 
         // Set thresholds array
         var thresholds = [Float](repeating: threshold, count: vertexCount)
@@ -50,6 +53,7 @@ public extension WGraph {
         }
 
         // Core sorting
+        //startTime = CFAbsoluteTimeGetCurrent()
         edges.forEach {
             var a = disjointSet.rootForElementOn(index: $0.a)
             let b = disjointSet.rootForElementOn(index: $0.b)
@@ -59,8 +63,10 @@ public extension WGraph {
                 thresholds[a] = $0.weight + threshold / Float(disjointSet[a].size)
             }
         }
+        //print("DisjointSet Core sorting in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s")
         
         // Post process small segments
+        //startTime = CFAbsoluteTimeGetCurrent()
         edges.forEach {
             let a = disjointSet.rootForElementOn(index: $0.a)
             let b = disjointSet.rootForElementOn(index: $0.b)
@@ -68,6 +74,8 @@ public extension WGraph {
                 disjointSet.joinSetsBy(index1: a, index2: b)
             }
         }
+        //print("DisjointSet Post process in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s")
+        print("DisjointSet.createSegmentSets in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s for \(threshold)-\(minSize)")
         return disjointSet
     }
 }

@@ -44,6 +44,42 @@ class BitmapImageTests: XCTestCase {
         XCTAssertEqual(wGraph.edges[1].a, 0)
         XCTAssertEqual(wGraph.edges[1].b, 4)
     }
+    
+    func testCalcResultEdgesAmount() throws {
+        var bitmap = BitmapImage(width: 3, height: 3, pixels: [])
+        XCTAssertEqual(bitmap.calcResultEdgesAmount(),12)
+        
+        bitmap = BitmapImage(width: 4, height: 4, pixels: [])
+        XCTAssertEqual(bitmap.calcResultEdgesAmount(), 24)
+    }
+    
+    func testTwoPixelPoints() throws {
+        let bitmap = BitmapImage(width: 3, height: 3, pixels: [])
+        let result1 = bitmap.twoPixelPoints(byWGrathIndex: 0)
+        XCTAssertEqual(result1.0.x, 0)
+        XCTAssertEqual(result1.0.y, 0)
+        XCTAssertEqual(result1.1.x, 1)
+        XCTAssertEqual(result1.1.y, 0)
+        
+        let result2 = bitmap.twoPixelPoints(byWGrathIndex: 5)
+        XCTAssertEqual(result2.0.x, 1)
+        XCTAssertEqual(result2.0.y, 2)
+        XCTAssertEqual(result2.1.x, 2)
+        XCTAssertEqual(result2.1.y, 2)
+        
+        let result3 = bitmap.twoPixelPoints(byWGrathIndex: 6)
+        XCTAssertEqual(result3.0.x, 0)
+        XCTAssertEqual(result3.0.y, 0)
+        XCTAssertEqual(result3.1.x, 0)
+        XCTAssertEqual(result3.1.y, 1)
+        
+        let result4 = bitmap.twoPixelPoints(byWGrathIndex: 11)
+        XCTAssertEqual(result4.0.x, 2)
+        XCTAssertEqual(result4.0.y, 1)
+        XCTAssertEqual(result4.1.x, 2)
+        XCTAssertEqual(result4.1.y, 2)
+        
+    }
 
 
 }

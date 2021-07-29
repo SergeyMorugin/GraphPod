@@ -6,6 +6,10 @@
 //  Copyright © 2021 Ostagram Inc. All rights reserved.
 //
 
+public struct PixelPoint {
+    let x: Int
+    let y: Int
+}
 
 public struct BitmapColor: Equatable {
     public let r: UInt8
@@ -71,6 +75,23 @@ public extension BitmapImage {
         return WGraph(edges: edges, vertexCount: pixelsCount)
     }
     
+    func createWGraph2() -> WGraph {
+        let height = Int(self.height)
+        let width = Int(self.width)
+        let pixelsCount = height*width
+        let edgesCount = calcResultEdgesAmount()
+        var edges = [Edge](repeating: Edge(a: 0, b: 0, weight: 0), count: edgesCount)
+
+        // Calculating pixels colors difference
+        
+        (0..<edgesCount).forEach { i in
+            let points = twoPixelPoints(byWGrathIndex: i)
+            let weight = diff(x1: points.0.x, y1: points.0.y, x2: points.1.x, y2: points.1.y)
+            edges[i] = Edge(a: toIndex(byPoint: points.0), b: toIndex(byPoint: points.1), weight: weight)
+        }
+        return WGraph(edges: edges, vertexCount: pixelsCount)
+    }
+    
     func diff(x1: Int, y1: Int, x2: Int, y2: Int) -> Float {
         let pixel1 = self.pixel(x: x1, y: y1)
         let pixel2 = self.pixel(x: x2, y: y2)
@@ -80,6 +101,35 @@ public extension BitmapImage {
             squared(divMod(pixel1.b, pixel2.b)) )
         
         return sqrt(Float(dis))
+    }
+    
+    func calcResultEdgesAmount() -> Int {
+        return (width-1)*height+(height-1)*width
+    }
+    
+    func twoPixelPoints(byWGrathIndex index: Int) -> (PixelPoint, PixelPoint) {
+        var x1 = 0
+        var x2 = 0
+        var y1 = 0
+        var y2 = 0
+        
+        if (index < ((width-1)*height)){
+            y1 = index / (width-1)
+            y2 = y1
+            x1 = index % (width-1)
+            x2 = x1 + 1
+        } else {
+            let index2 = index - (width-1)*height
+            x1 = index2 / (height-1)
+            x2 = x1
+            y1 = index % (height-1)
+            y2 = y1 + 1
+        }
+        return (PixelPoint(x: x1, y: y1), PixelPoint(x: x2, y: y2))
+    }
+    
+    func toIndex(byPoint: PixelPoint) -> Int {
+        return byPoint.y * width + byPoint.x
     }
     
     private func squared(_ val: Int) -> Int {return val * val}

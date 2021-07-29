@@ -11,7 +11,7 @@ import GraphPod
 
 class WGraphPerformanceTests: XCTestCase {
     func testPerformanceGraphSort() throws {
-        let bitmap = BitmapImage(width: 1000, height: 1000, pixels: Array(repeating: UInt8.random(in: 1..<255), count: 1000*1000*4))
+        let bitmap = BitmapImage(width: 10000, height: 1000, pixels: (0..<10000*1000*4).map({_ in UInt8.random(in: 0..<255) }))
         var graph = bitmap.createWGraph()
         self.measure {
             graph.sortEdges()
@@ -19,11 +19,11 @@ class WGraphPerformanceTests: XCTestCase {
     }
     
     func testPerformanceGraphCreateSegmentSets() throws {
-        let bitmap = BitmapImage(width: 1000, height: 1000, pixels: Array(repeating: UInt8.random(in: 1..<255), count: 1000*1000*4))
+        let bitmap = BitmapImage(width: 10000, height: 1000, pixels: (0..<10000*1000*4).map({_ in UInt8.random(in: 0..<255) }))
         var graph = bitmap.createWGraph()
         graph.sortEdges()
         self.measure {
-            let _ = graph.createSegmentSets(threshold: Float.random(in: 0.1...200.0), minSize: Int.random(in: 0..<200))
+            let _ = graph.createSegmentSets(threshold: 300, minSize: 300)
         }
     }
 

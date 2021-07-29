@@ -26,12 +26,13 @@ public final class DisjointSet {
     
     // MARK: - Find root for element
     public func rootForElementOn(index: Int) -> Int {
-        var y = index
-        while y != elements[y].parent {
-            y = elements[y].parent
-            elements[index].parent = y
+        var current = index
+        while current != elements[current].parent {
+            current = elements[current].parent
+            elements[index].parent = current
         }
-        return y
+        //let parent = current
+        return current
     }
     
     // MARK: - Join elements
