@@ -13,10 +13,10 @@ public struct DisjointSetElement {
 }
 
 public final class DisjointSet {
-    public var elements:[DisjointSetElement] = []
+    public var elements:ContiguousArray<DisjointSetElement> = []
     
     public init(count: Int) {
-        elements = [DisjointSetElement](repeating: DisjointSetElement(rank: 0, parent: 0, size: 1), count: count)
+        elements = ContiguousArray<DisjointSetElement>(repeating: DisjointSetElement(rank: 0, parent: 0, size: 1), count: count)
         for i in 0..<count {
             elements[i].rank = 0
             elements[i].size = 1

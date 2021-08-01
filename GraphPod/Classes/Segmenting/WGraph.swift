@@ -21,16 +21,17 @@ public struct Edge: Equatable {
 }
 
 public struct WGraph {
-    var edges: [Edge]
+    //var edges: [Edge]
+    var edges: ContiguousArray<Edge>
     let vertexCount: Int
     private var edgesIsSorted = false
-    public init(edges: [Edge], vertexCount: Int) {
+    public init(edges: ContiguousArray<Edge>, vertexCount: Int) {
         self.edges = edges
         self.vertexCount = vertexCount
     }
     
     public mutating func sortEdges()  {
-        edges = edges.sorted { $0.weight < $1.weight  }
+        edges.sort { $0.weight < $1.weight  }
         edgesIsSorted = true
     }
 }
@@ -45,7 +46,7 @@ public extension WGraph {
         //print("DisjointSet init in \(round((CFAbsoluteTimeGetCurrent() - startTime)*1000)/1000)s")
 
         // Set thresholds array
-        var thresholds = [Float](repeating: threshold, count: vertexCount)
+        var thresholds = ContiguousArray<Float>(repeating: threshold, count: vertexCount)
 
         // Sort edges by weight
         if !edgesIsSorted {

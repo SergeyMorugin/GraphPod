@@ -51,7 +51,7 @@ public extension BitmapImage {
         let width = Int(self.width)
         let pixelsCount = height*width
 
-        var edges: [Edge] = []
+        var edges: ContiguousArray<Edge> = []
 
         // Calculating pixels colors difference
         (0..<height).forEach { y in
@@ -80,7 +80,7 @@ public extension BitmapImage {
         let width = Int(self.width)
         let pixelsCount = height*width
         let edgesCount = calcResultEdgesAmount()
-        var edges = [Edge](repeating: Edge(a: 0, b: 0, weight: 0), count: edgesCount)
+        var edges = ContiguousArray<Edge>(repeating: Edge(a: 0, b: 0, weight: 0), count: edgesCount)
 
         // Calculating pixels colors difference
         
